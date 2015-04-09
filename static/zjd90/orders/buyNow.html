@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>立即结算-</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-12-25">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/buyNow.css">
+    <link rel="stylesheet" type="text/css" href="../css/address.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="BuyNowController">
+
+<!--header start-->
+<div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+<!--header end-->
+
+<!--页面主体 start-->
+<div class="content pos-content printing-bg">
+    <div class="printing-upload" style="padding-bottom: 0">
+        <div class="wrap pay-content">
+            <!-- 支付 步骤 -->
+            <ul class="pay-steps clearfix hack-mr-ul">
+                <li><a href="javascript:;">1.核对订单信息</a></li>
+                <li class="middle"><a href="javascript:;">2.付款到支付宝</a></li>
+                <li class="middle"><a href="javascript:;">3.确认收货</a></li>
+                <li><a href="javascript:;" class="last-bg">4.评价</a></li>
+            </ul>
+            <!-- 支付 步骤 -->
+            <!--管理地址 -->
+            <ul class="p-address clearfix">
+                <li class="tit">收货人信息</li>
+                <li class="link"><a href="../account/address.html" target="_blank">管理收货地址</a></li>
+            </ul>
+            <!--管理地址 -->
+            <!-- 地址内容 -->
+            <div style="height: 144px;"
+                 class="clearfix"
+                 ms-class-ofh="!isShowAll"
+                 ms-controller="AddressListController">
+                <ul class="d-main clearfix hack-mr-ul">
+                    <li class="p-address-info"
+                        ms-repeat="list"
+                        ms-click="selectHandler($index)">
+                        <p><span class="name">{{el.accept_name}}</span><span class="tel">{{el.telphone}}</span></p>
+
+                        <div class="adress-1">
+                            <span class="province">{{el.prov_name || ""}}</span>
+                            <span class="city">{{el.city_name || ""}}</span>
+                            <span class="qu">{{el.county || ""}}</span></div>
+                        <div class="adress-2">{{el.address|| ""}}</div>
+                        <a class="d-edit"
+                           ms-click="showHandler(el)">修改</a>
+                        <div class="default" ms-visible="el.isDefault">默认地址</div>
+                        <div class="def-img" ms-visible="selectedIndex==$index"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix" style="clear: both;"
+                 ms-controller="AddressListController">
+                <a class="btn-primary btn new-btn f_fl"
+                   ms-click="showHandler(null)">使用新地址</a>
+                <a class="f_fr show-all"
+                   ms-visible="!isShowAll"
+                   ms-click="showAllAddress(true)">显示全部</a>
+                <a class="f_fr show-all"
+                   ms-visible="isShowAll"
+                   ms-click="showAllAddress(false)">收起</a>
+            </div>
+            <!-- 地址内容 -->
+            <!-- 清单列表 -->
+            <div class="pay-list">
+                <ul class="p-address clearfix">
+                    <li class="tit">商品清单</li>
+                </ul>
+                <table class="pay-table">
+                    <thead>
+
+                    <tr>
+                        <th class="width-one">商品信息</th>
+                        <th class="width-four">数量</th>
+                        <th class="width-two">补充说明</th>
+                        <th class="width-five">定金</th>
+                        <th class="width-six">金额（元）</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ms-repeat="list">
+                            <td>
+                                <div class="clearfix">
+                                    <div class="c-pic f_fl pay-img">
+                                        <a class="image-wrap"><img  ms-src="el.thumbUrl"></a>
+                                    </div>
+                                    <div class="f_fl pay-por" style="width: 280px;">
+                                        <div>{{el.design_name}}</div>
+                                        <div>{{el.houseInfo}}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align: center">
+                                <div class="book-nums">
+                                    {{el.copy}}
+                                </div>
+                            </td>
+                            <td>无</td>
+                            <td>
+                                <span class="pay-price">{{(el.priceInfo.deposit * el.copy).toFixed(2)}}</span>
+                            </td>
+                            <td>
+                                <span class="pay-price">{{(el.priceInfo.design_price * el.copy).toFixed(2)}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 清单列表 -->
+            <div class="pay-main clearfix">
+                <ul class="chose-email f_fl" style="display: none;">
+                    <li class="clearfix">
+                        <span class="hd"><input type="radio"
+                                                ms-duplex-text="expressCompany"
+                                                name="expressCompany"
+                                                value="默认快递"></span>
+                        <span class="bd">申通快递(默认)</span>
+                    </li>
+                    <li class="clearfix">
+                        <span class="hd"><input type="radio"
+                                                ms-duplex-text="expressCompany"
+                                                name="expressCompany"
+                                                value="顺丰快递"></span>
+                        <span class="bd">顺丰快递（到付）</span>
+                        <span class="td">顺丰到付不支持任何包邮，且运费支付形式为客户收到货物自行向快递公司支付运费！</span>
+                    </li>
+                </ul>
+                <div  class="due f_fr" style="padding-top:50px;">
+                    <div class="realPay">
+                        <p class="money">
+                            <span class="hd">实付款</span>
+                            <span class="bd"><span class="tc-rmb">¥</span><strong >{{priceInfo.totalCost}}</strong></span>
+                        </p>
+                    </div>
+                    <!--<div class="obtainedPoint">（含运费   ￥ {{priceInfo.expressCost}} 元）</div>-->
+                </div>
+            </div>
+            <div class="ticket clearfix">
+               <!--<a class="f_fl ticket-w" ms-click="editHandler" ms-controller="InvoiceController">开具发票</a>-->
+                <div class="f_fr change-pic">
+                       <p class="change-contact f_fr">如有疑问，请联系: <a class="contact"  href="http://wpa.qq.com/msgrd?v=3&uin=2259500175&site=qq&menu=yes" target="_blank" >QQ 2259500175</a> 固定电话 0571-86693007</p>
+                       <a class="f_fr btn-block btn btn-primary t-submit" target="_blank"
+                            ms-click="placeOrder">提交订单</a>
+                </div>
+            </div>
+            <!--<ul class="ti-normal clearfix tit-mt"-->
+                <!--ms-controller="InvoiceController"-->
+                <!--ms-visible="invoiceEditting">-->
+                <!--<li>-->
+                    <!--<span class="ti-td">-->
+                        <!--<input type="radio" ms-duplex-bool="needInvoice" name="IsNeedInvoice" value="false">-->
+                    <!--</span>-->
+                <!--</li>-->
+                <!--<li><span>不开发票</span></li>-->
+            <!--</ul>-->
+            <!--<ul class="ti-normal clearfix"-->
+                <!--ms-controller="InvoiceController"-->
+                <!--ms-visible="invoiceEditting">-->
+                  <!--<li>-->
+                      <!--<span class="ti-td">-->
+                          <!--<input type="radio" ms-duplex-bool="needInvoice" name="IsNeedInvoice" value="true">-->
+                      <!--</span>-->
+                  <!--</li>-->
+                  <!--<li><span>普通发票</span></li>-->
+                  <!--<li class="line"></li>-->
+                  <!--<li><span>发票抬头：</span></li>-->
+                  <!--<li><input type="text" class="ti-input form-control" ms-blur="blurHandler('title')" ms-duplex="title"></li>-->
+                  <!--<li><span class="ti-content">发票内容：</span></li>-->
+                  <!--<li><span class="ti-fee">技术服务费</span></li>-->
+            <!--</ul>-->
+
+        </div>
+    </div>
+    <!--上传的内容 end-->
+</div>
+<!--页面主体 end-->
+
+<!--footer start-->
+<div ms-include-src="'../share/views/footer.html'"></div>
+<!--footer end-->
+
+<!--<!-- 新增 -->-->
+<!--<div  ms-controller="AddressController"-->
+      <!--ms-visible="visible"-->
+      <!--ms-include-src="'../share/views/addressDialog.html'"></div>-->
+<!--<!-- 新增 -->-->
+
+<!--脚本-->
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+<script type="text/javascript" src="../js/plugins/ngprogress/nprogress.js"></script>
+
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+<script type="text/javascript" src="../user/controllers/AddressListController.js"></script>
+<script type="text/javascript" src="controllers/BuyNowController.js"></script>
+
+</body>
+</html>

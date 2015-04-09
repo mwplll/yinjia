@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">图片/文件上传API</h1>
+<h2 id="1-">1、图片上传</h2>
+<p>[POST] <a href="http://121.40.212.161:8000/data/image/upload">http://121.40.212.161:8000/data/image/upload</a></p>
+<div class="row"><div class="col-lg-9"><table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>参数可选值</th>
+<th>可选值说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>图片类型</td>
+<td>avator</td>
+<td>用户头像</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>house_type</td>
+<td>户型图</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>design_room</td>
+<td>设计方案设计图</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>cid_pic</td>
+<td>实名认证的身份证</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>goods</td>
+<td>商品图片</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>brand_logo</td>
+<td>商品品牌logo</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>spec</td>
+<td>商品的规格图片</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>design_cad</td>
+<td>设计方案施工图</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>article</td>
+<td>文章</td>
+</tr>
+</tbody>
+</table>
+</div></div><p>file     | 图片文件， input type=file name=file，即 name 为 file 的表单元素 || </p>
+<p>返回</p>
+<pre><code>errorCode: 22000
+data:
+    link: xxx
+</code></pre><h2 id="2-">2、文件上传</h2>
+<p>[POST] <a href="http://121.40.212.161:8000/data/file/upload">http://121.40.212.161:8000/data/file/upload</a></p>
+<div class="row"><div class="col-lg-9"><table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>参数可选值</th>
+<th>可选值说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>文件类型</td>
+<td>design_file</td>
+<td>设计方案施工图工程文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>design_pdf</td>
+<td>设计方案施工图PDF文件</td>
+</tr>
+</tbody>
+</table>
+</div></div><p>file     | 文件， input type=file name=file，即 name 为 file 的表单元素 ||         </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+server {
+         listen 8000;
+         server_name zjd.com;
+
+         root /Users/wy/zjd90/trunk/rd/src;
+         index index.html index.htm index.php;
+
+         #rewrite ^(.*)$ /webroot/index.php/$1;
+
+         location ~ {
+             fastcgi_pass 127.0.0.1:9000;
+             fastcgi_param SCRIPT_FILENAME $document_root/webroot/index.php$fastcgi_script_name;
+             fastcgi_param PATH_INFO $fastcgi_script_name;
+             include fastcgi_params;
+         }
+
+         #location ~ {
+         #    fastcgi_pass 127.0.0.1:9000;
+         #    fastcgi_index index.php;
+         #    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         #    fastcgi_param PATH_INFO $fastcgi_script_name;
+         #    include fastcgi_params;
+         #}
+}

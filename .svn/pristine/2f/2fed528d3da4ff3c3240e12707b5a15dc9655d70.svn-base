@@ -1,0 +1,82 @@
+<style>
+.thumbnail-left {
+    background-color: #fff;
+
+}
+
+.thumbnail-left .order-info {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    border-color: #a0a0a0;
+    border-style: solid;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 0px;   
+}
+
+
+.thumbnail-left .order-info .info{
+    width: 150px;
+
+}
+
+.thumbnail-left .order-info .img img{
+    width: 100%;
+    height: 96px;    
+}
+
+.thumbnail-left .order-info .img {
+    padding-bottom: 20px;  
+}
+
+.thumbnail-left .order-express{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    border-color: #a0a0a0;
+    border-style: solid;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;  
+}
+
+.thumbnail-left .order-express .address{
+    width: 150px;
+    color: #000000 ;
+}
+
+</style>
+
+<div class="thumbnail-left pull-left">
+    <div class="order-info">
+        <div class="info">
+            <span style="color:#000000">订单编号:12213123222</span>
+            <span style="color:#000000"><br>创建日期:2014年12月5日</span>
+            <div style="margin-top: 20px;"class="img">
+                <img src="../data/4.jpg" alt="">
+            </div>
+            <span style="color:#000000">我就是名称啊哈哈哈哈我是名称啦<br></span>
+            <span>浙江 杭州 滨江金色黎明<br></span>
+            <span>100.00m2户型2室1厅1厨1卫</span>      
+        </div>
+    </div>
+    <div class="order-express">
+        <div class="address">
+            <div class="recv-address">
+                <p><span>收货信息:</span></p>
+                <p><span>浙江省杭州市下沙去具体我就不知道是哪里了</span></p>
+                <p><span>姓名</span></p>
+                <p><span>电话</span></p>
+            </div>
+            <div style="margin-top: 20px;"class="send-address">
+                <p><span>发货信息:</span></p>
+                <p><span>浙江省杭州市下沙去具体我就不知道是哪里了</span></p>          
+            </div>          
+        </div>     
+    </div>
+</div>

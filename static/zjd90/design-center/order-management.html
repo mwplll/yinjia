@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>订单管理</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/designer.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="OrderManagementController">
+    <div class="body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--breadcrumb start-->
+        <div class="breadcrumb-title breadcrumb-wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="j../design-center/designer.html">设计师中心</a></li>
+                    <li><a href="javascript:;">订单管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--breadcrumb end-->
+
+        <!--main start-->
+        <div class="main" id="order-manage" style="margin-bottom: 35px;">
+            <div class="container clearfix">
+                <div ms-include-src="'../design-center/views/nav-left.html'"></div>
+                <div class="order-content pull-right list-content">
+                    <div class="tab">
+                        <ul class="clearfix">
+                            <li class="pull-left items"
+                                ms-class-active="state=='all'"
+                                ms-click="listHandler('all')">所有订单</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='pay_first'"
+                                ms-click="listHandler('pay_first')">等待买家付定金</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='pic_first'"
+                                ms-click="listHandler('pic_first')">等待提交效果图</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='pay_second'"
+                                ms-click="listHandler('pay_second')">等待买家付余款</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='pic_second'"
+                                ms-click="listHandler('pic_second')">等待提交施工图</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='send'"
+                                ms-click="listHandler('send')">施工图已发货</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='complete'"
+                                ms-click="listHandler('complete')">成功的订单</li>
+                            <li class="pull-left items"
+                                ms-class-active="state=='cancel'"
+                                ms-click="listHandler('cancel')">关闭的订单</li>
+                        </ul>
+                    </div>
+
+                    <table class="title">
+                        <colgroup>
+                            <col width="441" class="name">
+                            <col class="price">
+                            <col class="amount">
+                            <col class="state">
+                            <col class="operate">
+                        </colgroup>
+                        <thead>
+                            <tr class="col-name">
+                                <th class="name">设计方案名称</th>
+                                <th class="price">订单类型</th>
+                                <th class="price">设计费（元）</th>
+                                <th class="amount">实付款（元）</th>
+                                <th class="state">交易状态</th>
+                                <th class="operate">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="items" ms-repeat="items">
+                            <tr class="sep_row"></tr>
+                            <tr class="info">
+                                <td colspan="6">
+                                    <span style="padding-left:20px">{{new Date(el.create_time*1000) | date("yyyy-MM-dd HH:mm:ss")}}</span>
+                                    <span style="padding-left:20px">订单号: {{el.order_sn}}</span>
+                                    <span style="padding-left:50px">{{el.user.user_name}}</span>
+                                </td>
+
+                            </tr>
+                            <tr class="item">
+                                <td class="name">
+                                    <div style="padding-left:40px" class="img pull-left">
+                                        <a ms-href="'../design/scheme-detail.html?design_id='+el.design.design_id">
+                                            <img ms-src="el.design.thumbUrl" alt="">
+                                        </a>
+                                    </div>
+                                    <div style="padding-left:24px" class="description pull-left">
+                                        <h2>{{el.design.design_name}}</h2>
+                                        <span>{{el.house.house_typename}}</span>
+                                    </div>                                   
+                                </td>
+
+                                <td class="price">
+                                    <span>{{el.order_type}}</span>
+                                </td>
+
+                                <td class="price">
+                                    <span>{{el.design.design_price}}<br>(含定金：{{el.design.design_deposit}})</span>
+                                </td>
+
+                                <td class="amount">
+                                    <span>{{el.order_amount}}</span>
+                                </td>
+                                <td class="state">
+                                    <span>{{el.order_status}}<br></span>
+                                    <span> <a class="color-orange cursorHand"
+                                              ms-href="'order-detail.html?sn=' + el.order_sn" target="_blank">订单详情</a></span>
+                                </td>
+                                <td class="operate">
+                                    <a href="javascript:;"
+                                       ms-click="dropOrderHandler(el)">关闭交易</a>
+                                    <a class="color-orange cursorHand"
+                                       ms-visible="el.expressAble"
+                                       href="express.html" target="_blank">查看物流</a><br/>
+                                    <!--<a href="order-modify.html" target="_blank">查看修改意见</a><br/>-->
+                                    <a ms-href="'upload-effect.html?sn=' + el.order_sn +'&house_id=' + el.house.house_id"
+                                       target="_blank">提交效果图</a><br/>
+                                    <a ms-href="'upload-cad.html?sn=' + el.order_sn" target="_blank">提交施工图</a><br/>
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+    <script type="text/javascript" src="../design-center/controllers/TabHandler.js"></script>
+    <script type="text/javascript" src="../design-center/controllers/OrderManagementController.js"></script>
+
+
+</body>
+</html>
+
+

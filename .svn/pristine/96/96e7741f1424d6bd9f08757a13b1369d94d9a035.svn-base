@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>详细清单-印家</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+    <link rel="stylesheet" type="text/css" href="../css/goods.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="DetailListController">
+    <div class="body scheme-detail-body detail-list-body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--main start-->
+        <div class="main-container" style="margin-top: 15px;margin-bottom: 50px;">
+
+            <div class="schema-wrap">
+                <div class="clearfix">
+                    <div class="pull-left left-wrap">
+                        <a class="image-wrap fill grey">
+                            <img class="fill" ms-src="row.thumbUrl">
+                        </a>
+                    </div>
+                    <div class="pull-left right-wrap">
+                        <p class="title">{{row.name}}</p>
+                        <div class="checkbox-wrap">
+                            <input type="checkbox"> 设计
+                            <input type="checkbox"> 施工
+                            <input type="checkbox"> 主材
+                            <input type="checkbox"> 全选
+                        </div>
+                        <div class="ul-wrap">
+                            <ul class="clearfix">
+                                <li class="pull-left">
+                                    <div style="margin-bottom: 33px;">
+                                        <span style="font-size: 18px;">装修总价 </span>
+                                        <span class="price">￥ {{row.totalPrice|number(2)}}</span>
+                                    </div>
+                                    <!--<a class="btn btn-default addBtn"-->
+                                       <!--ms-click="addToMyDesign">加入我的新家计划</a>-->
+                                </li>
+                                <li class="pull-left">
+                                    <div>
+                                        <p class="price">￥{{row.price|number(2)}}</p>
+                                    </div>
+                                    <a class="btn btn-default baoBtn">设计包</a>
+                                </li>
+                                <li class="pull-left">
+                                    <div>
+                                        <p class="price">￥{{row.manualPrice|number(2)}}</p>
+                                    </div>
+                                    <a class="btn btn-default baoBtn">施工包</a>
+                                </li>
+                                <li class="pull-left">
+                                    <div>
+                                        <p class="price">￥{{row.materialPrice|number(2)}}</p>
+                                    </div>
+                                    <a class="btn btn-default baoBtn">主材包</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--工艺 start-->
+            <div class="material-wrap tab construction"
+                 ms-controller="ConstructionListController"
+                 style="margin-top: 50px;"
+                 ms-include-src="'../schema/views/construction-tab.html'">
+            </div>
+            <!--工艺 end-->
+            <!--建材 start-->
+            <div class="material-wrap tab material"
+                 ms-controller="MaterialListController"
+                 ms-include-src="'../schema/views/material-tab.html'">
+            </div>
+            <!--建材 end-->
+
+            <div style="margin-top: 20px;">
+                <a class="btn btn-default"
+                   ms-controller="MaterialListController"
+                   ms-click="saveHandler"
+                   style="width: 100%; border: 0;background-color: #ff5900;
+                   color: #ffffff;
+                   font-size: 16px;">保存选择</a>
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+    <script type="text/javascript" src="../js/underscore.js"></script>
+    <script type="text/javascript" src="../material/controllers/GoodsDetailController.js"></script>
+    <script type="text/javascript" src="../schema/controllers/DetailList2UserController.js"></script>
+
+<script type="text/javascript">
+    headerCtr.setCurHandler('design');
+</script>
+</body>
+</html>

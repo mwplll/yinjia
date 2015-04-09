@@ -1,0 +1,36 @@
+server {
+         listen 8000;
+         server_name zjd.hellofe.com;
+
+         root /home/zjd/www/zjd/src;
+         index index.html index.htm index.php;
+
+         location ~ \.(xml)$ {
+             root /home/zjd/www/zjd/html;
+         }
+
+         location ^~ /html/ {
+             root /home/zjd/www/zjd;
+
+             autoindex on;
+         }
+
+
+         location ~ {
+             fastcgi_pass 127.0.0.1:9000;
+             fastcgi_param SCRIPT_FILENAME $document_root/webroot/index.php$fastcgi_script_name;
+             fastcgi_param PATH_INFO $fastcgi_script_name;
+             include fastcgi_params;
+
+             #add_header Access-Control-Allow-Origin $http_origin;
+         }
+
+
+         #location ~ {
+         #    fastcgi_pass 127.0.0.1:9000;
+         #    fastcgi_index index.php;
+         #    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         #    fastcgi_param PATH_INFO $fastcgi_script_name;
+         #    include fastcgi_params;
+         #}
+}

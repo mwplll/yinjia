@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>账户安全</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/person.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="PasswordController">
+<div class="body">
+    <!--header start-->
+    <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+    <!--header end-->
+
+    <!--main start-->
+    <div class="main" id="main" style="margin-bottom: 35px;">
+        <div class="container clearfix">
+            <div class="person-sidebar pull-left">
+                <ul class="person-sidebar-ul">
+                    <li class="person-sidebar-li"><a href="info.html">基本信息</a></li>
+                    <li class="person-sidebar-li current"><a href="javascript:;">账户安全</a></li>
+                    <li class="person-sidebar-li"><a href="address.html">收件地址</a></li>
+                    <li class="person-sidebar-li"><a href="authorized.html">实名认证</a></li>
+                </ul>
+            </div>
+            <div class="person-content security-content pull-left">
+                <div class="col-md-3 head-image" style="padding-left: 20px;">
+                    <input class="knob" data-width="200"
+                           data-fgColor="#f18044"
+                           data-readOnly="true"
+                           data-displayInput=true value="60">
+                    <div class="tlc mt3 f14">
+                        <p class="f14">账户安全得分</p>
+                    </div>
+
+                </div>
+                <div class="col-md-9 security-form" style="padding-bottom: 80px;">
+                    <div class="password-div item-wrap" ms-controller="PasswordController">
+                        <div class="form-item clearfix">
+                            <div class="pull-left tlc" style="width: 120px">
+                                <span class="title">密码</span>
+                            </div>
+                            <div class="pull-left tlc" style="width: 220px">
+                                <span class="">******</span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="!toggle"
+                                 ms-click="toggleHandler(true)"
+                                 style="width: 125px">
+                                <span class="color-orange">展开</span>
+                                <span class="fa fa-angle-double-down color-orange"></span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="toggle"
+                                 ms-click="toggleHandler(false)"
+                                 style="width: 125px">
+                                <span class="color-orange">收起</span>
+                                <span class="fa fa-angle-double-up color-orange"></span>
+                            </div>
+                        </div>
+                        <div class="form-content" ms-visible="toggle">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">旧密码</label>
+                                    <div class="col-sm-8">
+                                        <input type="password"
+                                               ms-duplex="old"
+                                               ms-blur="blurHandler('old')"
+                                               ms-focus="focusHandler('old')"
+                                               ms-class-focus="focus=='old'"
+                                               class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4" class="col-sm-4 control-label">新密码</label>
+                                    <div class="col-sm-8">
+                                        <input type="password"
+                                               ms-duplex="newPwd"
+                                               ms-blur="blurHandler('newPwd')"
+                                               ms-focus="focusHandler('newPwd')"
+                                               ms-class-focus="focus=='newPwd'"
+                                               class="form-control" id="inputEmail4" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group" ms-visible="!vType.newPwd">
+                                    <div class="col-sm-8 col-sm-offset-4">
+                                        <label class="control-label f14"
+                                               style="color: #F18044">
+                                            {{vType.newPwdError}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <a class="btn btn-default"
+                                                ms-click="saveHandler"
+                                                style="font-size: 16px;color:#ffffff;background-color: #ea5404;">确定</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mobile-div item-wrap" ms-controller="MobileController">
+                        <div class="form-item clearfix">
+                            <div class="pull-left tlc" style="width: 120px">
+                                <span class="title">手机</span>
+                            </div>
+                            <div class="pull-left tlc" style="width: 220px">
+                                <span class="">{{mobile}}</span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="!toggle"
+                                 ms-click="toggleHandler(true)"
+                                 style="width: 125px">
+                                <span class="color-orange">展开</span>
+                                <span class="fa fa-angle-double-down color-orange"></span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="toggle"
+                                 ms-click="toggleHandler(false)"
+                                 style="width: 125px">
+                                <span class="color-orange">收起</span>
+                                <span class="fa fa-angle-double-up color-orange"></span>
+                            </div>
+                        </div>
+                        <div class="form-content" ms-visible="toggle">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputEmail7" class="col-sm-4 control-label">新手机号</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="请输入手机号"
+                                               ms-duplex="phoneNumber"
+                                               ms-blur="blurHandler('phoneNumber')"
+                                               ms-focus="focusHandler('phoneNumber')"
+                                               ms-class-focus="focus=='phoneNumber'"
+                                               id="inputEmail7">
+                                    </div>
+                                </div>
+                                <div class="form-group" ms-visible="!vType.phoneNumber">
+                                    <div class="col-sm-8 col-sm-offset-4">
+                                        <label class="control-label f14"
+                                               style="color: #F18044">
+                                            {{vType.phoneNumberError}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail5" class="col-sm-4 control-label">验证码</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control"
+                                                   ms-duplex="verify"
+                                                   ms-blur="blurHandler('verify')"
+                                                   ms-focus="focusHandler('verify')"
+                                                   ms-class-focus="focus=='verify'"
+                                                   id="inputEmail5">
+                                              <span class="input-group-btn" style="text-align: center;">
+                                                <a class="btn btn-default"
+                                                   ms-click="sendCode">{{codeText}}</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <a class="btn btn-default"
+                                           ms-click="saveHandler"
+                                                style="font-size: 16px;color:#ffffff;background-color: #ea5404;">确定</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="email-div item-wrap" ms-controller="EmailController">
+                        <div class="form-item clearfix">
+                            <div class="pull-left tlc" style="width: 120px">
+                                <span class="title">邮箱</span>
+                            </div>
+                            <div class="pull-left tlc" style="width: 220px; height: 75px;">
+                                <span class="">{{email1}}</span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="!toggle"
+                                 ms-click="toggleHandler(true)"
+                                 style="width: 125px">
+                                <span class="color-orange">展开</span>
+                                <span class="fa fa-angle-double-down color-orange"></span>
+                            </div>
+                            <div class="pull-left tlc cursorHand"
+                                 ms-visible="toggle"
+                                 ms-click="toggleHandler(false)"
+                                 style="width: 125px">
+                                <span class="color-orange">收起</span>
+                                <span class="fa fa-angle-double-up color-orange"></span>
+                            </div>
+                        </div>
+                        <div class="form-content"
+                             ms-visible="toggle"
+                             style="border-bottom: 1px solid #ccc;">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputEmail8" class="col-sm-4 control-label">邮箱</label>
+                                    <div class="col-sm-8">
+                                        <input type="text"
+                                               ms-duplex="email"
+                                               ms-blur="blurHandler('email')"
+                                               ms-focus="focusHandler('email')"
+                                               ms-class-focus="focus=='email'"
+                                               class="form-control" id="inputEmail8" placeholder="邮箱">
+                                    </div>
+                                </div>
+                                <div class="form-group" ms-visible="!vType.email">
+                                    <div class="col-sm-8 col-sm-offset-4">
+                                        <label class="control-label f14"
+                                               style="color: #F18044">
+                                            {{vType.emailError}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <a class="btn btn-default"
+                                           ms-click="saveHandler"
+                                           style="font-size: 16px;color:#ffffff;background-color: #ea5404;">确定</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end-->
+
+    <!--footer start-->
+    <div ms-include-src="'../share/views/footer.html'"></div>
+    <!--footer end-->
+</div>
+
+<!--script-->
+<script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+<script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+<script type="text/javascript" src="../account/controllers/SecurityController.js"></script>
+
+<!--<script type="text/javascript" src="../js/jquery/jquery-1.11.1.min.js"></script>-->
+<!--[if IE]><script type="text/javascript" src="../js/jQuery-Knob-master/excanvas.js"></script><![endif]-->
+<!--<script src="../js/jQuery-Knob-master/dist/jquery.knob.min.js"></script>-->
+<script type="text/javascript">
+    require(['Jquery_Knob_Plugin'], function(){
+        $(".knob").knob({
+            change : function (value) {
+                //console.log("change : " + value);
+            },
+            release : function (value) {
+                //console.log(this.$.attr('value'));
+                console.log("release : " + value);
+            },
+            cancel : function () {
+                console.log("cancel : ", this);
+            },
+            /*format : function (value) {
+             return value + '%';
+             },*/
+            draw : function () {
+                // "tron" case
+                if(this.$.data('skin') == 'tron') {
+
+                    this.cursorExt = 0.3;
+
+                    var a = this.arc(this.cv)  // Arc
+                            , pa                   // Previous arc
+                            , r = 1;
+
+                    this.g.lineWidth = this.lineWidth;
+
+                    if (this.o.displayPrevious) {
+                        pa = this.arc(this.v);
+                        this.g.beginPath();
+                        this.g.strokeStyle = this.pColor;
+                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                        this.g.stroke();
+                    }
+
+                    this.g.beginPath();
+                    this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                    this.g.stroke();
+
+                    this.g.lineWidth = 2;
+                    this.g.beginPath();
+                    this.g.strokeStyle = this.o.fgColor;
+                    this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                    this.g.stroke();
+
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

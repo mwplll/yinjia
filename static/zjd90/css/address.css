@@ -1,0 +1,318 @@
+.userReceipt-addAddress{
+    font-family: Microsoft YaHei, Helvitica, Verdana, Tohoma, Arial, san-serif;
+}
+.userReceipt-addAddress .form-box {
+    position: relative;
+    /* margin-top: 20px; */
+    /* width: 530px; */
+
+}
+.user-order .panel {
+    background: none;
+    border-radius: 0px;
+    border: none;
+    margin-bottom: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ddd !important;
+}
+.user-order .panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 15px;
+    color: green;
+    font-size: 18px;
+}
+.form-box .item {
+    position: relative;
+    padding-left: 105px;
+    padding-bottom: 10px;
+    zoom: 1;
+    text-align: left;
+}
+.form-box .item-label {
+    display: inline;
+    float: left;
+    width: 100px;
+    margin-left: -105px;
+    text-align: right;
+    height: 26px;
+    line-height: 26px;
+}
+.form-box .item-label i {
+    color: red;
+    font-style: normal;
+}
+.userInfo-area-dropdown .bf-buttonsSelect {
+    width: 88px;
+    height: 28px;
+}
+.bf-select-content.bf-menu-button-content.bf-button-content {
+    /*height: 30px;*/
+}
+.bf-select .bf-menu-button-dropdown {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 14px;
+    height: 14px;
+    /* background: url(http://img04.taobaocdn.com/tps/i4/T1J6x.FkFeXXX_ownc-30-40.png) -10px -25px no-repeat; */
+}
+.userInfo-area-dropdown .bf-cn-select {
+    height: 30px;
+}
+.bf-select {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 6px 8px 4px 8px;
+    outline: 0;
+    position: relative;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+.lSelect {
+    /* width: 282px; */
+    width: 299px;
+}
+.city-title {
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.msg-error, .msg-stop, .msg-b-error, .msg-b-stop {
+    background-color: #FFF2F2;
+    border-color: #ff8080;
+}
+.msg, .msg-weak {
+    vertical-align: middle;
+}
+.msg {
+    padding: 4px 4px 4px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #404040;
+    background-color: #FFFFE5;
+    border: 1px solid #FFCC7F;
+    overflow: hidden;
+    zoom: 1;
+    display: inline-block;
+    zoom: 1;
+}
+.msg i, .msg-weak i {
+    display: inline;
+    float: left;
+    margin-left: -20px;
+    width: 16px;
+    height: 16px;
+    /* background: url(http://img01.taobaocdn.com/tps/i1/T1g3uoXdpQXXXXXXXX-60-280.png) no-repeat 0 -160px; */
+}
+.msg-cnt {
+    font-size: 12px;
+}
+.ks-combobox {
+    display: inline-block;
+    overflow: hidden;
+    zoom: 1;
+}
+.ks-combobox-input-wrap {
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+}
+.form-box .i-ta {
+    display: block;
+    margin: 0;
+    padding: 3px;
+    /* width: 392px; */
+    width: 397px;
+    height: 62px;
+    border: 1px solid #afafaf;
+    font-size: 12px;
+}
+.form-box .i-text {
+    border: 1px solid #afafaf;
+    padding: 3px;
+    width: 221px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.form-box .btn {
+    display: inline-block;
+    zoom: 1;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 60px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    background: #ff4001;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.bf-menu {
+    z-index: 999;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.ks-overlay {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 20002;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.select-country-wrap {
+    -webkit-user-select: none;
+    position: absolute;
+    left: 105px;
+    top: 97px;
+    width: 88px;
+    display: none;
+}
+.bf-popupmenu-content {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.bf-menu .bf-menuitem {
+    padding-left: 20px;
+    height: 26px;
+    line-height: 26px;
+    color: #333;
+    font-size: 12px;
+    padding-left: 30px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.bf-menu .bf-menuitem-selected {
+    background-position: 5px 10px;
+}
+.bf-menu .bf-menuitem-selected {
+    padding-left: 10px;
+    color: #f60;
+    font-weight: 700;
+}
+.bf-menu .bf-menuitem-selected i {
+    /* background-position: 5px 10px; */
+    color: #f60 !important;
+}
+.select-other-wrap {
+    width: 300px;
+    left: 204px;
+    top: 97px;
+    display: none;
+    z-index: 20002;
+    position: absolute;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.city-select-tab {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 299px;
+    height: 35px;
+    background: #f0f0f0;
+}
+.city-select-tab .current{
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    color: #ff6600;
+}
+.city-select-tab a{
+    float: left;
+    display: inline;
+    margin-bottom: -1px;
+    /* padding: 8px 20px; */
+    padding: 2px 20px;
+    /* width: 33px; */
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid transparent;
+    color: #4D4D4D;
+    text-align: center;
+    line-height: 2;
+}
+.city-select{
+    border: 1px #ccc solid;
+    border-top: 0;
+    /* width: 268px; */
+    width: 299px;
+    background: #fff;
+    overflow: hidden;
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.city-select dl {
+    line-height: 2;
+    clear: both;
+    padding: 3px 0;
+    margin: 0;
+    width: 268px;
+}
+.city-select dt {
+    display: inline-block;
+    width: 35px;
+    float: left;
+    padding-right: 10px;
+    font-weight: 700;
+    text-align: right;
+    line-height: 25px;
+}
+.city-select dd {
+    width: 233px;
+    display: inline;
+    float: left;
+    margin-left: 0;
+}
+.city-select a{
+    display: inline-block;
+    color: #4D4D4D;
+    padding: 0 10px;
+    outline: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 2px;
+    line-height: 2;
+}
+.city-select .border-top {
+    border-top: 1px solid #cccccc;
+}
+ .city-select-province dd, .city-select-city dd, .city-select-street dd, .city-select-district dd {
+    width: 270px;
+}
+.form-box .i-text-short {
+    width: 65px;
+}
+.city-select a.current{
+    background-color: #f60;
+    color: #fff;
+    border-radius: 2px;
+}
+.city-select a:hover{
+    background-color: #fff8f3;
+    border-radius: 2px;
+    color: #ff6600;
+}
+.city-select-tab .last {
+    /* width: 36px; */
+    padding: 2px 31px;
+}
+.city-select-tab .current{
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    color: #ff6600;
+}
+.msg-error, .msg-stop, .msg-b-error, .msg-b-stop {
+    background-color: #FFF2F2;
+    border-color: #ff8080;
+}

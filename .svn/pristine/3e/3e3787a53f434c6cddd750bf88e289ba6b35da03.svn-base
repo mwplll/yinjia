@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布设计方案-填写设计方案基本信息</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/upload-cad.css">
+    <link rel="stylesheet" type="text/css" href="../css/upload.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="PublishController">
+    <div class="body cad-body effect-body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <div class="breadcrumb-wrap">
+            <div class="breadcrumb-title">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../design-center/designer.html">设计师中心</a></li>
+                        <li><a href="javascript:;">发布设计方案</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--效果图 start-->
+        <div class="cad-container"
+             ms-controller="PublishController"
+             style="padding-bottom: 45px;">
+            <div class="container clearfix">
+                <div class="pull-left house" ms-controller="HouseController">
+                   <div ms-include-src="'views/houseInfo.html'"></div>
+                </div>
+                <div class="pull-left upload-images">
+                    <div ms-include-src="'views/tabPanel.html'">
+
+                    </div>
+                    <div class="" style="margin-top: 25px;margin-bottom: 20px;
+                        background: white;padding-top: 20px;padding-bottom: 30px;">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label tlc" style="width: 12%">方案名称：</label>
+                                <div class="col-sm-4">
+                                    <input type="text"
+                                           maxlength="20"
+                                           ms-duplex="row.name"
+                                           class="form-control" id="inputEmail3" placeholder="">
+                                </div>
+                                <label class="control-label">还能输入{{20-row.name.length}}个字</label>
+                            </div>
+                            <div class="form-group"
+                                 ms-visible="row.designSn">
+                                <label for="input31" class="col-sm-2 control-label tlc" style="width: 12%">方案编号：</label>
+                                <div class="col-sm-4">
+                                    <input type="text"
+                                           disabled
+                                           maxlength="20"
+                                           ms-duplex="row.designSn"
+                                           class="form-control" id="input31" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="input2" class="col-sm-2 control-label"-->
+                                        <!--style="width: 12%">设计费：</label>-->
+                                <!--<div class="col-sm-2" style="padding-right: 0;">-->
+                                    <!--<input type="text" disabled-->
+                                           <!--ms-blur="numBlurHandler('deposit')"-->
+                                           <!--ms-duplex="row.deposit"-->
+                                           <!--style="padding-right: 0"-->
+                                           <!--class="form-control" id="input2" placeholder="">-->
+                                <!--</div>-->
+                                <!--<label class="control-label col-sm-1" style="width: 5%;padding-left:0;">元</label>-->
+                                <!--<label for="input1" class="col-sm-2 control-label" style="width: 6%;padding-left:0;padding-right:0;">( 含定金</label>-->
+                                <!--<div class="col-sm-2">-->
+                                    <!--<input type="text"-->
+                                           <!--style="padding-right: 0"-->
+                                           <!--ms-duplex="row.price"-->
+                                           <!--ms-blur="numBlurHandler('price')"-->
+                                           <!--class="form-control" id="input1" placeholder="">-->
+                                <!--</div>-->
+                                <!--<label class="control-label">元)</label>-->
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label for="input21" class="col-sm-2 control-label" style="width: 12%">装修预估价：</label>-->
+                                <!--<div class="col-sm-2" style="padding-right: 0;">-->
+                                    <!--<input type="text"-->
+                                           <!--ms-blur="numBlurHandler('estimate_price')"-->
+                                           <!--ms-duplex="row.estimate_price"-->
+                                           <!--style="padding-right: 0"-->
+                                           <!--class="form-control" id="input21" placeholder="">-->
+                                <!--</div>-->
+                                <!--<label class="control-label col-sm-1" style="width: 5%;padding-left:0;">元</label>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label" style="width: 12%">设计说明：</label>
+                                <div class="col-sm-2" style="padding-right: 0;">
+                                    <textarea
+                                            ms-duplex="row.content"
+                                            style="padding-right: 0; width: 450px;height:150px;"
+                                            class="form-control">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tlc">
+                        <a class="btn btn-default btn-zjd"
+                           ms-click="saveHandler"
+                           href="javascript:;">下一步</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--效果图 end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+    <script type="text/javascript" src="controllers/HouseInfoController.js"></script>
+    <script type="text/javascript" src="controllers/PublishController.js"></script>
+
+</body>
+</html>

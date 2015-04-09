@@ -1,0 +1,39 @@
+<div class="head clear">
+    <span>设计</span>
+    <b>￥{{unit_design_price}}/m²</b>
+    <i id="gcZPrice">设计总价￥{{design_price}} (建筑面积：{{house_area}}m²)</i><em>(产品为每m²造价) </em>
+</div>
+<!--<table>-->
+    <!--<tbody style="border-bottom: 1px solid #d1d1d1">-->
+        <!--<tr>-->
+            <!--<td colspan="6"></td>-->
+        <!--</tr>-->
+        <!--<tr class="hover">-->
+            <!--<td width="180" class="">效果图</td>-->
+            <!--<td width="431" class=""></td>-->
+            <!--<td width="150"></td>-->
+            <!--<td width="150"></td>-->
+            <!--<td width="150">总价：免费</td>-->
+            <!--<td width="80" class="td7"><a href="javascript:;"></a></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td colspan="6"></td>-->
+        <!--</tr>-->
+    <!--</tbody>-->
+    <!--<tbody style="border-bottom: 1px solid #d1d1d1">-->
+        <!--<tr>-->
+            <!--<td colspan="6"></td>-->
+        <!--</tr>-->
+        <!--<tr class="hover">-->
+            <!--<td width="180" class="">施工图</td>-->
+            <!--<td width="431" class=""></td>-->
+            <!--<td width="150"></td>-->
+            <!--<td width="150"></td>-->
+            <!--<td width="150">总价：￥222</td>-->
+            <!--<td width="80" class="td7"><a href="javascript:;"></a></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td colspan="6"></td>-->
+        <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->

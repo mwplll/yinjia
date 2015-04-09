@@ -1,0 +1,50 @@
+<div class="step-wrap" style="position: relative;">
+    <ul class="clearfix">
+        <li class="pull-left" ms-class-grey="curStep<1">
+            <div class="clearfix tlc">
+                <p class="pull-left"
+                   style="font-size: 36px;
+                           margin-left: 45px;
+                           margin-right: 20px;">1</p>
+                <p class="pull-left" style="">方案基本信息</p>
+            </div>
+        </li>
+        <li class="pull-left" ms-class-grey="curStep<2">
+            <div class="clearfix tlc">
+                <p class="pull-left"
+                   style="font-size: 36px;
+                           margin-left: 45px;
+                           margin-right: 20px;">2</p>
+                <p class="pull-left" style="">上传效果图</p>
+            </div>
+        </li>
+        <li class="pull-left" ms-class-grey="curStep<3">
+            <div class="clearfix tlc">
+                <p class="pull-left"
+                   style="font-size: 36px;
+                          margin-left: 45px;
+                          margin-right: 20px;">3</p>
+                <p class="pull-left" style="">上传施工图</p>
+            </div>
+        </li>
+        <li class="pull-left" ms-class-grey="curStep<4">
+            <div class="clearfix tlc">
+                <p class="pull-left"
+                   style="font-size: 36px;
+                          margin-left: 45px;
+                          margin-right: 20px;">4</p>
+                <p class="pull-left" style="">选择建材</p>
+            </div>
+        </li>
+    </ul>
+
+    <div style="position: absolute;top:-1px;left: 210px;">
+        <img src="../images/user/arrow2.png" height="50px;">
+    </div>
+    <div style="position: absolute;top:-1px;left: 450px;">
+        <img src="../images/user/arrow2.png" height="50px;">
+    </div>
+    <div style="position: absolute;top:-1px;left: 685px;">
+        <img src="../images/user/arrow2.png" height="50px;">
+    </div>
+</div>

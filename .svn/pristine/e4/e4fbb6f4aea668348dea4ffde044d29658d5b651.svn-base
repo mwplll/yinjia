@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/person.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .ui-dialog-body{
+            padding: 0;
+        }
+        .ui-dialog-close{
+            position: absolute;
+            top: -22px;
+            right: -20px;
+            color: #5e5e5e;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body ms-controller="UserInfoController">
+    <div class="body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--main start-->
+        <div class="main" id="main" style="margin: 35px 0;">
+            <div class="container clearfix">
+                <div class="person-sidebar pull-left">
+                    <ul class="person-sidebar-ul">
+                        <li class="person-sidebar-li current"><a href="javascript:;">基本信息</a></li>
+                        <li class="person-sidebar-li"><a href="security.html">账户安全</a></li>
+                        <li class="person-sidebar-li"><a href="address.html">收件地址</a></li>
+                        <li class="person-sidebar-li"><a href="authorized.html">实名认证</a></li>
+                    </ul>
+                </div>
+                <div class="person-content pull-left">
+                    <div class="col-md-3 head-image">
+                        <div class="img-circle head-image-wrap image-wrap">
+                            <img ms-src="headImageUrl" width="100%">
+                        </div>
+                        <div class="tlc mt3">
+                            <a class="btn btn-default"
+                               ms-click="uploadHandler"
+                               style="color: #ea5404;">上传头像</a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 info-form">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" disabled class="form-control"
+                                           ms-duplex="username"
+                                           id="inputEmail3" placeholder="用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">性别</label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline col-md-3">
+                                        <input type="radio"
+                                               ms-duplex-text="sex"
+                                               value="男"
+                                               name="sex" id="inlineRadio1" value="option1"> 男
+                                    </label>
+                                    <label class="radio-inline col-md-3">
+                                        <input type="radio"
+                                               ms-duplex-text="sex"
+                                               value="女"
+                                               name="sex" id="inlineRadio2" value="option2"> 女
+                                    </label>
+                                    <label class="radio-inline col-md-3">
+                                        <input type="radio"
+                                               ms-duplex-text="sex"
+                                               value="保密"
+                                               name="sex" id="inlineRadio3" value="option3"> 保密
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">生日</label>
+                                <div class="col-sm-9">
+                                    <div class="col-sm-4" style="padding-left: 0">
+                                        <select class="form-control" ms-duplex="year" >
+                                            <option></option>
+                                            <option ms-repeat="defaultYears" ms-value="el">{{el}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4" style="padding-left: 0">
+                                        <select class="form-control" ms-duplex="month" >
+                                            <option></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4"  style="padding-left: 0">
+                                        <select class="form-control" ms-duplex="day">
+                                            <option></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">个人说明</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" style="height: 100px;"
+                                           ms-duplex="content" placeholder="稍微介绍下自己">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <a class="btn btn-default"
+                                            ms-click="saveHandler"
+                                            style="width: 100%;font-size: 16px;color:#ffffff;background-color: #ea5404;">保存</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+    <script type="text/javascript" src="../account/controllers/UserInfoController.js"></script>
+</body>
+</html>

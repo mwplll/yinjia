@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的喜欢</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="CollectListController">
+<div class="body my_orders-body user-body collect-body">
+    <!--header start-->
+    <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+    <!--header end-->
+
+    <!--breadcrumb start-->
+    <div class="breadcrumb-title breadcrumb-wrap">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="javascript:;">个人中心</a></li>
+                <li><a href="javascript:;">我的喜欢</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--breadcrumb end-->
+
+    <div class="userInfo-wrap">
+        <div class="clearfix container" style="padding-left: 40px;">
+            <div class="pull-left">
+                <a class="image-wrap">
+                    <img src="../images/designer-02.png" width="100%">
+                </a>
+            </div>
+            <div class="pull-left ml3" ms-controller="HeaderController">
+                <p class="f16">您好，{{userName}}，快来装修你的新家吧~~</p>
+                <a class="btn btn-default btn-zjd2" href="../account/info.html">账户设置</a>
+            </div>
+        </div>
+    </div>
+
+    <!--main start-->
+    <div class="main">
+        <div class="container">
+            <div class="head clearfix" style="margin-bottom: 0;">
+                <div class="pull-left head-title">
+                    <span>我的喜欢</span>
+                </div>
+                <div class="pull-right nav-wrap">
+                    <ul class="clearfix">
+                        <li class="pull-left cursorHand">
+                            <a href="my_calendar.html">家装日历</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_house.html">我的户型图</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_scheme.html">我的方案</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_orders.html">我的订单</a>
+                        </li>
+                        <li class="pull-left cur cursorHand">
+                            <a href="my_collects.html">我的喜欢</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collect-table" ms-controller="CollectListController">
+                <table>
+                    <tr ms-repeat="list">
+                        <td width="190" class="image-td">
+                            <div class="image-div">
+                                <a class="image-wrap">
+                                    <img src="../images/test-04.png">
+                                </a>
+                            </div>
+                        </td>
+                        <td width="292" style="padding-left: 25px;">
+                            <p class="f20" style="color: #000000; line-height: 40px;">90后温馨小窝新房</p>
+                            <p>青春都市公寓120.00㎡户型3室1厅1厨2卫</p>
+                        </td>
+                        <td width="400" style="padding-left: 50px;">
+                            <p class="f20" style="color: #000000; line-height: 40px;">￥379/㎡</p>
+                            <p>总价￥14605=设计费￥3000+建材￥5895+施工￥8710</p>
+                        </td>
+                        <td width="310" style="padding-left: 110px;">
+                            <div class="btn-wrap" style="width: 70px;text-align: center;">
+                                <a class="btn btn-default btn-zjd">
+                                    <i class="fa fa-heart-o"></i>
+                                    喜欢
+                                </a>
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+                <!--分页 start-->
+                <div ms-widget="pager, CollectListPager" class="pager-div-wrap pager-div-wrap2"></div>
+                <!--分页 end-->
+            </div>
+        </div>
+    </div>
+    <!--main end-->
+
+    <!--footer start-->
+    <div ms-include-src="'../share/views/footer.html'"></div>
+    <!--footer end-->
+</div>
+
+<!--script-->
+<script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+<script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+<script type="text/javascript" src="../user/controllers/CollectListController.js"></script>
+
+
+</body>
+</html>
+
+

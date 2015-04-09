@@ -1,0 +1,95 @@
+<div class="header-wrap header">
+    <img ms-src="pageLevel+'images/new/top__01.jpg'" width="100%" height="90">
+    <div class="nav-bg"></div>
+    <div class="main-container">
+        <a class="logo-wrap cursorHand" ms-href="pageLevel+'index.html'">
+            <img ms-src="pageLevel+ 'images/new/llog.jpg'" style="width: 100%">
+        </a>
+        <div class="nav-wrap">
+            <ul class="clearfix">
+                <li class="pull-left">
+                    <a class="cursorHand"
+                       ms-class-active="cur=='design'"
+                       ms-href="pageLevel+ 'schema/list.html'">全案设计</a>
+                </li>
+                <li class="pull-left">
+                    <a class="cursorHand"
+                       ms-class-active="cur=='material'"
+                       ms-href="pageLevel+ 'material/list.html'">自选主材</a>
+                </li>
+                <li class="pull-left">
+                    <a class="cursorHand">定点施工</a>
+                </li>
+                <li class="pull-left">
+                    <a class="cursorHand">多重保障</a>
+                </li>
+            </ul>
+        </div>
+        <div class="location-wrap">
+            <div>
+                <span class="city">{{city}}</span>
+                <a class="cursorHand change"
+                   ms-click="toggleCityHandler">切换地区
+                    <i class="fa fa-angle-down sanjiao" ms-visible="!toggleCity"></i>
+                    <i class="fa fa-angle-up sanjiao" ms-visible="toggleCity"></i>
+                </a>
+            </div>
+            <ul class="animate city-dropdown"
+                ms-visible="toggleCity">
+                <li class="cursorHand"
+                    ms-repeat="cities"
+                    ms-click="cityChange(el, $index)">
+                    <i class="fa fa-check"></i>{{el[1]}}</li>
+            </ul>
+        </div>
+        <div class="sign-wrap">
+            <ul class="clearfix login-wrap" ms-visible="!hasLogin">
+                <li class="pull-left"><a class="cursorHand" ms-click="toLogin">登录</a></li>
+                <li class="pull-left"><a class="cursorHand"
+                                         ms-href="pageLevel + 'sign/signUp.html'" target="_blank">注册</a></li>
+            </ul>
+            <div class="user-login-wrap" ms-visible="hasLogin">
+                <div class="pull-left ul-wrap" style="width: 105px;">
+                    <div class="clearfix" style="padding-left: 10px;">
+                        <!--<a class="pull-left image-wrap mr1"-->
+                           <!--ms-href="pageLevel + 'user/my_schema.html'">-->
+                            <!--<img ms-src="headImageUrl">-->
+                        <!--</a>-->
+                        <a class="pull-left" ms-href="pageLevel + 'user/my_schema.html'">
+                            {{userName}}
+                            <i class="fa fa-angle-down sanjiao animate"></i></a>
+                    </div>
+                    <ul class="name-list animate"
+                        style="position: relative;z-index: 99;">
+                        <li><a ms-href="pageLevel + 'user/my_schema.html'">
+                            <i class="fa fa-bookmark mr1"></i>我的方案</a></li>
+                        <li><a ms-href="pageLevel + 'user/my_orders.html'">
+                            <i class="fa fa-table mr1"></i>我的订单</a></li>
+                        <li><a ms-href="pageLevel + 'account/info.html'">
+                            <i class="fa fa-user mr1"></i>个人设置</a></li>
+                        <li><a ms-click="logoutHandler">
+                            <i class="fa fa-lock mr1"></i>退出</a></li>
+                    </ul>
+                </div>
+                <div class="pull-left ul-wrap" style="margin-left: 10px; width: 120px;">
+                    <div class="clearfix">
+                        <a class="cursorHand"
+                           ms-click="publishHandler('center')">
+                            设计师中心<i class="fa fa-angle-down ml sanjiao animate"></i></a>
+                    </div>
+                    <ul class="name-list animate designer-list"
+                        style="position: relative;z-index: 99;width: 120px;">
+                        <li><a ms-href="pageLevel + 'account/authorized.html'">
+                            <i class="fa fa-hand-o-up mr1"></i>申请成为设计师</a></li>
+                        <li><a href="javascript:;" ms-click="publishHandler">
+                            <i class="fa fa-paper-plane-o mr1"></i>发布设计方案</a></li>
+                        <li><a  ms-click="publishHandler('center')">
+                            <i class="fa fa-list mr1"></i>查看我的订单</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

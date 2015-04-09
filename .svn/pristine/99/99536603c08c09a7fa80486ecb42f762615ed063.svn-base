@@ -1,0 +1,35 @@
+<div class="head clear">
+    <span>施工包</span>
+    <span style="margin-left: 140px;">￥{{totalPrice * 1.05|number(2)}}</span>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th width="10%">序号</th>
+            <th width="30%">人工加辅料</th>
+            <th width="15%">建筑面积</th>
+            <th width="15%">单方造价</th>
+            <th width="15%">合计</th>
+            <th width="15%">备注</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr ms-repeat="list">
+            <td>{{$index+1}}</td>
+            <td>{{el.name}}</td>
+            <td>{{house_area}} m²</td>
+            <td>￥{{el.price}}</td>
+            <td>￥{{el.price*house_area | number(2)}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="color: black;">管理费</td>
+            <td></td>
+            <td></td>
+            <td style="color: black;">￥{{totalPrice*0.05 | number(2)}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+
+</table>

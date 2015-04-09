@@ -1,0 +1,199 @@
+.main .person-sidebar .person-sidebar-ul{
+    margin-left: 15px;
+    width: 150px;
+    line-height: 60px;
+    height: 60px;
+}
+
+.main .person-sidebar .person-sidebar-ul li{
+    cursor: hand;
+    cursor: pointer;
+    color: #000000;
+
+    /*padding-left: 22px;*/
+}
+.main .person-sidebar .person-sidebar-ul li a{
+    width: 100%;
+    height: 100%;
+    padding-left: 22px;
+    display: block;
+    font-size: 16px;
+}
+.main .person-sidebar .person-sidebar-ul li:hover,
+.main .person-sidebar .person-sidebar-ul li:hover a,
+.main .person-sidebar .person-sidebar-ul li.current,
+.main .person-sidebar .person-sidebar-ul li.current a{
+    color: #ea5404;
+    background-color: #ffffff;
+}
+.main .person-sidebar .person-sidebar-ul li:hover,
+.main .person-sidebar .person-sidebar-ul li.current{
+    border-left: 2px solid #ea5404;
+}
+
+.main .person-content{
+    width: 1005px;
+    min-height: 600px;
+    background-color: #ffffff;
+    padding:43px 0 0 0;
+
+    border-top: 7px solid #ea5404;
+    margin-top: -7px;
+}
+.main .person-content .head-image{
+    padding-left: 88px;
+
+}
+.main .person-content .head-image-wrap{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.main .person-content .info-form{
+    padding-left: 30px;
+    padding-right: 235px;
+}
+.main .person-content .info-form .form-group label{
+    text-align: left;
+    color: #000000;
+    font-size: 16px;
+}
+.main .person-content .info-form .form-group{
+    margin: 25px 0;
+}
+
+.main .security-form .item-wrap{
+    width: 467px;
+}
+.main .security-form .item-wrap .form-item{
+    border-top: 1px solid #ccc;
+    line-height: 75px;
+    height: 75px;
+    color: #000000;
+    font-size: 16px;
+}
+.main .security-form .item-wrap .form-content{
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    padding: 25px 40px 5px 35px;
+    background-color: #eeeeee;
+}
+.main .security-form .item-wrap .form-content label{
+    color: #000000;
+    font-size: 14px;
+}
+.main .address-form{
+    padding-left: 80px;
+}
+.main .address-form form{
+    width: 450px;
+}
+.main .address-form label{
+    color: #000000;
+    text-align: right;
+    font-size: 14px;
+}
+.main .address-form label i{
+    margin-left: 5px;
+}
+
+.main .address-list{
+    padding-left: 53px;
+    padding-right: 20px;
+
+    padding-bottom: 50px;
+}
+.main .address-list table{
+    border: 1px solid #ccc;
+    border-bottom: 0;
+}
+.main .address-list table th,
+.main .address-list table td{
+    border-bottom: 1px solid #ccc;
+}
+.main .address-list table thead th{
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+}
+.main .address-list table tbody td{
+    height: 50px;
+    /*line-height: 50px;*/
+    padding-left: 10px;
+}
+.main .address-list table th,
+.main .address-list table td{
+    font-size: 14px;
+    color: #000000;
+}
+.main .address-list table tr:hover{
+    background-color: #f5f5f5;
+}
+.main .address-list table tr .setDefault{
+    visibility: hidden;
+}
+.main .address-list table tr:hover .setDefault{
+    visibility: visible;
+}
+
+.main .authorized-form .image-wrap .del{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background: url(../images/close-03.png) no-repeat;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+.main .authorized-form .image-wrap:hover .del{
+    display: block;
+}
+.main .authorized-form .form-group{
+    margin-bottom: 25px;
+}
+
+/*person upload*/
+.upload-content{
+    padding: 20px 0 0 40px;
+}
+.upload-content p{
+    line-height: 45px;
+}
+.upload-content .image-wrap{
+    width: 300px;
+    cursor: pointer;
+    cursor: hand;
+    height: 182px;
+    border: 1px solid #eeeeee;
+    background: url(../images/upload-add-03.png) 50% 50% no-repeat;
+}
+/*person upload*/
+
+.audit-index .alert{
+    background-color: #f5f5f5;
+    padding: 11px 17px;
+    width: 378px;
+    color: #F18044;
+    margin: -30px auto 0 auto;
+}
+.audit-index .audit-info p{
+    color: #000000;
+    width: 758px;
+    text-align: left;
+    margin: 0 auto 80px auto;
+}
+.audit-index .audit-info{
+    text-align: center;
+}
+.audit-result{
+    text-align: center;
+    margin-top: 100px;
+}
+.audit-result p.title{
+    margin-bottom: 24px;
+}
+.audit-result p.info{
+    margin-bottom: 65px;
+    color: #000000;
+}

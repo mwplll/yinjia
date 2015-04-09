@@ -1,0 +1,14 @@
+<div class="order-wrap">
+    <p style="line-height: 30px;color: #000000">户型信息：</p>
+    <p>{{row.prov}} {{row.city}} {{row.area}} {{row.name}}</p>
+    <a class="image-wrap">
+        <img ms-src="row.thumbUrl">
+    </a>
+</div>
+<div style="margin: 20px auto;text-align: center;">
+    <a class="btn btn-default btn-zjd2 tlc"
+       href="../design-center/publish-step1.html"
+       style="width: 100px;">
+        重选
+    </a>
+</div>

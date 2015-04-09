@@ -1,0 +1,9 @@
+{
+    "errorCode": 22000,
+    "data": {
+        "list": [{}],
+        "pagination": {
+            "count": 10
+        }
+    }
+}

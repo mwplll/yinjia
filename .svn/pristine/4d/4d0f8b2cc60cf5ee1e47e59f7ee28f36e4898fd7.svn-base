@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>设计方案列表</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/scheme.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="SchemeListController">
+    <div class="body scheme-body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <div class="breadcrumb-wrap">
+            <div class="breadcrumb-title">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../design/design.html">设计方案</a></li>
+                        <li><a href="javascript:;">方案列表</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!--户型 start-->
+        <div class="house-container">
+            <div class="container house-type-wrap clearfix"
+                 style="position: relative;">
+                <div class="pull-left image">
+                    <a class="image-wrap">
+                        <img ms-src="{{building.pic}}">
+                    </a>
+
+                    <div class="big-image" style="">
+                        <a class="image-wrap">
+                            <img ms-src="{{building.pic}}">
+                        </a>
+                    </div>
+                </div>
+                <div class="pull-left title">
+                    <div class="big">
+                        <span class="f24 mr1">{{building.house_typename}}</span>
+                        <!-- <span class="f24">户型3室1厅1厨2卫</span> -->
+                    </div>
+                    <div class="small">
+                        <!--<span class="f14">户型3室1厅1厨2卫</span>-->
+                        <!--<span class="f14 mr2 cursorHand">[设为我的户型]</span>-->
+                        <!--<span class="f14 cursorHand">[更换户型图]</span>-->
+                    </div>
+                </div>
+                <div class="pull-left name">
+                    <p class="f14">浙江 杭州 {{building.building_name}}</p>
+                    <p class="f14">套内面积：{{building.usable_area}}平方米</p>
+                    <p class="f14">建筑面积： {{building.gross_area}}平方米</p>
+                </div>
+                <div class="pull-left action" ms-controller="HouseController">
+                   <div class="clearfix">
+                       <div class="pull-left tlc mr3"
+                            ms-click="setMyHouseHandler">
+                           <a class="add_house_btn cursorHand">
+
+                           </a>
+                           <p class="f14 cursorHand">[设为我的户型]</p>
+                       </div>
+                       <div class="pull-left tlc">
+                           <a class="change_house_btn cursorHand"
+                              href="../design/search-result.html">
+
+                           </a>
+                           <a class="f14 cursorHand"
+                              href="../design/search-result.html"
+                              style="color: #ffffff">[更换户型图]</a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <!--户型 end-->
+
+        <!--design list start-->
+        <div class="main" id="main"
+             ms-controller="SchemeListController">
+            <div class="container style-wrap"
+                 style="display: none;">
+                <ul class="tab-wrap clearfix">
+                    <li class="tab-item cur pull-left"
+                        ms-class-cur="curIndex==0"
+                        ms-click="setCurIndex(0)">
+                        <div class="item-icon-div icon0">
+
+                        </div>
+                        <span class="f14">全部</span>
+                    </li>
+                    <li class="tab-item cur pull-left"
+                        ms-class-cur="curIndex==1"
+                        ms-click="setCurIndex(1)">
+                        <div class="item-icon-div icon1">
+
+                        </div>
+                        <span class="f14">田园</span>
+                    </li>
+                    <li class="tab-item pull-left"
+                        ms-class-cur="curIndex==2"
+                        ms-click="setCurIndex(2)">
+                        <div class="item-icon-div icon2">
+
+                        </div>
+                        <span class="f14">中式</span>
+                    </li>
+                    <li class="tab-item pull-left"
+                        ms-class-cur="curIndex==3"
+                        ms-click="setCurIndex(3)">
+                        <div class="item-icon-div icon3">
+
+                        </div>
+                        <span class="f14">简欧</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!--设计方案列表 start-->
+            <div class="container scheme-list-wrap mt3" id="cbp-so-scroller"
+                 style="padding-left: 0;padding-right: 0;"
+                 ms-controller="SchemeListController">
+
+                <div class="cbp-so-section"
+                     ms-repeat="list"
+                     ms-include-src="'../design/views/scheme-list-item.html'"></div>
+
+                <!--分页 start-->
+                <div ms-widget="pager, SchemeListPager" class="pager-div-wrap"></div>
+                <!--分页 end-->
+            </div>
+            <!--设计方案列表 start-->
+        </div>
+        <!--design list end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+    <!--OnScrollEffectLayout-->
+    <script type="text/javascript" src="../js/OnScrollEffectLayout/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../js/OnScrollEffectLayout/classie.js"></script>
+    <script type="text/javascript" src="../js/OnScrollEffectLayout/cbpScroller.js"></script>
+
+
+    <script type="text/javascript" src="../design/controllers/SchemeListController.js"></script>
+
+</body>
+</html>

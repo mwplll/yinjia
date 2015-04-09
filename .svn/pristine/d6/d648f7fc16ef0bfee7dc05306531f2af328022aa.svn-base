@@ -1,0 +1,15 @@
+.idea
+.DS_Store
+*tpl_c*
+src/log
+*.svn
+node_modules
+
+
+.m3dsync_config
+
+*.log
+
+*.log
+
+npm-debug.log

@@ -1,0 +1,50 @@
+<!--新增房间 start-->
+<div class="dialog-wrap" ms-controller="AddHouseController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img src="../images/close-03.png" width="42" height="42">
+    </div>
+    <div class="add-room-content">
+        <form class="form-horizontal">
+            <fieldset>
+                <div id="legend" class="">
+                    <legend class="color-orange">新增房间</legend>
+                </div>
+                <div class="form-group">
+                    <label for="inputx3" class="col-sm-3 control-label">
+                        房间名称<i class="color-orange">*</i>
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control"
+                               ms-duplex="addRoom.room_name"
+                               id="inputx3" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputx1" class="col-sm-3 control-label">
+                        房间大小<i class="color-orange">*</i>
+                    </label>
+                    <div class="col-sm-7"
+                          style="padding-right: 0">
+                        <input type="text" class="form-control"
+                               ms-blur="sizeBlur('room_size')"
+                               ms-duplex="addRoom.room_size"
+                               id="inputx1" placeholder="">
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="inputx1"
+                               style="padding-left: 0"
+                               class="control-label">
+                            ㎡
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tlc">
+                    <a class="btn btn-default btn-zjd2"
+                       ms-click="saveRoomHandler">确认保存</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!--新增户型 end-->

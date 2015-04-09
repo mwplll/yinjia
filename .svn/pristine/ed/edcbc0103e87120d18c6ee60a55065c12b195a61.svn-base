@@ -1,0 +1,88 @@
+<div class="dialog-wrap" ms-controller="AuthorizedController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img src="../images/close-03.png" width="42" height="42">
+    </div>
+    <div class="upload-content">
+        <div class="clearfix">
+            <div class="pull-left">
+                <div class="form-group"
+                     style="margin-bottom: 2px;"
+                     ms-controller="UploadController">
+                    <div class="clearfix">
+                        <p class="col-sm-7" ms-if="type=='face'">个人信息所在面</p>
+                        <p class="col-sm-7" ms-if="type=='back'">国徽图案面</p>
+                        <div class="col-sm-5" style="padding-right: 0;padding-left: 0">
+                            <div id="UploadBtn"
+                                 style="width: 136px;height: 37px;display: block;padding: 0;">
+                            </div>
+                            <input style="display: none;"
+                                   id="CancelBtn" type="button" value="取消所有上传"
+                                   onclick="cancelUpload();">
+                        </div>
+                    </div>
+                    <div ms-visible="listVisible">
+                        <ul class="pop-imgs clearfix imageUploader-queue">
+                            <li class="pull-left"
+                                ms-class-error="el.error"
+                                ms-mouseover="showCancelHandler(el,'visible')"
+                                ms-mouseout="showCancelHandler(el, 'hidden')"
+                                ms-repeat="list">
+                                <div class="item">
+                                    <div class="pic"
+                                         ms-class-loading="el.state=='finish'">
+                                        <a
+                                                href="javascript:void(0);"
+                                                class="image-wrap">
+                                            <img ms-src="el.thumbUrl">
+                                        </a>
+                                    </div>
+                                    <div class="status-wrapper">
+                                        <div class="status waiting-status"
+                                             ms-visible="el.state != 'finish'">
+                                            <p style="width: 100%; overflow: hidden;height: 17px;">{{el.fname}}</p>
+                                        </div>
+                                        <div class="status waiting-status"
+                                             ms-visible="el.state == 'wait'">
+                                            <p>等待上传</p>
+                                        </div>
+                                        <div class="status start-status progress-status success-status"
+                                             ms-visible="el.state == 'inprogress'">
+                                            <div class="ks-progress-bar" ms-attr-id="el.fid">
+                                                <div class="ks-progress-bar-value"></div>
+                                            </div>
+                                        </div>
+                                        <div class="status error-status" ms-visible="el.error=='uploadError'" style="display: none;"><p>上传失败！</p></div>
+                                        <div class="status error-status" ms-visible="el.error=='sizeError'" style="display: none;"><p>文件过大！</p></div>
+                                    </div>
+                                    <a class="del-pic img-close"
+                                       ms-click="cancelUploadHandler($event,el)"
+                                       ms-visible="el.state == 'inprogress'||el.state == 'wait'"
+                                       href="javascript:;"
+                                       ms-attr-id="'del_pic_'+el.fid" title="删除"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="image-wrap"
+                   ms-controller="UploadController"
+                   ms-visible="!list.length">
+                    <img>
+                </a>
+            </div>
+            <div class="pull-left" style="margin-left: 50px;">
+                <p ms-if="type=='face'">示例：需要能看清姓名、身份证号等信息。</p>
+                <p ms-if="type=='back'">示例：需要能看清签发机关、有效期限等信息。</p>
+                <a class="image-wrap">
+                    <img src="../images/user/face.png" ms-if="type=='face'">
+                    <img src="../images/user/back.png" ms-if="type=='back'">
+                </a>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt3 tlc">
+            <a class="btn btn-default btn-zjd"
+               ms-click="confirmHandler">确认</a>
+        </div>
+    </div>
+</div>

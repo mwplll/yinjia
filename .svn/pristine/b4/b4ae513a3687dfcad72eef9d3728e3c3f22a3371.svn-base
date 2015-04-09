@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">后台管理系统-订单管理 API</h1>
+<h2 id="1-">1 订单列表</h2>
+<p>[GET]<a href="http://121.40.212.161:8000/data/order/list">http://121.40.212.161:8000/data/order/list</a></p>
+<div class="row"><div class="col-lg-9"><table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>每页的个数</td>
+</tr>
+<tr>
+<td>page</td>
+<td>当前的分页，第一页为1</td>
+</tr>
+</tbody>
+</table>
+</div></div><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{    &quot;errorCode&quot;:22000,//成功返回22000，失败返回22001
+    &quot;data&quot;:{
+        &quot;orderList&quot;:[{
+            &quot;id&quot;:String,   //订单id
+            &quot;user&quot;:String,  //用户名
+            &quot;sn&quot;:String,  //订单sn码
+            &quot;amount&quot;:String, //订单金额
+            &quot;type&quot;:String  //订单类型，0为未知，1为定金，2为余款，3为材料订单，4为项目订单
+            &quot;status&quot;:String  //订单状态，0为未知，1为等待买家付款，2为买家已付款、等待卖家发货，3为卖家已发货、等待买家确认收货，4为买家已确认收货，10为已关闭的订单，11为完成的订单
+            &quot;createTime&quot;:String  //订单创建时间
+            }],
+        &quot;pagination&quot;:{
+            &quot;count&quot;:Number,  //总个数
+            &quot;page&quot;:Number    //页数
+            }
+        }
+} 
+</code></pre></div>
+</body>
+</html>

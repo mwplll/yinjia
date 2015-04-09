@@ -1,0 +1,327 @@
+.house_body{
+    background-color: #ffffff;
+}
+.house_body .page1{
+    margin: 50px 0;
+    background-color: #ff4a00;
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 80px;
+    padding-left: 140px;
+    text-align: left;
+}
+.house_body .page2 .main-container{
+    text-align: center;
+    padding: 0 20px 0 5px;
+}
+.house_body .page2 ul{
+    margin-bottom: 40px;
+}
+.house_body .page2 ul li{
+    margin-left: 15px;
+}
+.house_body .page2 ul li.first a{
+    background-color: #323639;
+    border-color: #323639;
+    color: #ffffff;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.house_body .page2 ul li.first a:hover{
+    background-color: #323639;
+    border-color: #323639;
+    color: #ffffff;
+}
+.house_body .page2 ul li a{
+    background-color: #ffffff;
+    border-color: #f2f2f2;
+    color: #cdcdcd;
+    line-height: 28px;
+    padding: 0 25px;
+}
+.house_body .page2 ul li.last a{
+    padding: 0 12px;
+}
+.house_body .page2 ul li a.active,
+.house_body .page2 ul li a:hover{
+    background-color: #ff4a00;
+    border-color: #ff4a00;
+    color: #ffffff;
+}
+
+.house_body .page3{
+    padding-bottom: 160px;
+}
+.house_body .house-list-wrap ul li{
+    width: 300px;
+    color: #b5b5b5;
+    font-size: 14px;
+    background-color: #ffffff;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.house_body .house-list-wrap ul li:nth-child(3n){
+    margin-right: 0;
+}
+
+.house_body .house-list-wrap ul li .image-wrap{
+    height: 200px;
+    width: 100%;
+}
+
+.house_body .house-list-wrap ul li .info-wrap{
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+.house_body .house-list-wrap ul li.active,
+.house_body .house-list-wrap ul li:hover{
+    background-color: #ff4a00;
+    color: #ffffff;
+}
+.house_body .house-list-wrap ul li .image-wrap{
+    -webkit-transition: -webkit-transform 1s cubic-bezier(.23, 1, .32, 1),
+                        -webkit-filter 1s cubic-bezier(.23, 1, .32, 1),
+                        filter 1s cubic-bezier(.23, 1, .32, 1);
+    -moz-transition:    -moz-transform 1s cubic-bezier(.23, 1, .32, 1),
+                        -webkit-filter 1s cubic-bezier(.23, 1, .32, 1),
+                        filter 1s cubic-bezier(.23, 1, .32, 1);
+    transition:         transform 1s cubic-bezier(.23, 1, .32, 1),
+                        -webkit-filter 1s cubic-bezier(.23, 1, .32, 1),
+                        filter 1s cubic-bezier(.23, 1, .32, 1);
+}
+.house_body .house-list-wrap ul li.active .image-wrap,
+.house_body .house-list-wrap ul li:hover .image-wrap{
+    -webkit-transform: scale(0.96);
+    -moz-transform: scale(0.96);
+    transform: scale(0.96);
+    -webkit-filter: saturate(0.96);
+}
+
+.house_body .more,
+.house_detail_body .more{
+    background-color: #f2f2f2;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+    color: #989898;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    margin-top: 15px;
+    line-height: 40px;
+}
+
+.house_detail_body .page1{
+    margin: 50px 0;
+    background-color: #ff4a00;
+    text-align: left;
+}
+.house_detail_body .page1 .title{
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 80px;
+}
+.house_detail_body .page1 p,
+.house_detail_body .page1 span{
+    color: #ffffff;
+    font-size: 14px;
+}
+.house_detail_body .page1 .btn-wrap{
+    margin-right: 120px;
+}
+.house_detail_body .page1 .main-container{
+    padding-left: 145px;
+    padding-bottom: 10px;
+}
+.house_detail_body .page2 .my-thumbnail{
+    width: 1000px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+.house_detail_body .page2 .my-thumbnail .nav-left{
+    left: 0;
+    top: 0;
+}
+.house_detail_body .page2 .my-thumbnail .nav-right{
+    right: 0;
+    top: 0;
+}
+.house_detail_body .page2 .my-thumbnail .nav{
+    width: 20px;
+    height: 70px;
+    position: absolute;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+.house_detail_body .page2 .my-thumbnail .nav i{
+    color: #808080;
+}
+.house_detail_body .page2 .my-thumbnail ul li{
+    width: 115px;
+    height: 68px;
+    margin-right: 5px;
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+.house_detail_body .page2 .my-thumbnail ul li.active{
+    border: 1px solid #ff4a00;
+}
+.house_detail_body .page2 .my-thumbnail ul li .image-wrap{
+    width: 113px;
+    height: 68px;
+}
+.house_detail_body .page2 .my-thumbnail .ul-wrap{
+    width: 970px;
+    height: 70px;
+    overflow: hidden;
+    padding: 0 2px;
+    margin-left: 20px;
+}
+.house_detail_body .page3 .main-container{
+    margin-top: 30px;
+    background: #f0f0f0;
+    padding: 0 20px 20px 20px;
+}
+.house_detail_body .page3 .main-container .title span{
+    color: #ff4a00;
+    font-size: 24px;
+    line-height: 54px;
+}
+.house_detail_body .page3 .main-container .title a{
+    margin-right: 20px;
+    font-size: 14px;
+    color: #606060;
+    line-height: 54px;
+}
+.house_detail_body .page3 .main-container .title a i{
+    color: #ff4a00;
+}
+.house_detail_body .page3 .main-container .designer .image-wrap{
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+}
+.house_detail_body .page3 .main-container .designer{
+    padding-right: 30px;
+}
+.house_detail_body .page3 .main-container .designer p{
+    font-size: 14px;
+    color: #606060;
+    line-height: 34px;
+}
+.house_detail_body .page3 .main-container .price{
+    padding-left: 40px;
+    margin-right: 50px;
+}
+.house_detail_body .page3 .main-container .price span,
+.house_detail_body .page3 .main-container .size span{
+    color: #606060;
+    line-height: 30px;
+}
+.house_detail_body .page3 .main-container .price .title,
+.house_detail_body .page3 .main-container .size .title{
+    line-height: 40px;
+}
+.house_detail_body .page3 .main-container .size .price-span,
+.house_detail_body .page3 .main-container .price .price-span{
+    color: #ff4a00;
+}
+
+.house_detail_body .page4 .main-container,
+.house_detail_body .page5 .main-container,
+.house_detail_body .page7 .main-container,
+.house_detail_body .page6 .main-container{
+    margin-top: 40px;
+}
+.house_detail_body .page4 .main-container .header,
+.house_detail_body .page5 .main-container .header,
+.house_detail_body .page7.main-container .header,
+.house_detail_body .page6 .main-container .header{
+    border-bottom: 1px solid #f2f2f2;
+    color: #4d4d4d;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.house_detail_body .page4 .main-container ul{
+    margin-top: 20px;
+}
+.house_detail_body .page4 .main-container ul li{
+    margin-right: 50px;
+}
+.house_detail_body .page4 .main-container ul li:nth-child(3n){
+    margin-right: 0;
+}
+.house_detail_body .page4 .main-container ul li .image-wrap{
+    width: 300px;
+    height: 200px;
+}
+.house_detail_body .page4 .main-container ul li p{
+    line-height: 20px;
+    color: #989898;
+    padding-left: 12px;
+}
+
+.house_detail_body .page5 .main-container ul li{
+    line-height: 40px;
+}
+.house_detail_body .page5 .main-container ul li .title{
+    color: #4d4d4d;
+}
+.house_detail_body .page5 .main-container ul li span{
+    color: #989898;
+}
+.house_detail_body .page5 .main-container ul{
+    margin-top: 10px;
+}
+.house_detail_body .page6 .main-container textarea{
+    border:  1px solid #f2f2f2;
+    width: 850px;
+    height: 98px;
+}
+.house_detail_body .page6 .main-container .comment a{
+    border:  1px solid #ff4a00;
+    width: 150px;
+    height: 98px;
+    background: #ff4a00;
+    line-height: 100px;
+    color: #ffffff;
+}
+.house_detail_body .page6 .main-container p{
+    color: #959595;
+    line-height: 24px;
+    margin-top: 14px;
+    font-size: 14px;
+}
+.house_detail_body .page6 .main-container p a{
+    color: #ff4a00;
+}
+.house_detail_body .page7 .main-container ul li{
+    border-bottom:  1px solid #F2F2F2;
+    padding: 30px 0;
+}
+.house_detail_body .page7 .main-container ul li .image-wrap{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.house_detail_body .page7 .main-container ul li p{
+    color: #aaaaaa;
+    line-height: 25px;
+    font-size: 14px;
+}
+.house_detail_body .page7 .main-container ul li p .name{
+    color: #4d4d4d;
+    font-size: 18px;
+    margin-right: 20px;
+}
+.house_detail_body .page7 .main-container ul li p .zan{
+    margin-left: 15px;
+    color: #ff4a00;
+}
+.house_detail_body .page7{
+    margin-bottom: 80px;
+}

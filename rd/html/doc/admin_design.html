@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">后台管理系统-设计方案管理 API</h1>
+<h2 id="1-">1 查询</h2>
+<h3 id="1-1-">1.1 按条件查询，返回设计方案列表</h3>
+<p>[GET]<a href="http://121.40.212.161:8000/data/design/list">http://121.40.212.161:8000/data/design/list</a></p>
+<div class="row"><div class="col-lg-9"><table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>每页的个数</td>
+</tr>
+<tr>
+<td>page</td>
+<td>当前的分页，第一页为1</td>
+</tr>
+</tbody>
+</table>
+</div></div><h3 id="1-2-">1.2 单个设计方案信息</h3>
+<p>[GET]<a href="http://121.40.212.161:8000/data/design/details">http://121.40.212.161:8000/data/design/details</a></p>
+<div class="row"><div class="col-lg-9"><table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>design_id</td>
+<td>设计方案id</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+</body>
+</html>

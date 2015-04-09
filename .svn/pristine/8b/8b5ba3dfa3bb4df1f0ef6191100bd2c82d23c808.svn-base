@@ -1,0 +1,116 @@
+<div class="list-item clearfix">
+    <div class="pull-left image cbp-so-side cbp-so-side-left">
+        <ul class="clearfix big-wrap animate"
+            ms-css-width="995*el.design.length"
+            ms-css-margin-left="el.marginLeft">
+            <li class="pull-left" ms-repeat-eel="el.design">
+                <a class="image-wrap" ms-href="'../design/scheme-detail.html?design_id='+eel.design_schema_id" target="_blank">
+                    <img width="100%"
+                         height="100%"
+                         ms-src="eel.design_pic">
+                </a>
+            </li>
+        </ul>
+
+        <div class="likeBtn cursorHand animate">
+            <a class="fa fa-heart" style="color: #A0A0A0;"></a>
+            <span class="like-text" style="color: #A0A0A0;">喜欢</span>
+        </div>
+
+        <div class="thumb-wrap">
+            <ul class="clearfix">
+                <li class="" ms-repeat-eel="el.design"
+                    ms-class-cur="el.navIndex==$index"
+                    ms-click="setNavIndex($index, el)">
+                    <a class="image-wrap">
+                        <img width="100%" ms-src="eel.design_pic">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-left animate"
+             ms-visible="el.navIndex>0"
+             ms-click="navHandler('left', el)">
+            <!--<a class="fa fa-chevron-left"></a>-->
+        </div>
+        <div class="nav-right animate"
+             ms-visible="el.navIndex<(el.design.length-1)"
+             ms-click="navHandler('right', el)">
+            <!--<a class="fa fa-chevron-right"></a>-->
+        </div>
+    </div>
+    <div class="pull-right content tlc cbp-so-side cbp-so-side-right">
+        <div class="title">
+            <div class="tll">
+                <p class="f20" style="color: #5e5e5e;word-wrap: break-word;">{{el.design_name}}</p>
+            </div>
+
+            <div class="" style="margin-top: 16px;margin-bottom: 50px;">
+                <span class="cursorHand mr1">
+                    <span class="like-ico"></span>
+                    <span class="like-text f14 text">{{el.like_num}}</span>
+                </span>
+                <span class="cursorHand mr1">
+                    <span class="eye-ico"></span>
+                    <span class="eye-text f14 text">{{el.view_num}}</span>
+                </span>
+                <span class="cursorHand">
+                    <span class="info-ico"></span>
+                    <span class="info-text f14 text">{{el.comment_num}}</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="price">
+        </div>
+
+        <div class="clearfix" style="margin: 30px 0;text-align: center;line-height: 25px">
+            <span class="f14"><span></span>装修预估价</span><br/>
+            <span class="f30 color-orange">≈￥{{el.total_price}}</span>
+            <p style="background-color: #e6e5ea;" class="f14 color-orange">
+                <i class="fa fa-meh-o"></i>含设计费￥{{el.design_price}}</p>
+        </div>
+
+        <div style="margin-top: 90px">
+            <span class="btn btn-primary addBtn cursorHand">
+                <span class="fa fa-th-list color-orange"></span>
+                <a ms-href="'../design/scheme-detail.html?design_id='+el.design_schema_id" target="_blank"
+                   class="color-orange">查看详情</a>
+            </span>
+        </div>
+        <div style="margin: 15px 0 60px 0;">
+            <a class="btn btn-default addBtn cursorHand"
+               ms-click="addToMyDesign(el)">加入我的新家计划</a>
+        </div>
+        <div class="line"></div>
+        <div class="designer tll">
+            <div class="clearfix">
+                <div class="head-image pull-left">
+                    <a class="image-wrap">
+                        <img src="../images/designer-02.png">
+                    </a>
+                </div>
+                <div class="pull-left" style="line-height: 66px;">
+                    <span class="f14 ml1">
+                        <i class="fa fa-star color-orange"></i>
+                        <i class="fa fa-star color-orange"></i>
+                        <i class="fa fa-star color-orange"></i>
+                        <i class="fa fa-star color-orange"></i>
+                        <i class="fa fa-star color-orange"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="design-info">
+                <div>
+                    <span class="f14">设计师：90后梦想家</span>
+                </div>
+                <div>
+                    <span class="f14">作品数：20</span>
+                </div>
+                <div>
+                    <span class="f14">浙江杭州</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="tp-banner-container">
+    <div class="tp-banner" >
+        <ul>	<!-- SLIDE  -->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="../images/detail/detail_test-02.png"  alt="kenburns1"
+                     data-bgposition="left top" data-duration="1000">
+                <!-- LAYERS -->
+            </li>
+            <!-- SLIDE  -->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="../images/detail/1.jpg"  alt="kenburns2"
+                     data-bgposition="left top"
+                     data-duration="1000" >
+                <!-- LAYERS -->
+            </li>
+            <!-- SLIDE  -->
+            <li data-transition="fade" >
+                <!-- MAIN IMAGE -->
+                <img src="../images/detail/3.jpg"  alt="kenburns11"
+                     data-bgposition="left top"  data-duration="1000"
+                     >
+                <!-- LAYERS -->
+            </li>
+            <!-- SLIDE  -->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="../images/detail/2.jpg"  alt="kenburns5"
+                     data-bgposition="left top" data-duration="1000"
+                     >
+                <!-- LAYERS -->
+            </li>
+            <!-- SLIDE  -->
+            <li data-transition="fade">
+                <!-- MAIN IMAGE -->
+                <img src="../images/data/10.png" alt="kenburns9"
+                     data-bgposition="left top"
+                     data-duration="1000"
+                     >
+                <!-- LAYERS -->
+            </li>
+        </ul>
+    </div>
+</div>

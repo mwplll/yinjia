@@ -1,0 +1,60 @@
+{
+    "errorCode": 22000,
+    "data": [
+        {
+            "name": "zyc",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": true
+        },
+        {
+            "name": "ss",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": false
+        },
+        {
+            "name": "ss",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": false
+        },
+        {
+            "name": "ss",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": false
+        },
+        {
+            "name": "ss",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": false
+        },
+        {
+            "name": "ss",
+            "address": "人员赴事发i阿达分",
+            "county":"滨江区",
+            "province":"浙江省",
+            "city":"杭州市",
+            "phone":"12399999999",
+            "isDefault": false
+        }
+    ],
+    "total": 20
+}

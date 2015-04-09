@@ -1,0 +1,242 @@
+<!--新增户型 start-->
+        <style>
+            .add-house-content .add-image-wrap{
+                width: 136px;
+                cursor: pointer;
+                cursor: hand;
+                height: 97px;
+                border: 1px solid #eeeeee;
+                background: url(../images/upload-add-03.png) 50% 50% no-repeat;
+            }
+            input.form-control{
+                padding: 5px;
+            }
+            .form-horizontal .control-label{
+                padding-right: 0;
+            }
+            .room_item{
+                border: 1px solid transparent;
+                text-align: center;
+                padding:0; margin-bottom: 10px;
+                position: relative;
+            }
+            .room_item .remove{
+                position: absolute;
+                right: -4px;
+                top: -7px;
+                display: none;
+                cursor: hand;
+                cursor: pointer;
+            }
+            .room_item:hover{
+                border: 1px solid #e0e0e0;
+            }
+            .room_add_btn{
+                border: 1px solid #e0e0e0;
+                text-align: center;
+                padding:0; margin-bottom: 10px;
+                cursor: hand;
+                cursor: pointer;
+            }
+            .room_item:hover .remove{
+                display: block;
+            }
+            .room_item label,
+            .room_add_btn label{
+                padding: 3px 0 !important;
+            }
+        </style>
+<div class="dialog-wrap" ms-controller="AddHouseController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img src="../images/close-03.png" width="42" height="42">
+    </div>
+    <div class="add-house-content">
+        <form class="form-horizontal">
+            <fieldset>
+                <div id="legend" class="">
+                    <legend class="color-orange">新增户型</legend>
+                </div>
+
+                <div class="clearfix">
+                    <div class="pull-left col-sm-4" style="padding-right: 0;">
+                        <div class="form-group" ms-controller="UploadController">
+                            <div class="clearfix">
+                                <label for="inputEmail3"
+                                       style="padding-right: 0;text-align:center;padding-left: 0"
+                                       class="col-sm-5 control-label">
+                                    上传户型图<i class="color-orange">*</i>
+                                </label>
+                                <div class="col-sm-7" style="padding-right: 0;padding-left: 0">
+                                    <div id="UploadBtn"
+                                         style="width: 136px;height: 37px;display: block;padding: 0;">
+                                    </div>
+                                    <input style="display: none;"
+                                           id="CancelBtn" type="button" value="取消所有上传"
+                                           onclick="cancelUpload();">
+                                </div>
+                            </div>
+                            <div ms-visible="listVisible"
+                                 style="margin-top: 30px;padding-left: 35px;">
+                                <ul class="pop-imgs clearfix imageUploader-queue">
+                                    <li class="pull-left"
+                                        ms-class-error="el.error"
+                                        ms-mouseover="showCancelHandler(el,'visible')"
+                                        ms-mouseout="showCancelHandler(el, 'hidden')"
+                                        ms-repeat="list">
+                                        <div class="item">
+                                            <div class="pic"
+                                                 ms-class-loading="el.state=='finish'">
+                                                <a
+                                                        href="javascript:void(0);"
+                                                        class="image-wrap">
+                                                    <img ms-src="el.thumbUrl">
+                                                </a>
+                                            </div>
+                                            <div class="status-wrapper">
+                                                <div class="status waiting-status"
+                                                     ms-visible="el.state != 'finish'">
+                                                    <p style="width: 100%; overflow: hidden;height: 17px;">{{el.fname}}</p>
+                                                </div>
+                                                <div class="status waiting-status"
+                                                     ms-visible="el.state == 'wait'">
+                                                    <p>等待上传</p>
+                                                </div>
+                                                <div class="status start-status progress-status success-status"
+                                                     ms-visible="el.state == 'inprogress'">
+                                                    <div class="ks-progress-bar" ms-attr-id="el.fid">
+                                                        <div class="ks-progress-bar-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="status error-status" ms-visible="el.error=='uploadError'" style="display: none;"><p>上传失败！</p></div>
+                                                <div class="status error-status" ms-visible="el.error=='sizeError'" style="display: none;"><p>文件过大！</p></div>
+                                            </div>
+                                            <a class="del-pic img-close"
+                                               ms-click="cancelUploadHandler($event,el)"
+                                               ms-visible="el.state == 'inprogress'||el.state == 'wait'"
+                                               href="javascript:;"
+                                               ms-attr-id="'del_pic_'+el.fid" title="删除"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right col-sm-8" style="padding-left: 0;">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">
+                                户型名称<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       ms-duplex="row.houseName"
+                                       id="inputEmail3" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                楼盘名<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       disabled
+                                       ms-duplex="row.building" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                省份 <i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       disabled
+                                       ms-duplex="row.province" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                城市 <i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       disabled
+                                       ms-duplex="row.city" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                区域 <i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       disabled
+                                       ms-duplex="row.area" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label class="col-sm-6 control-label">
+                                    建筑面积<i class="color-orange">*</i>
+                                </label>
+                                <div class="col-sm-4"
+                                     style="padding-right: 0">
+                                    <input type="text" class="form-control"
+                                           ms-blur="sizeBlur('grossArea')"
+                                           ms-duplex="row.grossArea" placeholder="">
+                                </div>
+                                <label class="col-sm-1 control-label"
+                                       style="padding-left: 0;">
+                                    ㎡
+                                </label>
+                            </div>
+                            <div class="col-sm-6"
+                                 style="width: 45%">
+                                <label class="col-sm-6 control-label" style="padding-right: 0">
+                                    可使用面积<i class="color-orange">*</i>
+                                </label>
+                                <div class="col-sm-4" style="padding-right: 0">
+                                    <input type="text" class="form-control"
+                                           ms-blur="sizeBlur('usableArea')"
+                                           ms-duplex="row.usableArea" placeholder="">
+                                </div>
+                                <label class="col-sm-1 control-label"
+                                       style="padding-left: 0;">
+                                    ㎡
+                                </label>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-3 control-label">-->
+                                <!--房间<i class="color-orange">*</i>-->
+                            <!--</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<div class="col-sm-4"-->
+                                     <!--style="padding: 0"-->
+                                      <!--ms-click="addRoomHandler">-->
+                                    <!--<a class="btn btn-default"-->
+                                        <!--style="padding: 3px 12px;">新增</a>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-4 room_item"-->
+                                     <!--ms-repeat="row.rooms"-->
+                                     <!--style="">-->
+                                    <!--<label class="control-label"-->
+                                           <!--style="padding-left: 0;text-align: center">-->
+                                        <!--{{el.room_name}} {{el.room_size}}㎡-->
+                                    <!--</label>-->
+                                    <!--<i class="fa fa-minus-circle remove color-orange"-->
+                                       <!--ms-click="removeRoom($index)"></i>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+                <div class="tlc">
+                    <a class="btn btn-default btn-zjd2"
+                       ms-click="saveHandler">确认提交</a>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!--新增户型 end-->

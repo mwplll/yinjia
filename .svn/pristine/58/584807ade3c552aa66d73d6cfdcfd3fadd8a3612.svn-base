@@ -1,0 +1,65 @@
+<div class="calendar-items step3 jinchang nimu">
+    <div ms-visible="jcStep=='step1'">
+        <div class="tlc mt2">
+            <a class="btn btn-default btn-zjd2">进场准备</a>
+        </div>
+
+        <div class="clearfix" style="width: 840px;margin: 20px auto;">
+            <div class="pull-left">
+                <div class="box-item" style="margin-top: 20px;">
+                    <p>一、前期与业主、物业交接部分</p>
+                    <p>1，水表电表位置、业主装修手续办理、钥匙交接</p>
+                    <p>2，原建筑门窗、墙体破损及漏水检查确认</p>
+                    <p>3，卫生间、阳台下水管道通水及地面养水试验</p>
+                </div>
+                <div class="box-item" style="margin-top: 140px;">
+                    <p>三、前期尺寸复核确认部分</p>
+                    <p>1，一米完成面线、地面十字基准线弹制</p>
+                    <p>2，施工图尺寸复合、空调及地暖新风设备并图审核</p>
+                    <p>3，所有区域不同装饰面功能点位标注弹线</p>
+                    <p>4，橱柜厂家尺寸复核，水电点位交接</p>
+                    <p>5，水电隐蔽材料清单提交</p>
+                </div>
+            </div>
+            <div class="pull-left middle">
+
+            </div>
+            <div class="pull-left">
+                <div class="box-item" style="margin-top: 195px;">
+                    <p>二、前期现场形象布置部分</p>
+                    <p>1，现场卫生清理、临时照明、用水、卫生器具布</p>
+                    <p>2，原建筑墙顶面基层铲除</p>
+                    <p>3，原建筑成品保护、标志标语规划布置</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tlc">
+            <a class="btn btn-default  btn-zjd2"
+               ms-click="jcStepHandler('step2')">
+                <i class="fa fa-list"></i>
+
+                详细清单
+            </a>
+        </div>
+    </div>
+
+
+    <div ms-visible="jcStep=='step2'">
+        <div class="tlc mt2">
+            <a class="btn btn-default  btn-zjd2"
+               ms-click="jcStepHandler('step1')">
+                <i class="fa fa-list"></i>
+                详细清单
+            </a>
+        </div>
+
+        <!--建材 start-->
+        <div class="material-wrap tab material"
+             ms-include-src="'../design/views/material-tab.html'">
+        </div>
+        <!--建材 end-->
+
+    </div>
+
+</div>

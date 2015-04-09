@@ -1,0 +1,6 @@
+{
+  "path": "./",
+  "ignore": "*.log",
+  "host": "http://121.40.212.161:8888/nodesync.php",
+  "pathto": "/home/zjd/www/zjd"
+}

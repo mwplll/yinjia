@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实名认证</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-12-18">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/person.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="AuthorizedController">
+<div class="body">
+    <!--header start-->
+    <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+    <!--header end-->
+
+    <!--main start-->
+    <div class="main" id="main" style="margin-bottom: 35px;">
+        <div class="container clearfix">
+            <div class="person-sidebar pull-left">
+                <ul class="person-sidebar-ul">
+                    <li class="person-sidebar-li"><a href="info.html">基本信息</a></li>
+                    <li class="person-sidebar-li"><a href="security.html">账户安全</a></li>
+                    <li class="person-sidebar-li"><a href="address.html">收件地址</a></li>
+                    <li class="person-sidebar-li current"><a href="javascript:;">实名认证</a></li>
+                </ul>
+            </div>
+            <div class="person-content pull-left" style="padding-bottom: 40px;">
+                <div class="audit-index" ms-visible="step == 'step1'">
+                    <div class="alert f16">！非设计师用户无需进行实名认证，敬请知晓！</div>
+                    <div style="margin: 20px auto 20px auto;width: 573px;">
+                        <img src="../images/user/card-02.png">
+                    </div>
+                    <div class="audit-info">
+                        <p class="f16">【实名认证】是对设计师用户真实身份的确认，只有通过【实名认证】才能成为设计师用户，发布设计方案。
+                            有身份证明的个人即可申请，服务免费。</p>
+                        <a class="btn btn-zjd2" ms-click="stepHandler('step2')">立即申请</a>
+                    </div>
+                </div>
+                <div class="address-form authorized-form"
+                     ms-visible="step == 'step2'">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">
+                                真实姓名<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       ms-duplex="name"
+                                       id="inputEmail3" placeholder="">
+                                <span>需与身份证上姓名一致</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">
+                                QQ<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       ms-duplex="qq"
+                                       id="inputEmail5" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">
+                                支付宝账号<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       ms-duplex="alipay"
+                                       id="inputEmail6" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input4" class="col-sm-4 control-label">
+                                二代身份证<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       ms-duplex="IDNumber"
+                                       id="input4" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input4" class="col-sm-4 control-label">
+                                个人信息所在面<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <div ms-visible="face">
+                                    <a class="image-wrap"
+                                       style="height: 210px; width: 290px;border: 1px solid #a0a0a0;">
+                                        <img ms-src="faceUrl">
+                                        <div class="del cursorHand animate animate-rotate"
+                                              ms-click="removePicHandler('face')"></div>
+                                    </a>
+                                </div>
+                                <div ms-visible="!face">
+                                    <a class="btn btn-default btn-zjd2"
+                                       ms-click="uploadHandler('face')">上传</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input4" class="col-sm-4 control-label">
+                                国徽图案面<i class="color-orange">*</i>
+                            </label>
+                            <div class="col-sm-8">
+                                <div ms-visible="back">
+                                    <a class="image-wrap"
+                                       style="height: 210px; width: 290px;border: 1px solid #a0a0a0;">
+                                        <img ms-src="backUrl">
+                                        <div class="del cursorHand animate animate-rotate"
+                                             ms-click="removePicHandler('back')"></div>
+                                    </a>
+                                </div>
+                                <div ms-visible="!back">
+                                    <a class="btn btn-default btn-zjd2"
+                                       ms-click="uploadHandler('back')">上传</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tlc" style="margin-top: 50px;">
+                            <a class="btn btn-default btn-zjd2"
+                               ms-click="saveHandler">确认提交</a>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="audit-result" ms-visible="step == 'step3'">
+                    <div class="" ms-visible="auditResult['success']==2">
+                        <p class="title f24 color-orange">审核中</p>
+                        <p class="info f16">审核资料已成功提交，工作人员将在1~3个工作日内完成审核。</p>
+                    </div>
+                    <div class="" ms-visible="auditResult['success']==0">
+                        <p class="title f24 color-orange">审核失败</p>
+                        <p class="info f16">原因：{{auditResult['reason']}}</p>
+                        <a class="btn btn-zjd2" ms-click="stepHandler('step2')">返回修改</a>
+                    </div>
+                    <div class="" ms-visible="auditResult['success']==1">
+                        <p class="title f24 color-orange">恭喜您！审核通过</p>
+                        <p class="info f16">您已经通过实名认证信息审核，现在开始发布你的设计方案吧</p>
+                        <a class="btn btn-zjd2" href="../design-center/designer.html">进入设计师中心</a>
+                    </div>
+                </div>
+
+                <div class="audit-result" ms-visible="step=='admin'">
+                    <div class="">
+                        <p class="title f24 color-orange">管理员用户 无需审核</p>
+                        <p class="info f16"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end-->
+
+    <!--footer start-->
+    <div ms-include-src="'../share/views/footer.html'"></div>
+    <!--footer end-->
+</div>
+
+<!--script-->
+<script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+<script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+<script type="text/javascript" src="../account/controllers/SecurityController.js"></script>
+<script type="text/javascript" src="../account/controllers/AuthorizedController.js"></script>
+</body>
+</html>

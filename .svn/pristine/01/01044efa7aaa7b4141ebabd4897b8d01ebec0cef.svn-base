@@ -1,0 +1,71 @@
+<div class="head clear">
+    <span>主材包</span>
+    <span style="margin-left: 140px;">￥{{totalPrice* 1.05|number(2)}}</span>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th width="15%">施工阶段</th>
+            <th width="25%">材料</th>
+            <th width="15%">数量</th>
+            <th width="15%">单价</th>
+            <th width="15%">合计</th>
+            <th width="15%"></th>
+        </tr>
+    </thead>
+</table>
+<table>
+
+    <tbody ms-repeat="list" style="border-bottom: 1px dashed #dfdcc9;">
+        <tr>
+            <td width="15%" class="tlc">
+                <span style="margin-left: 5px;">{{el.period}}</span>
+            </td>
+            <td width="85%">
+                <table style="width: 100%"
+                       class="product-table">
+                    <tbody ms-repeat-good="el.goods"
+                           ms-class-borderbottom="!$last">
+                        <tr class="hover">
+                            <td width="30%"><a ms-href="good.link" target="_blank"
+                                               ms-class-link="!good.sellPrice"
+                                               ms-click="linkHandler(good)">{{good.goodsName}}</a></td>
+                            <td width="17%">
+                                {{good.num}}{{good.unit}}
+                            </td>
+                            <td width="17%">￥{{good.sellPrice}}</td>
+
+                            <td width="17%">￥{{good.totalPrice}}</td>
+                            <td width="17%">
+                                <a class="cursorHand" ms-click="selectHandler(good, el)">查看备选产品</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td width="15%" class="tlc">
+                <span style="margin-left: 5px;color: black;">管理费</span>
+            </td>
+            <td width="85%">
+                <table style="width: 100%"
+                       class="product-table">
+                    <tbody>
+                        <tr class="hover">
+                            <td width="30%"></td>
+                            <td width="17%"></td>
+                            <td width="17%"></td>
+
+                            <td width="17%" style="color: black;">￥{{totalPrice*0.05|number(2)}}</td>
+                            <td width="17%">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

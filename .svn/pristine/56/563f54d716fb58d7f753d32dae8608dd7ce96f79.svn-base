@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">用户相关API</h1>
+<h2 id="1-">1 用户注册</h2>
+<h3 id="1-1-2015-03-15">1.1 发送验证码  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/identifying/code">http://121.40.212.161:8000/data/user/identifying/code</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;tel&quot;:STRING,//11位手机号
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//发送成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="1-2-2015-03-15">1.2 提交注册信息  <code>√</code> 2015-03-15</h3>
+<p>[POST] <a href="http://121.40.212.161:8000/data/user/register">http://121.40.212.161:8000/data/user/register</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;tel&quot;:STRING, //11位手机号
+    &quot;code&quot;:STRING,  //验证码
+    &quot;userName&quot;:STRING,  //用户名
+    &quot;pwd&quot;:STRING,  //密码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: INT,//成功返回新增的用户id，失败为FALSE
+}
+</code></pre><h2 id="2-">2 用户登录</h2>
+<h3 id="2-1-2015-03-15">2.1 手机号/用户名登录  <code>√</code> 2015-03-15</h3>
+<p>[POST] <a href="http://121.40.212.161:8000/data/user/login">http://121.40.212.161:8000/data/user/login</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;user&quot;:STRING,  //用户名或手机号码
+    &quot;pwd&quot;:STRING,  //密码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//登录成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="2-2-2015-03-15">2.2 管理员登录  <code>√</code> 2015-03-15</h3>
+<p>[POST] <a href="http://121.40.212.161:8000/data/administrator/login">http://121.40.212.161:8000/data/administrator/login</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;user&quot;:STRING,  //用户名或手机号码
+    &quot;pwd&quot;:STRING,  //密码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//登录成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="2-3-2015-03-15">2.3 退出登录  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/logout">http://121.40.212.161:8000/data/user/logout</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   无
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h2 id="3-">3 用户后台管理</h2>
+<h3 id="3-1-2015-03-15">3.1 用户列表  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/admin/user/list">http://121.40.212.161:8000/data/admin/user/list</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;isSpecial&quot;:INT,  //用户类型，0为普通用户，1为设计师用户，10为超级管理员，11设计方案管理员，12为材料管理员，13文章管理员，设计师用户拥有普通用户权限，超级管理员拥有所有权限
+    &quot;states&quot;:ARRAY,  //审核状态，0为否，1为是，2为审核中，3为未知
+    &quot;num&quot;:INT,//每页显示个数
+    &quot;page&quot;:INT,//所在页数，第一页为1
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: [
+        &quot;userList&quot;:[{
+            &quot;id&quot;:INT,   //用户id
+            &quot;tel&quot;:STRING,   //手机号
+            &quot;userName&quot;:STRING,   //用户名
+            &quot;realName&quot;:STRING,   //真实名字
+            &quot;createTime&quot;:STRING,   //注册时间
+            &quot;userSex&quot;:STRING,   //性别，0为男，1为女，2为未知
+            &quot;avatar&quot;:STRING,   //用户头像
+            &quot;birthday&quot;:STRING,   //生日
+            &quot;isSpecial&quot;:STRING,   //用户类型，0为普通用户，1为设计师用户，10为超级管理员
+            &quot;state&quot;:STRING,   //审核状态，0为否，1为是，2为审核中，3为未知
+            &quot;userShow&quot;:STRING,   //个性签名
+            &quot;qq&quot;:STRING,   //qq号码
+            &quot;email&quot;:STRING,   //电子邮箱
+            &quot;alipay&quot;:STRING,  //支付宝账号
+            &quot;cid&quot;:STRING,  //身份证号码
+            &quot;cidFrontPic&quot;:STRING,  //身份证正面（个人信息面）图片
+            &quot;cidBackPic&quot;:STRING,  //身份证反面（国徽图案面）图片
+            &quot;reason&quot;:STRING,  //审核失败原因
+            &quot;designerSn&quot;:STRING //设计师编号
+        }
+        ……
+        ],
+        &quot;pagination&quot;:{
+            &quot;count&quot;:INT,  //总个数
+            &quot;page&quot;:INT    //页数
+        }
+    ]
+}
+</code></pre><h3 id="3-2-2015-03-15">3.2 单个用户信息（管理员查看）  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/admin/user/info">http://121.40.212.161:8000/data/admin/user/info</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,  //用户id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: {
+        &quot;id&quot;:INT,   //用户id
+        &quot;tel&quot;:STRING,   //手机号
+        &quot;userName&quot;:STRING,   //用户名
+        &quot;realName&quot;:STRING,   //真实名字
+        &quot;createTime&quot;:STRING,   //注册时间
+        &quot;userSex&quot;:STRING,   //性别，0为男，1为女，2为未知
+        &quot;avatar&quot;:STRING,   //用户头像
+        &quot;birthday&quot;:STRING,   //生日
+        &quot;isSpecial&quot;:STRING,   //用户类型，0为普通用户，1为设计师用户，10为超级管理员
+        &quot;state&quot;:STRING,   //审核状态，0为否，1为是，2为审核中，3为未知
+        &quot;userShow&quot;:STRING,   //个性签名
+        &quot;qq&quot;:STRING,   //qq号码
+        &quot;email&quot;:STRING,   //电子邮箱
+        &quot;alipay&quot;:STRING,  //支付宝账号
+        &quot;cid&quot;:STRING,  //身份证号码
+        &quot;cidFrontPic&quot;:STRING,  //身份证正面（个人信息面）图片
+        &quot;cidBackPic&quot;:STRING,  //身份证反面（国徽图案面）图片
+        &quot;reason&quot;:STRING,  //审核失败原因
+        &quot;designerSn&quot;:STRING //设计师编号
+    }
+}
+</code></pre><h3 id="3-3-2015-03-15">3.3 删除用户  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/admin/user/edit?act=del">http://121.40.212.161:8000/data/admin/user/edit?act=del</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,  //用户id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="3-4-2015-03-15">3.4 审核设计师用户  <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/admin/user/edit?act=check">http://121.40.212.161:8000/data/admin/user/edit?act=check</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,  //用户id
+    &quot;isChecked&quot;:INT, //是否审核通过，0为否，1为是
+    &quot;failReason&quot;:STRING, //审核不通过原因
+}
+</code></pre><h2 id="4-">4 实名认证</h2>
+<h3 id="4-1-2015-03-15">4.1 提交实名认证信息/修改后提交实名认证信息 <code>√</code> 2015-03-15</h3>
+<p>[POST] <a href="http://121.40.212.161:8000/data/user/verify">http://121.40.212.161:8000/data/user/verify</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;realName&quot;:INT,  //真实姓名
+    &quot;qq&quot;:STRING,   //qq号码
+    &quot;alipay&quot;:STRING,  //支付宝账号
+    &quot;cid&quot;:STRING,  //身份证号码
+    &quot;cidFrontPic&quot;:STRING,  //身份证正面（个人信息面）图片
+    &quot;cidBackPic&quot;:STRING,  //身份证反面（国徽图案面）图片
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h2 id="5-">5 用户信息维护</h2>
+<h3 id="5-1-2015-03-15">5.1 当前用户信息 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/info">http://121.40.212.161:8000/data/user/info</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   无
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: {
+        &quot;id&quot;:INT,   //用户id
+        &quot;tel&quot;:STRING,   //手机号
+        &quot;userName&quot;:STRING,   //用户名
+        &quot;realName&quot;:STRING,   //真实名字
+        &quot;createTime&quot;:STRING,   //注册时间
+        &quot;userSex&quot;:STRING,   //性别，0为男，1为女，2为未知
+        &quot;avatar&quot;:STRING,   //用户头像
+        &quot;birthday&quot;:STRING,   //生日
+        &quot;isSpecial&quot;:STRING,   //用户类型，0为普通用户，1为设计师用户，10为超级管理员
+        &quot;state&quot;:STRING,   //审核状态，0为否，1为是，2为审核中，3为未知
+        &quot;userShow&quot;:STRING,   //个性签名
+        &quot;qq&quot;:STRING,   //qq号码
+        &quot;email&quot;:STRING,   //电子邮箱
+        &quot;alipay&quot;:STRING,  //支付宝账号
+        &quot;cid&quot;:STRING,  //身份证号码
+        &quot;cidFrontPic&quot;:STRING,  //身份证正面（个人信息面）图片
+        &quot;cidBackPic&quot;:STRING,  //身份证反面（国徽图案面）图片
+        &quot;reason&quot;:STRING,  //审核失败原因
+        &quot;designerSn&quot;:STRING //设计师编号
+    }
+}
+</code></pre><h3 id="5-2-2015-03-15">5.2 当前用户修改个人基本信息 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/edit?part=base">http://121.40.212.161:8000/data/user/edit?part=base</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;avatar&quot;:STRING,  //基本信息
+    &quot;userSex&quot;:INT,    //性别，0为男，1为女，2为未知
+    &quot;birthday&quot;:STRING,   //生日
+    &quot;userShow&quot;:STRING,   //个性签名
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="5-3-2015-03-15">5.3 当前用户修改密码 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/edit?part=pwd">http://121.40.212.161:8000/data/user/edit?part=pwd</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;oldPwd&quot;:STRING,  //旧密码
+    &quot;newPwd&quot;:STRING,    //新密码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="5-4-2015-03-15">5.4 当前用户修改手机号 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/edit?part=tel">http://121.40.212.161:8000/data/user/edit?part=tel</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;tel&quot;:STRING,    //手机号
+    &quot;code&quot;:STRING,    //验证码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="5-5-2015-03-15">5.5 当前用户修改邮箱 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/edit?part=email">http://121.40.212.161:8000/data/user/edit?part=email</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;email&quot;:STRING,    //邮箱号
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h2 id="6-">6 收件地址</h2>
+<h3 id="6-1-2015-03-15">6.1 当前用户收件地址列表 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/addr/list">http://121.40.212.161:8000/data/user/addr/list</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   无
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: {
+        &quot;addrList&quot;:[{
+            &quot;id&quot;:INT,   //收件地址id
+            &quot;userId&quot;:STRING,   //用户id
+            &quot;address&quot;:STRING,   //详细地址
+            &quot;area&quot;:STRING,   //区域名
+            &quot;city&quot;:STRING,   //城市名
+            &quot;province&quot;:STRING,   //省份名
+            &quot;name&quot;:STRING,   //收件人名
+            &quot;zip&quot;:STRING,   //邮政编码
+            &quot;telephone&quot;:STRING,   //手机号
+            &quot;mobile&quot;:STRING,   //座机号
+            &quot;isDefault&quot;:STRING   //是否是默认地址，0为否，1为是
+        }
+        ……
+        ]
+    }
+}
+</code></pre><h3 id="6-2-2015-03-15">6.2 收件地址详情 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/addr/info">http://121.40.212.161:8000/data/user/addr/info</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,    //收件地址id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: {
+        &quot;id&quot;:INT,   //收件地址id
+        &quot;userId&quot;:STRING,   //用户id
+        &quot;address&quot;:STRING,   //详细地址
+        &quot;area&quot;:STRING,   //区域名
+        &quot;city&quot;:STRING,   //城市名
+        &quot;province&quot;:STRING,   //省份名
+        &quot;name&quot;:STRING,   //收件人名
+        &quot;zip&quot;:STRING,   //邮政编码
+        &quot;telephone&quot;:STRING,   //手机号
+        &quot;mobile&quot;:STRING,   //座机号
+        &quot;isDefault&quot;:STRING   //是否是默认地址，0为否，1为是
+    }
+}
+</code></pre><h3 id="6-3-2015-03-15">6.3 新增/修改收件地址 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/addr/edit?act=save">http://121.40.212.161:8000/data/user/addr/edit?act=save</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,   //收件地址id，新增时不用传
+    &quot;address&quot;:STRING,   //详细地址
+    &quot;area&quot;:STRING,   //区域名
+    &quot;city&quot;:STRING,   //城市名
+    &quot;province&quot;:STRING,   //省份名
+    &quot;name&quot;:STRING,   //收件人名
+    &quot;zip&quot;:STRING,   //邮政编码
+    &quot;telephone&quot;:STRING,   //手机号
+    &quot;mobile&quot;:STRING,   //座机号，非必填
+    &quot;isDefault&quot;:STRING   //是否是默认地址，0为否，1为是
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功返回新增收件地址id，失败为FALSE
+}
+</code></pre><h3 id="6-4-2015-03-15">6.4 设为默认地址 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/addr/edit?act=default">http://121.40.212.161:8000/data/user/addr/edit?act=default</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,    //收件地址id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="6-5-2015-03-15">6.5 删除收件地址 <code>√</code> 2015-03-15</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/addr/edit?act=del">http://121.40.212.161:8000/data/user/addr/edit?act=del</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,    //收件地址id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//成功为TRUE，失败为FALSE
+}
+</code></pre><h2 id="7-">7 找回密码</h2>
+<h3 id="7-1-">7.1 验证手机号与验证码是否一致</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/tel/right">http://121.40.212.161:8000/data/user/tel/right</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;tel&quot;:STRING,//11位手机号
+    &quot;code&quot;:STRING,//验证码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//发送成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="7-2-">7.2 修改密码</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/user/pwd/reset">http://121.40.212.161:8000/data/user/pwd/reset</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;tel&quot;:STRING,//11位手机号
+    &quot;code&quot;:STRING,//验证码
+    &quot;pwd&quot;:STRING,//新密码
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN,//发送成功为TRUE，失败为FALSE
+}
+</code></pre></div>
+</body>
+</html>

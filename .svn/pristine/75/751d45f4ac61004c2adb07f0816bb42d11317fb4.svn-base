@@ -1,0 +1,50 @@
+<style>
+    .ui-dialog-close{
+        position: absolute;
+        top: -44px;
+        opacity: 1;
+        right: -42px;
+        color: #5e5e5e;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+/*        background: url(../images/close-03.png) no-repeat;*/
+    }
+    .ui-dialog-close:focus,
+    .ui-dialog-close:hover{
+        opacity: 1;
+        color: #5e5e5e;
+        text-decoration: none;
+        outline: 0;
+        transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+        -moz-transform:rotate(90deg);
+        -o-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+    }
+
+    .ui-popup-modal .ui-dialog{
+        border-top: 2px solid #ea5404;
+    }
+
+    .dialog-thumbnail  {
+		text-align: center;
+	}
+
+	.dialog-thumbnail .content {
+		margin-left: auto;
+		margin-right: auto;
+        width: 100%;
+		height: 565px;
+	}
+
+
+</style>
+
+
+<div class="dialog-thumbnail" ms-controller="SearchResultController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img ms-src="pageLevel + 'images/close-03.png'" width="42" height="42">
+    </div>
+    <img class="content" ms-src="bigThumbUrl" alt="">
+</div>

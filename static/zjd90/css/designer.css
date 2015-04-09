@@ -1,0 +1,431 @@
+/*order-management.html*/
+.list-content{
+	width: 1020px;
+}
+
+.list-content .tab li{
+	width: 12.5%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	background-color: #ffffff;
+	color: #EA5404;
+    border: 1px solid #a0a0a0;
+}
+
+.list-content .tab li:last-child{
+	border-right-width: 1px;
+}
+
+.list-content .tab li:hover,
+.list-content .tab li.active{
+	cursor: pointer;
+	background-color: #5e5e5e;
+	color: #ffffff;
+}
+
+.list-content .title {
+	margin-top: 8px;
+	table-layout: fixed;
+	width: 100%;
+
+}
+
+.list-content .title .col-name th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 16px;
+	font-weight: normal;
+	background-color: #EA5404;
+	color: #ffffff;
+}
+
+
+.list-content .title .col-name .name,
+.list-content .title .col-name .price,
+.list-content .title .col-name .amount,
+.list-content .title .col-name .state,
+.list-content .title .col-name .operate{
+	text-align: center;
+}
+
+
+.list-content .items .sep_row {
+	height: 16px;
+}
+
+.list-content .items {
+	width: 100%;
+}
+
+.list-content .items .info {
+	width: 100%;
+	background-color: #ffffff;
+    border: 1px solid #a0a0a0;
+    border-bottom: 0;
+}
+
+.list-content .items .info span{
+	font-size: 12px;
+	line-height: 36px;
+}
+
+
+.list-content .title .items .name,
+.list-content .title .items .price,
+.list-content .title .items .amount,
+.list-content .title .items .state,
+.list-content .title .items .operate{
+	text-align: center;
+}
+
+
+.list-content .items .item {
+	background-color: #ffffff;
+    border: 1px solid #a0a0a0;
+}
+
+.list-content .items .item .img{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.list-content .items .item img{
+	height: 100px;
+	width: 145px;
+}
+
+.list-content .items .description{
+	padding-top: 30px;
+    max-width: 270px;
+}
+.list-content .items .description h2{
+	color: #5e5e5e;
+}
+
+.list-content .items .item td a{
+	color:#EA5404;
+}
+
+
+.list-content .search .dropdown{
+    position: relative;
+}
+
+.list-content .search .dropdown .dropdown-menu{
+    top: 32px;
+}
+
+.list-content .search .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.list-content .search .dropdown .dropdown-menu li{
+    cursor: pointer;
+    padding: 5px 0 5px 20px;
+}
+
+.list-content .search .dropdown .dropdown-menu li:hover{
+    background-color: #eeeeee;
+    color: #F18044;
+}
+
+#stock-scheme .stock-content .title {
+	margin-top: 10px;
+	table-layout: fixed;
+	width: 100%;
+
+}
+
+#stock-scheme .stock-content .title .sep_row {
+	height: 10px;
+}
+
+.list-content .title .col-name th{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 16px;
+	font-weight: normal;
+	background-color: #EA5404;
+	color: #ffffff;
+}
+
+
+/*express.html*/
+#express .express-content {
+	width: 950px;
+}
+
+#express .express-content .express-info {
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #a0a0a0;
+}
+
+#express .express-content .express-condition {
+	margin-top: 15px;
+}
+
+#express .express-content .express-condition .title{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	background-color: #EA5404;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+#express .express-content .express-condition .title{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	background-color: #EA5404;
+	font-size: 16px;
+	color: #ffffff;
+	border: 1px solid #a0a0a0;
+}
+
+#express .express-content .express-condition .info {
+	padding-left: 20px;
+	padding-top: 20px;
+	background-color: #ffffff;
+	height: 493px;
+
+    border: 1px solid #a0a0a0;
+}
+
+/*order-modify.html*/
+#order-modify .modify-content {
+	background-color: #ffffff;
+	border: 1px solid #a0a0a0;
+	width: 950px;
+}
+
+#order-modify .modify-content .content {
+	padding-top: 20px;
+	padding-left: 40px;
+	padding-bottom: 40px;
+	width: 100%;
+}
+
+#order-modify .modify-content .title{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;	
+	background-color: #EA5404;
+	color: #ffffff;
+	font-size: 16px;
+}
+
+#order-modify .modify-content .confirm-button {
+	padding-left: 80%;
+	padding-bottom: 20px;
+}
+
+
+#order-modify .modify-content .confirm-button button {
+	background-color: #ffffff;
+	color: #EA5404;
+	outline: none;
+	border: 1px solid #EA5404;
+}
+
+#order-modify .modify-content .message-input {
+	width: 100%;
+}
+
+#order-modify .modify-content .message-input textarea {
+	padding: 10px 40px;
+	width: 100%;
+	height: 300px;
+	overflow-y: scroll;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	resize:none;
+	outline: none;
+}
+
+#order-modify .modify-content .message-input textarea:focus {
+	outline-color: transparent;
+  	outline-style: none;
+}
+
+
+/*release.html*/
+#release .release-content {
+	padding-top: 20px;
+	padding-left: 124px;
+}
+
+#release .release-content .result input{
+	margin-left: 20px;
+	width: 507px;
+}
+
+#release .release-content .choose{
+	margin-top: 33px;
+}
+
+#release .release-content .choose .select {
+	width: 185px;
+	/*background-color: #ffffff;*/
+    margin-right: 5px;
+}
+
+#release .release-content .choose .select input{
+	width: 100%;
+}
+
+#release .release-content .choose .select .items{
+	width: 100%;
+}
+
+#release .release-content .choose .select .items select{
+	width: 100%;
+	margin-bottom: -3px;
+	outline: none;
+}
+#release .release-content .choose .select .items select option{
+    padding-left: 10px;
+    line-height: 25px;
+    height: 25px;
+}
+#release .release-content .choose .select span{
+    color: #000000;
+    font-size: 16px;
+    line-height: 30px;
+}
+#release .release-content .choose .select .house-image{
+    /*background: url(../images/lian-04.png) 50% 50%;*/
+}
+
+#release .release-content .info{
+	margin-top: 20px;
+	color: #EA5404;
+}
+
+#release .release-content .confirm {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#release .release-content .confirm a{
+	padding: 10px 40px;
+	/*color: #ffffff;*/
+	border-radius: 6px;
+
+}
+#release .release-content .confirm a.clickable{
+    background-color: #EA5404;
+    border: 1px solid #EA5404;
+    color:white;
+}
+
+
+#release .release-content .message {
+	background-color: #ffffff;
+	/*height: 200px;*/
+	margin-top: 50px;
+	margin-bottom: 100px;
+    padding-bottom: 30px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border: 1px solid #a0a0a0;
+}
+#release .release-content .message ul li{
+    list-style: circle;
+    margin-bottom: 10px;
+}
+
+
+/*designer.html*/
+#designer .designer-content {
+	width: 1020px;
+}
+
+#designer .designer-content .face{
+	background-color: #ffffff;
+	width: 100%;
+	height: 96px;
+	border: 1px solid #a0a0a0;
+}
+
+#designer .designer-content .face .img{
+	padding-left: 22px;
+	padding-top: 10px;
+	padding-right: 22px
+}
+
+#designer .designer-content .face .name{
+	text-align: center;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+#designer .designer-content .face .name button{
+	padding: 5px 10px;
+	margin-top: 5px;
+	color:#EA5404;
+	border: 1px solid #EA5404;
+}
+
+#designer .designer-content .face .cerification{
+	padding-top: 15px;
+}
+
+#designer .designer-content .face .cerification .img{
+    background: url(../images/designer-cerification-black.png) no-repeat;
+    background-position: 16px 10px,
+                         center;
+    text-indent: -9999px;
+    border:none;	
+}
+
+#designer .designer-content .content-wrap {
+	margin-top: 20px;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+#designer .designer-content .content-wrap .title {
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+	background-color: #EA5404;
+	color: #ffffff;
+	font-size: 16px;
+} 
+
+#designer .designer-content .content-wrap .button-group {
+	padding-top: 25px;
+	padding-left: 20px;
+	padding-bottom: 35px;
+	border: 1px solid #a0a0a0;
+}
+
+#designer .designer-content .content-wrap .button-group .img img{
+	height: 70px;
+	width:70px;
+
+}
+
+#designer .designer-content .content-wrap .button-group .button {
+	text-align: center;
+	padding-top: 40px;
+	height: 214px;
+	width: 214px;
+	border: 1px solid #a0a0a0;
+	border-radius: 8px;
+	margin-left: 30px;
+}
+
+#designer .designer-content .content-wrap .button-group .button:first-child {
+	margin-left: 0;
+}
+
+
+
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布设计-选择户型图</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/designer.css">
+
+    <link rel="stylesheet" type="text/css" href="../css/upload.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="PublishController">
+    <div class="body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--main start-->
+        <div class="main" id="release" style="margin-bottom: 35px; margin-top: 25px;">
+            <div class="container clearfix">
+                <div class="release-content">
+                    <div class="result">
+                        <span>请选择您设计方案对于的户型图：</span>
+                    </div>
+
+                    <div class="choose clearfix">
+                        <div class="select pull-left" style="display: none;">
+                            <span>选择省份</span>
+                            <div class="items">
+                                <select size="15" ms-duplex="select.province">
+                                    <option ms-attr-value="el[1]"
+                                            ms-click="provinceChangeHandler(el)"
+                                            ms-repeat="provinces">{{el[1]}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="select pull-left">
+                            <span>选择城市</span>
+                            <div class="items">
+                                <select size="15" ms-duplex="select.city">
+                                    <option ms-attr-value="el[1]"
+                                            ms-click="cityChangeHandler(el)"
+                                            ms-repeat="cities">{{el[1]}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="select pull-left">
+                            <span>选择区域</span>
+                            <div class="items">
+                                <select size="15" ms-duplex="select.county">
+                                    <option ms-attr-value="el[1]"
+                                            ms-click="countyChangeHandler(el)"
+                                            ms-repeat="countys">{{el[1]}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="select pull-left">
+                            <!--<input type="text" placeholder="输入名称搜索">-->
+                            <span>选择楼盘</span>
+                            <div class="items">
+                                <select size="15" ms-duplex="select.building">
+                                    <option value=""
+                                            ms-click="buildingChangeHandler(null)">请选择</option>
+                                    <option ms-attr-value="el.building_name"
+                                            ms-click="buildingChangeHandler(el)"
+                                            ms-repeat="buildings">{{el.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="select pull-left">
+                            <span>选择户型</span>
+                            <div class="items">
+                                <select size="15" ms-duplex="select.house">
+                                    <option value=""
+                                            ms-click="houseChangeHandler(null)">请选择</option>
+                                    <option ms-attr-value="el['house_typename']"
+                                            ms-click="houseChangeHandler(el)"
+                                            ms-repeat="houses">{{el['name']}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="select pull-left">
+                            <span>户型图</span>
+                            <div class="items house-image"
+                                 style="width: 185px;height:226px;
+                                         border: 1px solid #e0e0e0;">
+                                <div ms-visible="select.houseThumbUrl"
+                                        style="width: 185px;height:226px;">
+                                    <a class="image-wrap">
+                                        <img ms-src="select.houseThumbUrl"
+                                             ms-attr-alt="select.house">
+                                    </a>
+                                </div>
+                                <div ms-visible="!select.houseThumbUrl"
+                                     style="width: 185px;height:226px;text-align: center;">
+                                    <a class="image-wrap" style="height: 180px;">
+                                        <img src="../images/lian-04.png" alt="没有合适的户型">
+                                    </a>
+                                    <!--<a ms-visible="select.building"-->
+                                       <!--ms-click="addHouseHandler"-->
+                                       <!--class="btn btn-default btn-zjd2">新增户型</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <p>
+                            <span>你当前选择的户型图为：
+                                <span ms-visible="select.province">{{select.province}}>></span>
+                                <span ms-visible="select.city">{{select.city}}>></span>
+                                <span ms-visible="select.building">{{select.building}}>></span>
+                                <span ms-visible="select.house">{{select.house}}</span>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="confirm">
+                            <a class="btn btn-default"
+                               ms-class-clickable="clickAble"
+                               ms-click="toNextHandler">我已经阅读以下规则，现在发布设计方案</a>
+                    </div>
+
+                    <div class="message">
+                        <ul>
+                            <li>
+                                作品发布实施实名制，图纸版权归印家平台所有，效果图模型、CAD施工图等图纸相关资料归印家平台所有，设计师必须保证所发布的设计作品为原创，如出现著作权纠纷相应法律责任由相关设计师承担。印家只与诚信负责的设计师携手共进，拒绝与任何不负责不守信用的设计师合作。
+                            </li>
+                            <li>
+                                严格按照印家标准图纸规范提交图纸，不达标的图纸返回修改后再上传。
+                            </li>
+                            <li>
+                                客户购买设计方案后可在所购图纸原风格基础上对设计图纸提出三次免费修改。
+                            </li>
+                            <li>
+                                施工过程中设计师现场服务按150元每次收费。
+                            </li>
+                            <li>
+                                施项目现场尺寸设计师自行测量，如需印家平台测量的，平台按100元每次收取费用。
+                            </li>
+                            <li>
+                                平台将在设计师成交的第一笔设计费中预留1000元作为保证金。
+                            </li>
+                            <li>
+                                言而有信，兑现承诺，提前完成超出客户期望值，设计过程中客户投诉设计师繁忙拖延时间、未按约定完成修改方案，服务态度恶劣、没耐心、回复不及时、效果图施工图质量细节粗糙设计不到位等导致<span style="color: #ff0000;">退单处罚500元</span>
+                            </li>
+                            <li>
+                                公司售后回访了解到设计师未正常回访客户第1次给予警告，第2次出现罚款100元。客户投诉设计师后期服务怠慢1次处罚200元<span style="color: #ff0000;">（如：不接电话，短信qq回复不及时，图纸修改不配合，借故拖延时间等）</span>，因设计师后期服务恶劣导致客户退款，<span style="color: #ff0000;">罚款500元</span>，客户差评罚款1000元，<span style="color: #ff0000;">（特殊客户除外，公司会深入调查划分责任）</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+    <script type="text/javascript" src="../design-center/controllers/PublishController.js"></script>
+
+
+</body>
+</html>
+
+

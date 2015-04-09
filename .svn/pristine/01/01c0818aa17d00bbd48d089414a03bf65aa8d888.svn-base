@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>收件地址</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/person.css">
+    <link rel="stylesheet" type="text/css" href="../css/address.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="IndexController">
+<div class="body">
+    <!--header start-->
+    <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+    <!--header end-->
+
+    <!--main start-->
+    <div class="main" id="main" style="margin-bottom: 35px;">
+        <div class="container clearfix">
+            <div class="person-sidebar pull-left">
+                <ul class="person-sidebar-ul">
+                    <li class="person-sidebar-li"><a href="info.html">基本信息</a></li>
+                    <li class="person-sidebar-li"><a href="security.html">账户安全</a></li>
+                    <li class="person-sidebar-li current"><a href="javascript:;">收件地址</a></li>
+                    <li class="person-sidebar-li"><a href="authorized.html">实名认证</a></li>
+                </ul>
+            </div>
+            <div class="person-content pull-left">
+                <div class="address-form" ms-controller="AddressListController">
+                    <a class="btn btn-default btn-lg btn-zjd" style="padding: 10px 30px;"
+                       ms-click="showHandler(null)">
+                        新增地址
+                    </a>
+                </div>
+                <div class="address-list mt3" ms-controller="AddressListController">
+                    <p class="color-orange f16" style="line-height: 45px;">已保存{{list.length}}条地址，还能保存{{10-list.length}}条地址</p>
+                    <table class="address-table">
+                        <thead style="background-color: #f5f5f5;">
+                            <tr>
+                                <th style="width: 80px">收货人</th>
+                                <th style="width: 180px;">所在地区</th>
+                                <th style="width: 200px;">详细地址</th>
+                                <th style="width: 90px;">邮编</th>
+                                <th style="width: 120px;">联系电话</th>
+                                <th style="width: 100px;">操作</th>
+                                <th style="width: 100px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ms-repeat="list">
+                                <td>{{el.name}}</td>
+                                <td>{{el.province}} {{el.city}} {{el.area}}</td>
+                                <td>{{el.address}}</td>
+                                <td>{{el.zip}}</td>
+                                <td>
+                                    <p ms-visible="el.mobile">{{el.mobile}}</p>
+                                    <p>{{el.telephone}}</p>
+                                </td>
+                                <td>
+                                    <a class="cursorHand color-orange"
+                                       ms-click="showHandler(el)">修改</a> |
+                                    <a class="cursorHand color-orange"
+                                       ms-click="removeHandler(el, $index)">删除</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-default setDefault"
+                                       ms-if="!el.isDefault"
+                                       ms-click="setDefaultHandler(el)">设为默认</a>
+                                    <a class="color-orange"
+                                       ms-if="el.isDefault"
+                                       ms-visible="el.isDefault">默认地址</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end-->
+
+    <!--footer start-->
+    <div ms-include-src="'../share/views/footer.html'"></div>
+    <!--footer end-->
+</div>
+
+<!--script-->
+<script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+<script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+<script type="text/javascript" src="../user/controllers/AddressListController.js"></script>
+<!--<script type="text/javascript" src="../account/controllers/AddressFormController.js"></script>-->
+
+<script type="text/javascript">
+    var ctr = avalon.define("IndexController", function(vm){
+
+    });
+</script>
+</body>
+</html>

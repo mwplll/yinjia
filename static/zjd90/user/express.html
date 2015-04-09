@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的订单-物流详情</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="OrderListController">
+<div class="body my_orders-body express-body user-body">
+    <!--header start-->
+    <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+    <!--header end-->
+
+    <!--breadcrumb start-->
+    <div class="breadcrumb-title breadcrumb-wrap">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="javascript:;">个人中心</a></li>
+                <li><a href="javascript:;">我的订单</a></li>
+                <li><a href="javascript:;">物流详情</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--breadcrumb end-->
+
+    <div class="userInfo-wrap">
+        <div class="clearfix container" style="padding-left: 40px;">
+            <div class="pull-left">
+                <a class="image-wrap">
+                    <img src="../images/designer-02.png" width="100%">
+                </a>
+            </div>
+            <div class="pull-left ml3" ms-controller="HeaderController">
+                <p class="f16">您好，{{userName}}，快来装修你的新家吧~~</p>
+                <a class="btn btn-default btn-zjd2" href="../account/info.html">账户设置</a>
+            </div>
+        </div>
+    </div>
+
+    <!--main start-->
+    <div class="main">
+        <div class="container">
+            <div class="head clearfix" style="margin-bottom: 0;">
+                <div class="pull-left" style="padding-left: 30px;">
+                    <span>我的订单</span>
+                </div>
+                <div class="pull-right nav-wrap">
+                    <ul class="clearfix">
+                        <li class="pull-left cursorHand">
+                            <a href="my_house.html" target="_blank">家装日历</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_house.html" target="_blank">我的户型图</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_scheme.html" target="_blank">我的方案</a>
+                        </li>
+                        <li class="pull-left cur cursorHand">
+                            <a href="my_orders.html" target="_blank">我的订单</a>
+                        </li>
+                        <li class="pull-left cursorHand">
+                            <a href="my_collects.html" target="_blank">我的喜欢</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="padding-bottom: 30px; padding-top: 10px;">
+                 <div class="tip-images clearfix">
+                     <div class="pull-left">
+                        <img src="../images/user/express-btn-02.png">
+                        <span>仓库接单</span>
+                     </div>
+                     <div class="pull-left">
+                         <img src="../images/user/express-btn-03.png">
+                        <span>包裹出库</span>
+                     </div>
+                     <div class="pull-left">
+                         <img src="../images/user/express-btn-04.png">
+                        <span>包裹运输</span>
+                     </div>
+                     <div class="pull-left">
+                         <img src="../images/user/express-btn-05.png">
+                        <span>包裹派送</span>
+                     </div>
+                     <div class="pull-left">
+                        <img src="../images/user/express-btn-06.png">
+                        <span>签收</span>
+                     </div>
+                 </div>
+                 <div class="express-info">
+                    <div class="express-head">
+                        <span class="express-order">订单编号：122131243214</span>
+                        <span class="express-company">物流公司：申通快递 </span>
+                    </div>
+                    <div class="clearfix express-content">
+                        <div class="pull-left express-left" style="width: 358px;">
+                            <p class="f16" style="color: #000000;margin-bottom: 20px;">订单信息</p>
+                            <p style="line-height: 35px;">收件人：黄蓉</p>
+                            <p style="line-height: 35px;">手机号码：15067138909</p>
+                            <p style="line-height: 35px;">收货地址：浙江省万塘路250号xx小区</p>
+                            <p style="line-height: 35px;">发货信息：浙江省杭州市西湖区*********</p>
+                            <p style="line-height: 35px;">收件人：黄蓉</p>
+                        </div>
+                        <div class="pull-left express-right">
+                            <p class="f16 mb2" style="color: #000000;">物流动态</p>
+                            <ul>
+                                <li>
+                                    <span>2014-11-18 20:58:55</span>
+                                    <span style="margin-left: 25px;">快件离开 潮南 已发往 潮汕中心</span>
+                                </li>
+                                <li>
+                                    <span>2014-11-18 20:58:55</span>
+                                    <span style="margin-left: 25px;">快件离开 潮南 已发往 潮汕中心</span>
+                                </li>
+                                <li>
+                                    <span>2014-11-18 20:58:55</span>
+                                    <span style="margin-left: 25px;">快件离开 潮南 已发往 潮汕中心</span>
+                                </li>
+                                <li>
+                                    <span>2014-11-18 20:58:55</span>
+                                    <span style="margin-left: 25px;">快件离开 潮南 已发往 潮汕中心</span>
+                                </li>
+                                <li>
+                                    <span>2014-11-18 20:58:55</span>
+                                    <span style="margin-left: 25px;">快件离开 潮南 已发往 潮汕中心</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="order-info" style="margin-top: 55px;">
+                     <table class="head-table">
+                         <thead>
+                         <td width="403">设计方案名称</td>
+                         <td width="185">方案总价(元)</td>
+                         <td width="160">实付款(元)</td>
+                         <td width="270">交易状态</td>
+                         <td width="160">操作</td>
+                         </thead>
+                     </table>
+                     <table class="list-table">
+                         <tbody>
+                         <tr class="tr-head">
+                             <td colspan="100%">
+                                 <p style="line-height: 35px;padding-left: 25px; text-align: left;">
+                                     <span>2014-11-11  19:52</span>
+                                     <span class="ml2">订单号:123456789878</span>
+                                 </p>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td width="403">
+                                 <div class="clearfix image-div">
+                                     <div class="pull-left">
+                                         <a class="image-wrap">
+                                             <img src="../images/test-04.png">
+                                         </a>
+                                     </div>
+                                     <div class="pull-left">
+                                         <p style="line-height: 40px;color: #000000;">大气格局我为自己代言我是名称啦</p>
+                                         <p style="width: 180px; text-align: left;">浙江 杭州  滨江金色黎明
+                                             100.00㎡户型2室1厅1厨1卫</p>
+                                     </div>
+                                 </div>
+
+                             </td>
+                             <td width="185">
+                                 <p>3000</p>
+                             </td>
+                             <td width="160">
+                                 <p>600</p>
+                                 <p>(定金)</p>
+                                 <p>(含运费：100)</p>
+                             </td>
+                             <td width="270">
+                                 <p style="width: 100%">已支付定金，等待设计师修改方案</p>
+                                 <p style="width: 100%">设计师已更新修改方案</p>
+                                 <p style="width: 100%">支付剩余设计费，等待发货</p>
+                                 <p style="width: 100%">交易关闭</p>
+                                 <a class="color-orange cursorHand">订单详情</a>
+                                 <a class="color-orange cursorHand">查看物流</a>
+                             </td>
+                             <td width="160" class="td-last">
+                                 <a class="color-orange cursorHand">完成修改，购买方案</a><br/>
+                                 <a class="color-orange cursorHand">继续修改</a><br/>
+                                 <a class="color-orange cursorHand">取消订单</a><br/>
+                             </td>
+                         </tr>
+                         </tbody>
+                     </table>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <!--main end-->
+
+    <!--footer start-->
+    <div ms-include-src="'../share/views/footer.html'"></div>
+    <!--footer end-->
+</div>
+
+<!--script-->
+<script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+<script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+<script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+<script type="text/javascript" src="../config/config.js"></script>
+<script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+<script type="text/javascript">
+    var orderListCtr = avalon.define({
+        $id: 'OrderListController'
+    });
+</script>
+
+</body>
+</html>
+
+

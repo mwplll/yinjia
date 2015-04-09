@@ -1,0 +1,192 @@
+.add {
+    background-image: url(../images/icons/fam/add.gif) !important;
+}
+
+.option {
+    background-image: url(../images/icons/fam/plugin.gif) !important;
+}
+
+.remove {
+    background-image: url(../images/icons/fam/delete.gif) !important;
+}
+
+.cancel {
+    background-image: url(../images/icons/fam/cross.gif) !important;
+}
+
+.folder {
+    background-image: url(../images/icons/fam/folder_go.gif) !important;
+}
+
+.gridlist {
+    background-image: url(../images/icons/fam/grid.png) !important;
+}
+
+.revert {
+    background-image: url(../images/icons/fam/cog.gif) !important;
+}
+
+.x-item-disabled .x-form-item-label, .x-item-disabled .x-form-field, .x-item-disabled .x-form-cb-label, .x-item-disabled .x-form-trigger {
+    filter: alpha(opacity = 50);
+    opacity: .5
+}
+
+.x-grid-row {
+    line-height: 13px;
+    vertical-align: top;
+    padding: 0 1px;
+    -moz-user-select: text !important;
+    -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+.x-grid-cell {
+    overflow: hidden;
+    font: normal 13px tahoma, arial, verdana, sans-serif;
+    -moz-user-select: text !important;
+    -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+.x-unselectable {
+    -moz-user-select: text !important;
+    -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+.user-list-username {
+    width: 120px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.user-list-name {
+    width: 65px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.user-list-email {
+    width: 160px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.user-list-phone {
+    width: 100px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.owner-info {
+    line-height: 24px;
+}
+
+.sort-desc {
+    background-image: url("../images/grid/sort_desc.gif") !important;
+    background-position: 4px 7px !important;
+}
+
+.sort-asc {
+    background-image: url("../images/grid/sort_asc.gif") !important;
+    background-position: 4px 7px !important;
+}
+
+.x-mask {
+    opacity: 0.15;
+}
+
+.disabled_mask {
+    opacity: 0.1;
+}
+
+.xcke * {
+    box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -ms-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+}
+
+.cke_dialog_tabs * {
+    box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -ms-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+}
+#cke_kindEditor_RefundWin { width: 578px;}
+
+body {
+    width:100%;
+    /*min-width: 1000px;*/
+    height:100%;
+}
+
+.edit-col{
+    background-image: url("../images/icons/edit.png") !important;
+}
+.delete-col{
+    background-image: url("../images/icons/fam/delete.gif") !important;
+}
+.remove-btn{
+    background-image: url("../images/icons/del.png") !important;
+}
+.save_btn{
+    background-image: url("../images/icons/fam/accept.gif") !important;
+}
+.clear_btn{
+    background-image: url("../images/icons/fam/delete.gif") !important;
+}
+.refresh_btn{
+    background-image: url("../images/icons/fam/table_refresh.png") !important;
+}
+.add_btn{
+    background-image: url("../images/icons/fam/add.gif") !important;
+}
+
+.upload-icon {
+    background: url('../images/icons/fam/image_add.png') no-repeat 0 0 !important;
+}
+.user-icon {
+    background: url('../images/icons/fam/user.png') no-repeat 0 0 !important;
+}
+.house-icon {
+    background: url('../images/icons/fam/plugin.gif') no-repeat 0 0 !important;
+}
+.design-icon {
+    background: url('../images/icons/fam/plugin.gif') no-repeat 0 0 !important;
+}
+.good-icon {
+    background: url('../images/icons/fam/plugin.gif') no-repeat 0 0 !important;
+}
+.order-icon {
+    background: url('../images/icons/fam/grid.png') no-repeat 0 0 !important;
+}
+.params-icon {
+    background: url('../images/icons/fam/cog.gif') no-repeat 0 0 !important;
+}
+
+.trash-icon {
+    background: url('../images/icons/fam/trash.png') no-repeat 0 0 !important;
+}
+
+.arrow-up{
+    background: url('../images/icons/fam/arrow-up_7ec169_16.png') no-repeat 0 0 !important;
+}
+.arrow-down{
+    background: url('../images/icons/fam/arrow-down_eb7192_16.png') no-repeat 0 0 !important;
+}
+
+.icon-color-green{
+    color: #7ec169;
+}
+.fa-1_2x{
+    font-size: 1.2em;
+}
+
+.x-border-layout-ct {
+    /*background-color: #BDDEF5;*/
+}
+.x-panel-header-default {
+    /*background-image: none;*/
+    /*background-color: #157fcc;*/
+}

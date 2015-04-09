@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>建材列表</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/material.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="MaterialListController">
+    <div class="body material-body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <div class="breadcrumb-wrap">
+            <div class="breadcrumb-title">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="javascript:;">自选主材</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--material start-->
+        <div class="material-container" id="material-container">
+            <div class="main-container">
+                <div class="material-content">
+                    <!-- material-icon start -->
+                    <div class="material-icon-wrap">
+                        <ul class="clearfix cbp-so-init">
+                            <li ms-repeat="icons" class="material-icon-item cbp-so-side"
+                                ms-class="{{el.style}}">
+                                <a class="image-wrap">
+                                    <div ms-class-selected="iconsSelected == $index"
+                                         ms-class="{{el.icon}}" class="icon-div"
+                                         ms-click="catHandler(el, $index)">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>                    
+                    </div>   
+                    <!-- material-icon end  -->
+
+                    <div class="option-warp">
+                        <div class="option clearfix">
+                            <a ms-click="sortHandler(null)">
+                                <span>默认排序</span>
+                            </a>
+                            <a ms-click="sortHandler('hot')">
+                                <span>按人气<i style="padding:5px;"
+                                    class="fa"
+                                    ms-class-fa-sort-desc="sortField['hot']=='desc'"
+                                    ms-class-fa-sort-asc="sortField['hot']=='asc'"></i>
+                                </span>
+                            </a>
+                            <a ms-click="sortHandler('comment')">
+                                <span>按评论<i style="padding:5px;"
+                                    class="fa"
+                                    ms-class-fa-sort-desc="sortField['comment']=='desc'"
+                                    ms-class-fa-sort-asc="sortField['comment']=='asc'"></i>
+                                </span>
+                            </a>
+                            <a ms-click="sortHandler('price')">
+                                <span>按价格<i style="padding:5px;"
+                                    class="fa"
+                                    ms-class-fa-sort-desc="sortField['price']=='desc'"
+                                    ms-class-fa-sort-asc="sortField['price']=='asc'"></i>
+                                </span>
+                            </a>
+                            <div class="pull-right search-wrap">
+                                <input class="search" type="text"
+                                       ms-duplex="keywords">
+                                <i class="fa fa-search" ms-click="searchHandler"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goods-wrap clearfix">
+                        <div class="good" ms-repeat="goods"
+                             ms-class-nomargin="($index+1)%3==0">
+                             <div class="img">
+                                <a ms-href="../material/detail.html?id={{el.id}}"
+                                   class="image-wrap">
+                                    <img ms-src="el.thumbUrl" alt="">
+                                </a>
+                            </div>
+                            <div class="name">
+                                <p>
+                                    <span style="font-size:14px">{{el.name}}</span>
+                                </p>
+                                <p>
+                                    <span style="font-size:10px">{{el.type}}</span>
+                                </p>
+
+                            </div>
+                            <div class="price clearfix">
+                                <span class="pull-left" style="font-size:26px;">
+                                    ￥{{el.price}}
+                                </span>
+                                <span style="text-decoration:line-through;color:#5e5e5e;font-size:10px" class="pull-right">
+                                    市场价:{{el.marketPrice}}
+                                </span>
+                            </div>                           
+                        </div>
+                    </div>
+                    <!--分页 start-->
+                    <div ms-widget="pager, GoodsListPager"
+                         style="margin-top: 30px;"
+                         class="pager-div-wrap"></div>
+                    <!--分页 end-->
+                </div>               
+            </div>
+        </div>
+        <!--material end-->
+
+
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+    <script type="text/javascript" src="../material/controllers/MaterialListController.js"></script>
+
+</body>
+</html>

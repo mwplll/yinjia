@@ -1,0 +1,75 @@
+<div class="dialog-wrap" ms-controller="SignInController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img ms-src="pageLevel + 'images/close-03.png'" width="42" height="42">
+    </div>
+    <div class="login-wrap">
+        <div class="login-title">
+            <span class="title f24">登入印家</span>
+            <label class="f16">没有账号?  <a ms-href="pageLevel + 'sign/signUp.html'">立即注册</a></label>
+        </div>
+        <div class="form">
+            <div class="input-group line1">
+                <input type="text" class="form-control" placeholder="手机号/用户名"
+                       ms-duplex="userName">
+            </div>
+            <div class="input-group line2">
+                <input
+                       ms-attr-type="passwordType"
+                       ms-duplex="password"
+                       ms-keydown ='keydown($event)'
+                       class="middle form-control" placeholder="密码">
+                   <span class="input-group-btn">
+                        <span class="btn btn-default"
+                              ms-click="passwordToggle"
+                              ms-visible="passwordType=='text'"
+                              style="color: #F18044; padding: 1px 10px;">
+                           <i class="fa fa-eye" style="font-size: 30px"></i>
+                        </span>
+                        <span class="btn btn-default"
+                              ms-click="passwordToggle"
+                              ms-visible="passwordType=='password'"
+                              style="color: #F18044;padding: 1px 10px;">
+                           <i class="fa fa-eye-slash" style="font-size: 30px"></i>
+                        </span>
+                    </span>
+            </div>
+            <div class="line3">
+
+                 <span class="fa fa-check-square-o fa-1_3x vld"
+                       ms-click="agreeHandler(false)"
+                       ms-visible="agreeCheck"></span>
+                 <span class="fa fa-square-o fa-1_3x vld"
+                      ms-click="agreeHandler(true)"
+                      ms-visible="!agreeCheck"></span>
+                记住登录状态
+
+                <span><a ms-href="pageLevel+'sign/findPwd.html'">忘记密码</a></span>
+            </div>
+            <div class="line4">
+                <a class="btn btn-default"
+                        ms-keydown="keydown($event)"
+                        ms-click="login">登入</a>
+            </div>
+            <div class="line5">
+                <div class="title">
+                    <span>或使用社交平台账号登陆</span>
+                </div>
+                <div class="content">
+                    <ul class="btn-group clearfix">
+                        <li class="btn-qq pull-left">
+                            <button>qq</button>
+                        </li>
+                        <li class="btn-weibo pull-left">
+                            <button>weibo</button>
+                        </li>
+                        <li class="btn-weixin pull-left">
+                            <button>weixin</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

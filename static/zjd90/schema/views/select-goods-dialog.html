@@ -1,0 +1,146 @@
+<div class="dialog-wrap" ms-controller="SelectGoodsController">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img src="../images/close-03.png" width="42" height="42">
+    </div>
+    <div class="select-goods-content clearfix">
+        <div class="" style="border-bottom: 1px dashed #ddd;margin-bottom: 10px;"
+             ms-controller="SelectGoodsController">
+            <div class="form-group">
+                <label for="disabledSelect" class="f20">选择建材</label>
+                <select id="disabledSelect"
+                        class="select-dom"
+                        ms-duplex="selectId"
+                        style="margin-left: 20px;">
+                    <option ms-repeat="rows"
+                            ms-click="selectHandler(el)"
+                            ms-attr-value="{{el.id}}">{{el.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="wrapper clearfix"
+             ms-controller="GoodsDetailController">
+            <div class="summary">
+                <h2>{{detailObj.name}}</h2>
+                <!--基本信息区域-->
+                <ul>
+                    <li>
+                            <span class="f_r light_gray">商品编号：<label id="data_goodsNo">{{detailObj.goodsSn}}</label>
+                            </span>
+                        品牌：{{detailObj.brandName}}
+                    </li>
+                    <li id="priceLi">销售价：
+                        <b class="price red2">
+                            <span class="f30" id="real_price">￥{{sellPrice}}</span>
+                        </b>
+                    </li>
+                    <li>
+                        市场价：<s id="data_marketPrice">￥{{marketPrice}}</s>
+                    </li>
+                    <li>
+                        库存：现货<span>(<label id="data_storeNums">{{storeNum}}</label>)</span>
+                    </li>
+                </ul>
+
+                <!--购买区域-->
+                <div class="current">
+                    <dl class="m_10 clearfix" name="specCols"
+                         ms-repeat-sku="skuList">
+                        <dt>{{sku.name}}：</dt>
+                        <dd class="w_45"
+                            ms-if="sku.type == 1"
+                            style="margin-left:67px;">
+                            <div class="item"
+                                 ms-repeat="sku.items">
+                                <a href="javascript:void(0);"
+                                   ms-attr-disabled="!el.enable"
+                                   ms-class-current="$index==sku.selectIndex"
+                                   ms-click="selectSkuHandler(sku, $index, el)">
+                                    <img ms-src="el.thumbUrl"
+                                         ms-attr-title="el.picName"
+                                         width="30px" height="30px">
+                                   <span></span>
+                                </a>
+                            </div>
+                        </dd>
+                        <dd class="w_45" style="margin-left:67px;"
+                            ms-if="sku.type == 0">
+                            <div class="item w_27"
+                                 ms-repeat="sku.items">
+                                <a href="javascript:void(0);"
+                                   ms-attr-disabled="!el.enable"
+                                   ms-class-current="$index==sku.selectIndex"
+                                   ms-click="selectSkuHandler(sku, $index, el)">
+                                    {{el.value}}
+                                    <span></span>
+                                </a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="m_10 clearfix">
+                        <dt>购买数量：</dt>
+                        <dd>
+                            <input class="gray_t f_l" type="text"
+                                   ms-duplex="copy"
+                                   value="1" maxlength="5">
+                            <div class="resize">
+                                <a class="add" href="javascript:modified(1);"></a>
+                                <a class="reduce" href="javascript:modified(-1);"></a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <p class="m_10 orange bold">已选择：“
+                        <span ms-repeat="selectValue"
+                              class="orange bold">
+                            <span class="orange bold" ms-if="el.type==1">{{el.picName}}</span>
+                            <span class="orange bold" ms-if="el.type==0">{{el.value}}</span>
+                        </span>”
+                    </p>
+
+                </div>
+
+                <div class="shop_cart mt2 tlc"
+                     ms-contoller="SelectGoodsController"
+                     style="z-index:1">
+                    <span class="btn btn-zjd btn-lg"
+                          ms-click="okHandler">确认选择</span>
+                </div>
+            </div>
+
+            <!--图片放大镜-->
+            <div class="preview">
+                <div class="pic_show" style="position:relative;z-index:5;padding-bottom:5px;">
+                    <a class="jqzoom" href="javascript:;"
+                       rel="goodsPhoto"
+                       id="bigPicBox" alt="原图" title="" style="outline-style: none; text-decoration: none;">
+                        <!--<div class="zoomPad">-->
+                        <img ms-src="detailObj.thumbUrl"
+                             style="border: none; opacity: 1;"
+                             id="smallPicBox" alt="缩略图" title="">
+                    </a>
+                </div>
+
+                <div class="bx-wrapper" >
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 80px;">
+                        <ul id="thumblist" class="pic_thumb"
+                            style="width: 515%; position: relative; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(0px, 0px, 0px);">
+                            <li ms-repeat-pic="picList"
+                                ms-click="selectPicHandler(pic, $index)"
+                                style="float: left; list-style: none; position: relative; width: 72px; margin-right: 15px;">
+                                <a href="javascript:void(0);"
+                                   ms-class-zoomThumbActive="picSelectIndex==$index">
+                                    <img ms-src="pic.thumbUrl" width="60px" height="60px">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bx-controls bx-has-controls-direction">
+                        <div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a
+                                class="bx-next disabled" href="">Next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

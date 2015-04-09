@@ -1,0 +1,254 @@
+<div class="userReceipt-addAddress"
+     ms-controller="AddressFormController"
+     ms-click="bodyClickHandler">
+    <div i="close" class="ui-dialog-close animate" title="cancel">
+        <img src="../images/close-03.png" width="42" height="42">
+    </div>
+    <div class="user-order form-box">
+        <div class="panel clearfix">
+            <div class="pull-left">
+                <div class="panel-heading" style="font-size: 18px">新增收货地址</div>
+            </div>
+        </div>
+        <form id="J_FormDeliver" style="margin-top: 20px;">
+            <div class="item item-devision userInfo-area-dropdown">
+                <span class="item-label">所在地区：<i>*</i></span>
+                <div class="ks-clear clearfix">
+                    <div class="bf-select bf-menu-button bf-buttonsSelect"
+                         ms-click="dropHandler('single', $event)">
+                        <div class="bf-select-content bf-menu-button-content bf-button-content">
+                            {{areaAddress}}
+                        </div>
+                        <div class="bf-select-dropdown bf-menu-button-dropdown bf-button-dropdown fa-angle-down fa">
+
+                        </div>
+                    </div>
+                    <div class="bf-select bf-cn-select lSelect"
+                         ms-visible="showMore"
+                         ms-click="dropHandler('multi', $event)">
+                        <div id="city-title" class="city-title"
+                             ms-attr-title="shortAddress">
+                            {{shortAddress}}
+                        </div>
+                        <div class="bf-menu-button-dropdown  fa-angle-down fa">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="msg-box" ms-visible="vType.MsgDivision">
+                    <div class="msg msg-error">
+                        <i></i>
+                        <div class="msg-cnt">请补充乡镇街道地址</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-street" style="display: block;">
+                <span class="item-label">详细地址：<i>*</i></span>
+
+                <div class="ks-combobox" id="J_ComboboxStreet" aria-pressed="false">
+                    <div class="ks-combobox-input-wrap">
+                        <textarea class="ks-combobox-input i-ta focusAble"
+                                  ms-duplex="row.ReceiptAddressShort"
+                                  name="addressDetail" placeholder="不需要重复填写省市区，必须大于5个字符，小于100个字符"
+                                  data-pattern="^.{5,120}$" data-msg="5-100个字符，一个汉字为两个字符"
+                                  data-ph="不需要重复填写省市区，必须大于5个字符，小于100个字符">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="msg-box" style="margin-top: -7px;" ms-visible="vType.MsgStreet">
+                    <div class="msg msg-error">
+                        <i></i>
+
+                        <div class="msg-cnt">5-100个字符，一个汉字为两个字符</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-postcode" id="J_ItemPostCode">
+                <span class="item-label">邮政编码：<i>*</i></span>
+                <input name="post"
+                       ms-duplex="row.ZipCode" maxlength="20"
+                       data-pattern="^[\da-zA-Z\-]{3,10}$" data-msg="请输入邮编" class="i-text focusAble"
+                       type="text">
+
+                <div class="msg msg-error" id="J_MsgPostCode" ms-visible="vType.MsgPostCode">
+                    <i></i>
+
+                    <div class="msg-cnt">请输入邮编</div>
+                </div>
+            </div>
+            <div class="item item-name clearfix" id="J_ItemName">
+                <div class="pull-left">
+                    <span class="item-label">收货人姓名：<i>*</i></span>
+                    <input name="fullName" class="i-text focusAble"
+                           ms-duplex="row.ReceiptName" maxlength="50"
+                           type="text" id="J_Name" placeholder="长度不超过25个字符"
+                           data-pattern="^.{2,25}$"
+                           data-msg="收货人姓名姓名应为2-25个字符，一个汉字为两个字符">
+
+                    <div class="msg-box" ms-visible="vType.MsgName">
+                        <div class="msg msg-error" id="J_MsgName">
+                            <i></i>
+
+                            <div class="msg-cnt">收货人姓名姓名应为2-25个字符，一个汉字为两个字符</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item item-mobile clearfix" id="J_ItemMobile">
+                <span class="item-label">手机号码：<i>*</i></span>
+                <input name="mobile" class="i-text focusAble"
+                       ms-duplex="row.ReceiptMobile" maxlength="20"
+                       type="text" placeholder="手机号码6-20个数字"
+                       data-pattern="^\d{6,20}$" data-ph="手机号码6-20个数字"
+                       data-msg="6-20个数字">
+
+                <div class="msg-box" ms-visible="vType.MsgMobile">
+                    <div class="msg msg-error" id="J_MsgMobile">
+                        <i></i>
+                        <div class="msg-cnt">6-20个数字</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-mobile clearfix">
+                <span class="item-label">电话号码：</span>
+                <!--<input name="phoneSection"-->
+                       <!--ms-duplex="phone1" maxlength="20"-->
+                       <!--class="i-text i-text-short focusAble" placeholder="区号" data-ph="区号"-->
+                       <!--type="text"> --->
+                <input name="phoneCode"
+                       ms-duplex="row.ReceiptPhone" maxlength="20"
+                       class="i-text focusAble" placeholder="电话号码" data-ph="电话号码"
+                       type="text">
+                <!----->
+                <!--<input name="phoneExt" maxlength="20"-->
+                       <!--class="i-text i-text-short focusAble" placeholder="分机" data-ph="分机" type="text"-->
+                       <!--ms-duplex="phone3">-->
+
+                <div class="msg hide">
+                    <i></i>
+                    <div class="msg-cnt"></div>
+                </div>
+            </div>
+
+            <div class="item item-set-default">
+            <span class="fa fa-square-o fa-1_3x vld i-chk" style="margin-top: 0"
+                  ms-click="setDefaultHandler(true)"
+                  ms-visible="!row.IsDefaultAddress"></span>
+            <span class="fa fa-check-square-o fa-1_3x vld i-chk" style="margin-top: 0"
+                  ms-click="setDefaultHandler(false)"
+                  ms-visible="row.IsDefaultAddress"></span>
+                <span for="J_SetDefault">设置为默认收货地址</span>
+            </div>
+            <div class="item">
+            <span class="btn"
+                  ms-click="saveHandler">保存</span>
+            </div>
+        </form>
+    </div>
+
+    <!--国家-->
+    <div class="ks-overlay bf-popupmenu bf-menu
+        bf-popupmenu-hover bf-menu-hover select-country-wrap"
+         ms-controller="SingleDropdownController"
+         ms-visible="dropdown">
+        <div class="bf-popupmenu-content bf-menu-content">
+            <div class="bf-option bf-menuitem"
+                 ms-class-bf-menuitem-selected="selectIdx==$index"
+                 ms-click="selectHandler($index, item, $event)"
+                 ms-repeat-item="rows"
+                 style="-webkit-user-select: none;padding-left: 10px">
+            <span class="item_ cursorHand" href="javascript:;">
+                <i class="fa fa-check" style="color:white;margin-right: 2px"></i>
+                {{item.Name}}
+            </span>
+            </div>
+        </div>
+    </div>
+    <!--国家-->
+
+    <!--地区-->
+    <div class="ks-overlay select-other-wrap"
+         ms-controller="MultiDropdownController"
+         ms-visible="dropdown">
+        <div class="ks-overlay-content">
+            <div id="city-select">
+                <div class="city-select-tab">
+                    <a class="cursorHand"
+                       ms-class-current="$index==curLevel"
+                       ms-class-last="$last"
+                       ms-click="tabChangeHandler($index, $event)"
+                       ms-repeat="levels">{{el.name}}</a>
+                </div>
+                <div class="city-select-content">
+                    <div class="city-select clearfix"
+                         ms-repeat="levels"
+                         ms-visible="curLevel==$index">
+                        <dl ms-if="$first" class="fn-clear clearfix" ms-repeat="first">
+                            <dt>{{$key}}</dt>
+                            <dd>
+                                <a ms-repeat-item="$val"
+                                   ms-attr-title="item[1]"
+                                   ms-class-current="item[0]==levels[curLevel]['selectItem'][0]"
+                                   ms-click="selectHandler(item, curLevel,$event)"
+                                   href="javascript:;">{{item[1]}}</a>
+                            </dd>
+                        </dl>
+                        <dl ms-if="$index>0" class="fn-clear city-select-city">
+                            <dd>
+                                <a ms-repeat-item="curList"
+                                   ms-attr-title="item[1]"
+                                   ms-class-current="item[0]==levels[curLevel]['selectItem'][0]"
+                                   ms-click="selectHandler(item, curLevel,$event)"
+                                   href="javascript:;">{{item[1]}}</a>
+                            </dd>
+                        </dl>
+                        <!--<dl ms-if="$last"-->
+                            <!--class="fn-clear city-select-street border-top">-->
+                            <!--<dd>-->
+                                <!--<a title="稍后再说" href="javascript:;"-->
+                                   <!--ms-click="lastChoiceHandler"-->
+                                   <!--ms-class-current="levels[curLevel]['selectItem'][0]==-1">-->
+                                    <!--稍后再说</a>-->
+                            <!--</dd>-->
+                        <!--</dl>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--地区-->
+
+    <!--港澳台地区-->
+    <div class="ks-overlay select-other-wrap"
+         ms-controller="KOTMultiDropdownController"
+         ms-visible="dropdown">
+        <div class="ks-overlay-content">
+            <div class="_city-select">
+                <div class="city-select-tab">
+                    <a class="cursorHand"
+                       ms-class-current="$index==curLevel"
+                       ms-class-last="$last"
+                       ms-click="tabChangeHandler($index,$event)"
+                       ms-repeat="levels">{{el.name}}</a>
+                </div>
+                <div class="city-select-content">
+                    <div class="city-select clearfix"
+                         ms-repeat="levels"
+                         ms-visible="curLevel==$index">
+                        <dl class="fn-clear city-select-city">
+                            <dd>
+                                <a ms-repeat-item="curList"
+                                   ms-attr-title="item[1]"
+                                   ms-class-current="item[0]==levels[curLevel]['selectItem'][0]"
+                                   ms-click="selectHandler(item, curLevel, $event)"
+                                   href="javascript:;">{{item[1]}}</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--地区-->
+</div>

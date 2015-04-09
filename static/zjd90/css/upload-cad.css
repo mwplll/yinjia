@@ -1,0 +1,223 @@
+.cad-body .cad-container .house{
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+.cad-body .cad-container .house .house-wrap,
+.cad-body .cad-container .house .order-wrap{
+    width: 145px;
+}
+.cad-body .cad-container .house .house-wrap .image-wrap{
+    height: 96px;
+    margin-bottom: 10px;
+}
+.cad-body .cad-container .house p{
+    /*height: 20px;*/
+    width: 100%;
+    line-height: 20px;
+    color: #5e5e5e;
+}
+.cad-body .cad-container .order-wrap .image-wrap{
+    height: 126px;
+}
+.cad-body .upload-images{
+    margin-left: 30px;
+    width: 963px;
+}
+.cad-body .upload-images .title{
+    margin-bottom: 15px;
+    background-color: #EA5404;
+    color: #ffffff;
+    font-size: 16px;
+    padding-left: 25px;
+    line-height: 30px;
+}
+.cad-body .upload-images .head{
+    /*line-height: 40px;*/
+    padding-left: 25px;
+    padding-right: 20px;
+}
+.cad-body .upload-images .head .btn{
+    color: #EA5404;
+    border-color: #EA5404;
+}
+.cad-body .upload-images .upload-box-wrap{
+    margin-bottom: 12px;
+    /*border: 1px solid #A0A0A0;*/
+    /*background-color: #ffffff;*/
+}
+.cad-body .upload-images .upload-box-item{
+    width: 145px;
+    /*height: 135px;*/
+    text-align: center;
+    margin-left:13px;
+    margin-top:10px;
+}
+.cad-body .upload-images .upload-box-item .image-wrap{
+    height: 96px;
+    border: 1px solid #A0A0A0;
+}
+.cad-body .upload-images .upload-box-item .upload-btn{
+    background: url(../images/upload-add-03.png) 50% 50% no-repeat;
+}
+.cad-body .upload-images .upload-box-item p{
+    overflow: hidden;
+    line-height: 38px;
+}
+.cad-body.effect-body .upload-box-wrap{
+    padding-top: 18px;
+    margin-top: -15px;
+    /*padding-left: 30px;*/
+}
+.cad-body.effect-body .upload-box-wrap.upload-effect{
+    padding-left: 30px;
+}
+.cad-body.effect-body .upload-images .upload-box-wrap{
+    background-color: #ffffff;
+    border: 0;
+    padding-bottom: 30px;
+}
+.cad-body.effect-body .upload-images .upload-box-wrap .upload-box-item{
+    margin: 10px 21px 10px 0;
+}
+.cad-body.effect-body .upload-images .upload-box-wrap .upload-box-item:nth-child(4n){
+    margin-right: 0;
+}
+.cad-body.effect-body .upload-images .upload-box-wrap .upload-btn{
+    background: url(../images/upload-add-03.png) 50% 50% no-repeat;
+
+}
+.cad-body.effect-body .upload-images .upload-box-item{
+    width: 183px;
+}
+.cad-body.effect-body .upload-images .upload-box-item .image-wrap{
+    height: 183px;
+}
+.cad-body.effect-body .upload-images .upload-effect .upload-box-item{
+    width: 203px;
+}
+.cad-body.effect-body .upload-images .upload-effect .upload-box-item .image-wrap{
+    height: 203px;
+}
+
+
+/*upload-audit.html*/
+.audit-body .step-wrap,
+.cad-body .step-wrap{
+
+}
+.audit-body .step-wrap li,
+.cad-body .step-wrap li{
+    width: 240px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #EA5404;
+    text-align: center;
+
+}
+.audit-body .step-wrap li.grey,
+.cad-body .step-wrap li.grey{
+    background-color: #A0A0A0;
+}
+.audit-body .step-wrap li p ,
+.cad-body .step-wrap li p {
+    font-size: 18px;
+    text-align: center;
+}
+.audit-body .audit-content{
+    position: relative;
+    background-color: #ffffff;
+    padding-left: 238px;
+    padding-top: 190px;
+    padding-bottom: 220px;
+
+    border: 1px solid #a0a0a0;
+    border-top: 10px solid #EA5404;
+}
+.audit-body .audit-content .audit-add-btn{
+    background: url(../images/audit-add-02.png);
+    top: 0;
+    right: 0;
+    width: 213px;
+    height: 144px;
+    position: absolute;
+}
+/*upload-audit.html*/
+
+.upload-material-form table td{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    border-bottom: 1px solid #DAD4D4;
+}
+.upload-material-form table thead tr{
+    background: rgba(154, 230, 208, 0.23);
+    font-size: 14px;
+}
+.upload-material-form table td p{
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upload-box-wrap .list-room-title{
+    font-size: 16px;
+    text-align: center;
+
+}
+.upload-box-wrap .list-room-li .row{
+    padding: 5px 0 10px 30px;
+}
+.upload-box-wrap .list-room-title .row div{
+    padding: 10px 0;
+}
+.upload-box-wrap .list-room-li .upload-material-form{
+    border-top: 1px solid #dedfe0
+}
+.upload-box-wrap .list-room-li{
+    position: relative;
+    font-size: 16px;
+
+    line-height: 30px;
+    border-bottom: 1px solid #dedfe0;
+}
+.upload-box-wrap .list-room-li:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 10px;
+    background: url(../images/1sdf.png) no-repeat center left;
+    -webkit-background-size: 8px auto;
+    background-size: 8px auto;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+.upload-box-wrap .list-room-li.active:before {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.btn-group.open .dropdown-toggle,
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle{
+    box-shadow: none;
+    -wekit-box-shadow: none;
+}
+
+.dropdown-menu i{
+    color: #ffffff;
+}
+.dropdown-menu li a:hover i,
+.dropdown-menu li a:hover,
+.dropdown-menu li.selected a i,
+.dropdown-menu li.selected a{
+    color: #f50;
+}
+
+
+

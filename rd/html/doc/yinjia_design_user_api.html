@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">用户-设计方案相关API</h1>
+<h2 id="1">1</h2>
+<h3 id="1-1-">1.1 加入我的新家  <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/design/collect">http://121.40.212.161:8000/data/design/collect</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,//设计方案id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{    &quot;errorCode&quot;:22000,//成功返回22000，失败返回22001
+    &quot;data&quot;:{
+        &quot;collectionId&quot;://收藏设计方案id
+    }
+}
+</code></pre><h3 id="1-2-">1.2 ”我的方案“列表  <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/my/design/collection">http://121.40.212.161:8000/data/my/design/collection</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   无
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>    {   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+        &quot;data&quot;: {
+            &quot;schemaList&quot;:[{
+                    &quot;id&quot;:String,   //设计方案id
+                    &quot;name&quot;:String,   //设计方案名称
+                    &quot;designSn&quot;:String,   //编号
+                    &quot;userId&quot;:String,   //设计师id
+                    &quot;userName&quot;:String,   //设计师昵称
+                    &quot;realName&quot;:String,   //设计师真实名字
+                    &quot;qq&quot;:String,   //设计师qq
+                    &quot;designerSn&quot;:String,   //设计师编号
+                    &quot;avatar&quot;:String,   //设计师头像
+                    &quot;totalPrice&quot;:String,   //装修总价
+                    &quot;price&quot;:String,   //设计费
+                    &quot;deposit&quot;:String,   //定金
+                    &quot;mainPic&quot;:String,   //设计方案主图
+                    &quot;modifyTime&quot;:String,   //更新时间
+                    &quot;viewNum&quot;:String,   //浏览量
+                    &quot;commentNum&quot;:String,   //评论数
+                    &quot;likeNum&quot;:String,   //喜欢数
+                    &quot;state&quot;:String,   //状态，0上架，1删除，2审核中，3下架，4审核失败
+                    &quot;recommend&quot;:String,   //状态，是否在首页推荐，0为否，1为是
+                    &quot;houseType&quot;:{
+                        &quot;id&quot;:String, //户型id
+                        &quot;name&quot;:String,//户型名称
+                        &quot;grossArea&quot;:String,//建筑面积
+                        &quot;building&quot;:String,//楼盘
+                        &quot;area&quot;:String,//区域
+                        &quot;city&quot;:String,//城市
+                        &quot;prov&quot;:String //省
+                    }
+                    },
+                    ……
+            ]
+
+        }
+    }
+</code></pre><h3 id="1-3-">1.3 在”我的方案列表“中删除设计方案  <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/design/collection/del">http://121.40.212.161:8000/data/design/collection/del</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;ids&quot;:ARRAY,//要删除的设计方案id数组
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEN,//成功为TRUE，失败为FLASE 
+} 
+</code></pre><h3 id="1-4-">1.4 查看明细报价清单  <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/my/design/material">http://121.40.212.161:8000/data/my/design/material</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,//设计方案id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{    &quot;errorCode&quot;:22000,//成功返回22000，失败返回22001
+    &quot;data&quot;:[{
+            &quot;id&quot;://材料-用户id
+            &quot;userId&quot;://用户id
+            &quot;materialNo&quot;://材料编号
+            &quot;materialName&quot;://材料类目名称，前端写死的那个
+            &quot;goodsId&quot;://商品id
+            &quot;goodsName&quot;://商品名称
+            &quot;unit&quot;://单位
+            &quot;productsId&quot;://货品id
+            &quot;sellPrice&quot;://售价
+            &quot;period&quot;://所处装修阶段
+            &quot;num&quot;://货品数量
+            &quot;content&quot;://设计师备注
+            }
+            ……
+            ]
+}
+</code></pre><h3 id="1-5-">1.5 保存明细报价清单  <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/my/design/material/edit?act=save">http://121.40.212.161:8000/data/my/design/material/edit?act=save</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,//设计方案id
+    &quot;materialList&quot;:[{
+        &quot;id&quot;:INT,//用户的设计方案材料子项id
+        &quot;goodsId&quot;:INT,//替换的商品id
+        &quot;productsId&quot;:INT，//替换的某一具体规格的商品id
+        &quot;num&quot;:INT，//商品数量
+    }
+    ……
+    ]
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:22000,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEN,//成功为TRUE，失败为FLASE 
+} 
+</code></pre></div>
+</body>
+</html>

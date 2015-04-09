@@ -1,0 +1,44 @@
+<div class="calendar-items step1 index" ms-controller="Step1Controller">
+    <div class="items" style="margin-top: 50px;">
+        <div class="clearfix">
+            <div class="pull-left item-left">
+                <div class="clearfix">
+                    <p class="pull-left">我家户型图</p>
+                    <a class="image-wrap pull-right">
+                        <img ms-src="house.thumbUrl">
+                    </a>
+                </div>
+            </div>
+            <div class="pull-left" style="padding-top: 35px;padding-left: 105px;">
+                <p class="f20" style="line-height: 40px;">{{house.name}}</p>
+                <p>套内面积：{{house.size}}平方米 位置：{{house.position}}</p>
+            </div>
+            <div class="pull-right"  style="padding-top: 35px;margin-right: 77px;">
+                <div class="cursorHand">
+                    <a class="user-btn2 cursorHand" href="../design/search-result.html"></a>
+                    <span style="color:#ea5404">[更换户型图]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items items2">
+        <div class="clearfix">
+            <div class="pull-left item-left">
+                <div class="clearfix">
+                    <p class="pull-left">我的设计方案</p>
+                    <a class="image-wrap pull-right">
+                        <img ms-src="design.thumbUrl">
+                    </a>
+                </div>
+            </div>
+            <div class="pull-left" style="padding-top: 35px;padding-left: 105px;">
+                <a class="f20"
+                   href="../design/design.html"
+                   style="line-height: 40px;color: white">{{design.name}}</a>
+            </div>
+            <div class="pull-left"  style="padding-top: 35px;margin-left: 70px;">
+
+            </div>
+        </div>
+    </div>
+</div>

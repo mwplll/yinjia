@@ -1,0 +1,222 @@
+/***********************图标 ie7***********************/
+
+.fa-square-o.fa-1_3x{
+    *background: url(../images/fa/square-o_333333_15.png) no-repeat;
+    _background: url(../images/fa/square-o_333333_15.png) no-repeat;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+.fa-check-square-o.fa-1_3x{
+    *background: url(../images/fa/check-square-o_333333_15.png) no-repeat;
+    _background: url(../images/fa/check-square-o_333333_15.png) no-repeat;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+
+}
+.fa-plus{
+    *background: url(../images/fa/plus_000000_14.png) no-repeat;
+    _background: url(../images/fa/plus_000000_14.png) no-repeat;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+}
+.fa-times{
+    *background: url(../images/fa/times_000000_14.png) no-repeat;
+    _background: url(../images/fa/times_000000_14.png) no-repeat;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+}
+.new-sidebar .nav-list .list-group-item .fa-plane{
+    *background: url(../images/fa/plane_000000_14.png) no-repeat;
+    _background: url(../images/fa/plane_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-plane{
+    *background: url(../images/fa/plane_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/plane_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-paper-plane{
+    *background: url(../images/fa/paper-plane_000000_14.png) no-repeat;
+    _background: url(../images/fa/paper-plane_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-paper-plane{
+    *background: url(../images/fa/paper-plane_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/paper-plane_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-bank{
+    *background: url(../images/fa/bank_000000_14.png) no-repeat;
+    _background: url(../images/fa/bank_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-bank{
+    *background: url(../images/fa/bank_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/bank_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-fighter-jet{
+    *background: url(../images/fa/fighter-jet_000000_14.png) no-repeat;
+    _background: url(../images/fa/fighter-jet_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-fighter-jet{
+    *background: url(../images/fa/fighter-jet_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/fighter-jet_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-database{
+    *background: url(../images/fa/database_000000_14.png) no-repeat;
+    _background: url(../images/fa/database_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-database{
+    *background: url(../images/fa/database_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/database_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-list-alt{
+    *background: url(../images/fa/list-alt_000000_14.png) no-repeat;
+    _background: url(../images/fa/list-alt_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-list-alt{
+    *background: url(../images/fa/list-alt_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/list-alt_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-bar-chart-o{
+    *background: url(../images/fa/bar-chart-o_000000_14.png) no-repeat;
+    _background: url(../images/fa/bar-chart-o_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-bar-chart-o{
+    *background: url(../images/fa/bar-chart-o_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/bar-chart-o_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-list{
+    *background: url(../images/fa/list_000000_14.png) no-repeat;
+    _background: url(../images/fa/list_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-list{
+    *background: url(../images/fa/list_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/list_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-lock{
+    *background: url(../images/fa/lock_000000_14.png) no-repeat;
+    _background: url(../images/fa/lock_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-lock{
+    *background: url(../images/fa/lock_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/lock_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-archive{
+    *background: url(../images/fa/archive_000000_14.png) no-repeat;
+    _background: url(../images/fa/archive_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-archive{
+    *background: url(../images/fa/archive_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/archive_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-money{
+    *background: url(../images/fa/money_000000_14.png) no-repeat;
+    _background: url(../images/fa/money_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-money{
+    *background: url(../images/fa/money_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/money_ff4001_14.png) no-repeat;
+}
+
+
+.new-sidebar .nav-list .list-group-item .fa-user,
+.nav-user li.dropdown .fa-user{
+    *background: url(../images/fa/user_000000_14.png) no-repeat;
+    _background: url(../images/fa/user_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-user,
+.nav-user li.dropdown:hover .fa-user{
+    *background: url(../images/fa/user_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/user_ff4001_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item .fa-lock{
+    *background: url(../images/fa/lock_000000_14.png) no-repeat;
+    _background: url(../images/fa/lock_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-lock{
+    *background: url(../images/fa/lock_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/lock_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-credit-card{
+    *background: url(../images/fa/credit-card_000000_14.png) no-repeat;
+    _background: url(../images/fa/credit-card_000000_14.png) no-repeat;
+}
+
+.new-sidebar .nav-list .list-group-item:hover .fa-credit-card{
+    *background: url(../images/fa/credit-card_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/credit-card_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-book{
+    *background: url(../images/fa/book_000000_14.png) no-repeat;
+    _background: url(../images/fa/book_000000_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item:hover .fa-book{
+    *background: url(../images/fa/book_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/book_ff4001_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item .fa-key{
+    *background: url(../images/fa/key_000000_14.png) no-repeat;
+    _background: url(../images/fa/key_000000_14.png) no-repeat;
+}
+.new-sidebar .nav-list .list-group-item:hover .fa-key{
+    *background: url(../images/fa/key_ff4001_14.png) no-repeat;
+    _background: url(../images/fa/key_ff4001_14.png) no-repeat;
+}
+
+.fa-angle-up{
+    *background: url(../images/fa/angle-up_afafaf_14.png) no-repeat;
+    _background: url(../images/fa/angle-up_afafaf_14.png) no-repeat;
+    display:inline-block;
+    width: 14px;
+    height: 14px;
+}
+.fa-angle-down{
+    *background: url(../images/fa/angle-down_afafaf_14.png) no-repeat;
+    _background: url(../images/fa/angle-down_afafaf_14.png) no-repeat;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+.fa-pencil-square-o{
+    *background: url(../images/fa/pencil-square-o_2b9ae1_12.png) no-repeat;
+    _background: url(../images/fa/pencil-square-o_2b9ae1_12.png) no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.fa-question-circle{
+    *background: url(../images/fa/question-circle_428bca_12.png) no-repeat;
+    _background: url(../images/fa/question-circle_428bca_12.png) no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.fa-folder-open-o{
+    *background: url(../images/fa/folder-open-o_9acd32_12.png) no-repeat;
+    _background: url(../images/fa/folder-open-o_9acd32_12.png) no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+/***********************图标 ie7***********************/

@@ -1,0 +1,442 @@
+.user-body .userInfo-wrap{
+    height: 100px;
+    background: #97cfb6;
+}
+.user-body .userInfo-wrap .image-wrap{
+    width: 86px;
+    height: 86px;
+    margin-top: 10px;
+}
+.user-body .userInfo-wrap p{
+    line-height: 50px;
+    color: white;
+}
+.my_orders-body .main{
+    background: white;
+    padding: 30px 0 35px 0;
+}
+.my_orders-body .head span,
+.my_orders-body .head a{
+    font-size: 16px;
+}
+.my_orders-body .head{
+    line-height: 34px;
+    color: #5e5e5e;
+    font-size: 16px;
+    /*border-bottom: 1px solid #a0a0a0;*/
+    margin-bottom: 22px;
+}
+.my_orders-body .head .head-title{
+    border-bottom: 1px solid #a0a0a0;
+    width: 473px;
+    padding-left: 30px;
+}
+.my_orders-body .head .nav-wrap ul{
+    border-top: 1px solid #f18044;
+    border-right: 1px solid #f18044;
+    border-bottom: 1px solid #f18044;
+}
+.my_orders-body .head .nav-wrap li{
+    width: 116px;
+    height: 33px;
+    text-align: center;
+    border-left: 1px solid #f18044;
+}
+.my_orders-body .head .nav-wrap li a{
+    color: #f18044;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.my_orders-body .head .nav-wrap li:hover,
+.my_orders-body .head .nav-wrap li.cur{
+    background: #f18044;
+}
+.my_orders-body .head .nav-wrap li:hover a,
+.my_orders-body .head .nav-wrap li.cur a{
+    color: white;
+}
+.my_orders-body .head-table thead{
+    background: #f18044;
+}
+.my_orders-body .head-table thead td{
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+}
+.my_orders-body .list-table td{
+    text-align: center;
+}
+.my_orders-body .list-table{
+    margin-top: 15px;
+    border: 1px solid #a0a0a0;
+}
+.my_orders-body .list-table .tr-head{
+    border-bottom: 1px solid #a0a0a0;
+}
+.my_orders-body .list-table .td-last{
+    border-right: 1px solid #a0a0a0;
+}
+.my_orders-body .list-table .image-div{
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+}
+.my_orders-body .list-table .image-div .image-wrap{
+    width: 145px;
+    height: 96px;
+    margin-right: 20px;
+}
+.my_orders-body .filter-wrap{
+    margin: 20px 0;
+    width: 581px;
+}
+.my_orders-body .filter-wrap{
+    border: 1px solid #a0a0a0;
+    border-right: 0;
+}
+.my_orders-body .filter-wrap li{
+    width: 116px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #f18044;
+    font-size: 16px;
+    cursor: pointer;
+    cursor: hand;
+    border-right: 1px solid #a0a0a0;
+}
+.my_orders-body .filter-wrap li.cur,
+.my_orders-body .filter-wrap li:hover{
+    background: #f18044;
+    color: white;
+}
+
+.user-btn1{
+    background: url(../images/user/user-btn-02.png) no-repeat;
+    display: block;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+}
+.user-btn1:hover{
+    background: url(../images/user/user-btn-05.png) no-repeat;
+}
+.user-btn2:hover{
+    background: url(../images/user/user-btn-04.png) no-repeat;
+}
+.user-btn2{
+    background: url(../images/user/user-btn-03.png) no-repeat;
+    display: block;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+}
+
+.express-body .tip-images>div{
+    width: 233px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.express-body .tip-images .pull-left span{
+    padding-left: 15px;
+}
+.express-body .express-info .express-head{
+    background: #f5f5f5;
+    height: 62px;
+    line-height: 62px;
+    border-top: 2px solid #f18044;
+    padding-left: 25px;
+    border-bottom:  1px solid #a0a0a0;
+}
+
+.express-body .express-info .express-head .express-company{
+    margin-left: 50px;
+}
+.express-body .express-left{
+    width: 358px;
+    border-right:  1px solid #a0a0a0;
+    padding: 30px 0 0 25px;
+}
+.express-body .express-right{
+    width: 810px;
+    padding: 30px 0 0 45px;
+}
+.express-body .express-info{
+    border:  1px solid #a0a0a0;
+    border-top: 0;
+
+}
+.express-body .express-info .express-left,
+.express-body .express-info .express-right{
+    padding-bottom: 55px;
+}
+
+/*collect-body*/
+.collect-body .image-div{
+    /*padding: 0 23px;*/
+    width: 180px;
+    height: 120px;
+}
+.collect-body .buy-btn{
+    display: block;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    cursor: hand;
+    background: url(../images/user/buy-btn-04.png) no-repeat;
+}
+.collect-body .btn-wrap:hover .buy-btn{
+    background: url(../images/user/buy-btn-03.png) no-repeat;
+}
+.collect-body .btn-wrap:hover p{
+    color: #f18044;
+}
+.collect-body .collect-table tr{
+    border-bottom: 1px solid #a0a0a0;
+}
+.collect-body .collect-table tr td{
+    padding: 10px 0;
+}
+.collect-body .collect-table tr td.image-td{
+    /*padding: 0;*/
+    padding-left: 20px;
+}
+/*collect-body*/
+
+/*order-detail-body*/
+.order-detail-body .detail-content-head{
+    height: 63px;
+    line-height: 63px;
+}
+.order-detail-body .detail-content-head span{
+    color: #000000;
+    font-size: 20px;
+}
+.order-detail-body .step-wrap li{
+    width: 167px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+.order-detail-body .step-wrap li.cur{
+    background: #f18044;
+}
+.order-detail-body .step-wrap li{
+    background: #a0a0a0;
+}
+.order-detail-body .order-content{
+    margin-top: 25px;
+    border-top: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+}
+.order-detail-body .order-content .order-left{
+    border-right: 1px solid #a0a0a0;
+}
+
+.order-detail-body .order-content .order-left{
+    padding: 20px 10px;
+}
+.order-detail-body .order-content .order-right{
+    padding: 20px 30px;
+}
+.order-detail-body .order-state{
+    padding: 30px 0 0 170px;
+}
+.order-detail-body .order-state p{
+    margin-top: 30px;
+    margin-left: 25px;
+}
+.order-detail-body .order-state span{
+    display: block;
+    width: 54px;
+    height: 67px;
+}
+.order-detail-body .order-state span.state1{
+    background: url(../images/user/order-btn-02.png?__sprite) no-repeat;
+}
+.order-detail-body .order-state span.state2{
+    background: url(../images/user/order-btn-03.png?__sprite) no-repeat;
+}
+.order-detail-body .order-state span.state3{
+    background: url(../images/user/order-btn-04.png?__sprite) no-repeat;
+}
+.order-detail-body .order-state span.state4{
+    background: url(../images/user/order-btn-05.png?__sprite) no-repeat;
+}
+.order-detail-body .order-state span.state5{
+    background: url(../images/user/order-btn-06.png?__sprite) no-repeat;
+}
+.order-detail-body .order-state span.state6{
+    background: url(../images/user/order-btn-07.png?__sprite) no-repeat;
+}
+/*order-detail-body*/
+.buy-content{
+    padding-top: 56px;
+    padding-left: 65px;
+}
+.buy-content .btn-wrap{
+    padding-left: 35px;
+    padding-top: 25px;
+}
+.buy-content .bg-span{
+    width: 104px;
+    height: 129px;
+    display: block;
+    background: url(../images/user/buy-btn-05.png?__sprite) no-repeat;
+}
+
+
+
+/*calendar.html*/
+.calendar-body .calendar-step{
+    margin-bottom: 20px;
+}
+.calendar-body .calendar-content .calendar-step ul{
+    border: 1px solid #c6cbd3;
+    border-right: 0;
+    border-top: 0;;
+}
+.calendar-body .calendar-content .calendar-step ul li{
+    position: relative;
+    width: 167px;
+    height: 124px;
+    padding: 43px 0 0 38px;
+    border-right: 1px solid #c6cbd3;
+    cursor: pointer;
+    cursor: hand;
+}
+.calendar-body .calendar-content .calendar-step ul li p{
+    font-size: 14px;
+    line-height: 25px;
+}
+.calendar-body .calendar-content .calendar-step ul li.used p{
+    color: #ea5404;
+}
+.calendar-body .calendar-content .calendar-step ul li .step{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    color: white;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background: url(../images/user/round-05.png?__sprite) no-repeat;
+}
+.calendar-body .calendar-content .nav-wrap ul li.used .step{
+    background: url(../images/user/round-04.png) no-repeat;
+}
+.calendar-body .calendar-content .items{
+    height: 125px;
+    background: #badf5c;
+    color: white;
+    margin-top: 30px;
+}
+.calendar-body .calendar-content .items .item-left{
+    width: 375px;
+    height: 126px;
+    margin: -1px 0 0 -1px;
+    text-align: center;
+    background: url(../images/user/calendar-bg-04.png?__sprite) no-repeat;
+}
+.calendar-body .calendar-content .items2{
+    background: #f18044;
+}
+.calendar-body .calendar-content .items2 .item-left{
+    background: url(../images/user/calendar-bg-05.png?__sprite) no-repeat;
+}
+.calendar-body .calendar-content .items .item-left a,
+.calendar-body .calendar-content .items .item-left p{
+    line-height: 125px;
+    width: 182px;
+    font-size: 24px;color: #000000;
+}
+.calendar-body .calendar-content .items .item-left .image-wrap{
+    width: 162px;
+    height: 100px;
+    margin-right: 17px;
+    margin-top: 13px;
+}
+
+.calendar-body .calendar-content .step-info-ul-wrap{
+    padding-left: 78px;
+}
+.calendar-body .calendar-content .step-info-ul{
+    width: 520px;
+    border: 0;
+}
+.calendar-body .calendar-content .step-info-ul li{
+    height: 53px;
+    line-height: 53px;
+    background: url(../images/user/step-bg-02.png) repeat-y;
+    padding-left: 65px;
+    font-size: 16px;
+}
+.calendar-body .calendar-content .nimu{
+    border-top: 1px solid #a0a0a0;
+}
+.calendar-body .calendar-content .nimu p{
+    margin-left: 40px;
+    line-height: 70px;
+}
+
+
+.calendar-body .calendar-content .zhuangqian .step-wrap{
+    margin: 35px auto 0 auto;
+    position: relative;width: 1140px;
+}
+.calendar-body .calendar-content .zhuangqian .step-wrap li{
+    background: #a0a0a0;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    width: 285px;
+    height: 55px;
+    line-height: 55px;
+}
+.calendar-body .calendar-content .zhuangqian .step-wrap li.cur{
+    background: #f18044;
+}
+.calendar-body .calendar-content .zhuangqian .jinli{
+    padding-left: 27px;
+}
+.calendar-body .calendar-content .zhuangqian .jinli .item-jinli{
+    width: 82px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 35px;
+}
+.calendar-body .calendar-content .zhuangqian .jinli .item-jinli{
+
+}
+.calendar-body .calendar-content .zhuangqian .zhuangqian-step2 p{
+    line-height: 25px;
+}
+.calendar-body .calendar-content .zhuangqian .jinli .item-jinli .image-wrap{
+    height: 82px;
+}
+.calendar-body .calendar-content .jinchang .box-item p{
+    margin: 0;
+    line-height: 28px;
+    color: #000000;
+}
+.calendar-body .calendar-content .jinchang .box-item{
+    border: 1px solid #f18044;
+    font-size: 14px;
+    padding: 10px 10px 10px 20px;
+    width: 353px;
+}
+.calendar-body .calendar-content .jinchang .middle{
+    background: url(../images/user/jinchang-bg-02.png) repeat-y;
+    margin: 0 58px;
+    width: 12px;
+    height: 550px;
+}
+/*calendar.html*/

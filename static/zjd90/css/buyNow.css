@@ -1,0 +1,362 @@
+.printing-bg {
+    background-color: #f5f5f5;
+}
+.pos-content {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+}
+.printing-upload {
+    width: 100%;
+    background: #fff;
+    padding-bottom: 58px;
+}
+.pay-content {
+    padding: 38px 0 89px;
+}
+.wrap {
+    width: 1102px;
+    margin: 0 auto;
+}
+.pay-steps li.middle {
+    margin-left: -5px;
+}
+.pay-steps li {
+    float: left;
+}
+.pay-steps li:first-child a {
+    background: url(../images/order/pay-step-now.png) no-repeat;
+    width: 289px;
+    color: #fff;
+}
+.pay-steps li a {
+    font-size: 14px;
+    display: block;
+    color: #555;
+    width: 274px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    cursor: pointer;
+    background: url(../images/order/pay-step.png);
+}
+.pay-steps li:last-child a {
+    background: url(../images/order/pay-last.png) no-repeat;
+    width: 275px;
+}
+.p-address {
+    padding: 35px 0 16px;
+}
+.p-address li.tit {
+    font-size: 16px;
+}
+.p-address li {
+    float: left;
+    font-size: 14px;
+    color: #555;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.ofh {
+    overflow: hidden;
+}
+.p-address .link {
+    padding-top: 2px;
+}
+.p-address-info {
+    width: 360px;
+    background: url(../images/order/pay-address-bg.png) no-repeat;
+    color: #707070;
+    padding: 20px 28px 35px 22px;
+    font-size: 14px;
+    height: 130px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.d-main li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+.p-address-info p {
+    border-bottom: 1px dashed #dcdcdc;
+}
+.d-main li:nth-child(3n) {
+    margin-right: 0;
+}
+.p-address-info p .name, .p-address-info p .tel {
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.p-address-info .adress-1 {
+    padding: 5px 0 5px;
+}
+.p-address-info .adress-2 {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.d-main .d-edit {
+    font-size: 14px;
+    color: #ff6036;
+}
+.p-address-info .default {
+    font-size: 12px;
+    color: #fff;
+    background-color: #64bbe6;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 66px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+.p-address-info .def-img {
+    position: absolute;
+    right: 11px;
+    bottom: 32px;
+    background: url(../images/order/pay-right.png) no-repeat;
+    width: 37px;
+    height: 26px;
+}
+.new-btn {
+    width: 117px;
+    height: 35px;
+    font-size: 15px;
+}
+.f_fl {
+    float: left;
+}
+.f_fr {
+    float: right;
+}
+.show-all {
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.p-address li {
+    float: left;
+    font-size: 14px;
+    color: #555;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.pay-table {
+    width: 100%;
+}
+.pay-table .width-one {
+    width: 450px;
+}
+.pay-table .width-two {
+    width: 190px;
+}
+.pay-table .width-four {
+    width: 125px;
+}
+.pay-table .width-six {
+    width: 110px;
+}
+.pay-table thead tr th {
+    border-right: 4px solid #fff;
+    height: 26px;
+    text-align: center;
+    border-bottom: 2px solid #3399cc;
+    color: #777;
+}
+.pay-table tbody {
+    background-color: #f8f9fa;
+}
+.pay-table tbody tr {
+    border-bottom: 1px solid #dcdcdc;
+}
+.pay-table tbody tr td {
+    text-align: center;
+    font-size: 12px;
+}
+.pay-img {
+    width: 116px;
+    height: 107px;
+    margin: 15px;
+}
+.c-pic {
+    /* display: table; */
+    float: left;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+.c-pic .image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.c-pic a {
+    /* display: table-cell; */
+    vertical-align: middle;
+    cursor: pointer;
+    background: url(../images/loading2.gif) 50% 50% no-repeat;
+}
+.c-pic .image-wrap img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    top: 0;
+    height: 107px;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.pay-por {
+    margin-top: 21px;
+    text-align: left;
+    margin-right: 5px;
+    font-size: 14px;
+}
+.b-limit {
+    width: 150px;
+}
+.b-limit p {
+    width: 150px;
+}
+.book-nums {
+    font-size: 15px;
+    line-height: 15px;
+    margin-left: 4px;
+}
+.pay-price {
+    font-size: 16px;
+    color: #ff6036;
+}
+.chose-email {
+    padding: 30px 0 0 15px;
+}
+.chose-email .hd {
+    padding: 0 5px 0 0;
+    display: block;
+    float: left;
+}
+.chose-email .td {
+    color: #777;
+    display: block;
+    float: left;
+    font-size: 13px;
+    padding-top: 3px;
+}
+.chose-email .bd {
+    color: #707070;
+    display: block;
+    float: left;
+    width: 120px;
+}
+.chose-email li {
+    font-size: 14px;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+.due .realPay .hd {
+    font-size: 14px;
+    color: #777;
+    display: inline-block;
+    padding-right: 10px;
+}
+.due .obtainedPoint {
+    font-size: 14px;
+    color: #777;
+    text-align: right;
+    padding-bottom: 5px;
+}
+.due .obtainedPoint {
+    font-size: 14px;
+    color: #777;
+    text-align: right;
+    padding-bottom: 5px;
+}
+.due .realPay .bd {
+    font-size: 36px;
+    color: #ff6036;
+    font-weight: bold;
+}
+.point {
+    width: 144px;
+    height: 55px;
+    margin-right: 65px;
+    font-size: 14px;
+    color: #777;
+    margin-top: 30px;
+}
+.point input {
+    border: 1px solid #959595;
+    width: 56px;
+    height: 22px;
+    text-align: center;
+    margin: 0 7px;
+    background-color: #fff;
+    display: inline-block;
+    padding: 0;
+}
+.point .bd {
+    padding-top: 6px;
+}
+.ticket {
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 12px;
+}
+.ticket .ticket-w {
+    color: #3399cc;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+}
+.change-pic {
+    width: 500px;
+}
+.change-pic .change-contact {
+    height: 55px;
+    font-size: 14px;
+    line-height: 35px;
+    color: #777;
+}
+.change-pic .change-contact .contact {
+    color: #3399cc;
+}
+.change-pic .t-submit {
+    background-color: #ff6036;
+    border-color: #ff6036;
+    width: 144px;
+    height: 35px;
+}
+.ticket .ticket-b {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #3399cc;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.ti-normal {
+    /* height: 37px; */
+    line-height: 37px;
+    font-size: 14px;
+    color: #555;
+}
+.ti-normal li {
+    float: left;
+}
+.ti-normal .ti-td {
+    display: block;
+    margin: 2px 5px 0 15px;
+}
+.ti-normal .line {
+    height: 14px;
+    width: 2px;
+    margin: 12px 17px 0 17px;
+    background-color: #dcdcdc;
+}

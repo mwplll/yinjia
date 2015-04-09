@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/html/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+<h1 id="-api">户型相关API</h1>
+<h2 id="1-">1 查询类</h2>
+<h3 id="1-1-">1.1 根据区域查询楼盘列表 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/list">http://121.40.212.161:8000/data/building/list</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;cityId&quot;:INT,//城市id
+    &quot;areaId&quot;:INT,//区域id
+    &quot;num&quot;:INT,//每页显示个数
+    &quot;page&quot;:INT,//所在页数，第一页为1
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: [
+        &quot;buildingList&quot;:[{
+            &quot;id&quot;:INT,   //楼盘id
+            &quot;cityId&quot;:INT,   //城市id
+            &quot;prov&quot;:STRING,   //省份名称
+            &quot;city&quot;:STRING,   //城市名称
+            &quot;areaId&quot;:INT,   //区域id
+            &quot;area&quot;:INT,   //区域名称
+            &quot;name&quot;:STRING,   //楼盘名称
+            &quot;recommend&quot;:INT,   //是否在首页推荐，0为否，1为是
+            &quot;designNum&quot;:INT,   //该楼盘设计方案总数
+            &quot;companyId&quot;:INT,   //开发商id
+            &quot;company&quot;:STRING,   //开发商公司名称
+        }
+        ……
+        ],
+        &quot;pagination&quot;:{
+            &quot;count&quot;:INT,  //总个数
+            &quot;page&quot;:INT    //页数
+        }
+    ]
+}
+</code></pre><h3 id="1-2-">1.2 单个楼盘详情 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/info">http://121.40.212.161:8000/data/building/info</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT //楼盘id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: {
+        &quot;id&quot;:INT,   //楼盘id
+        &quot;cityId&quot;:INT,   //城市id
+        &quot;prov&quot;:STRING,   //省份名称
+        &quot;city&quot;:STRING,   //城市名称
+        &quot;areaId&quot;:INT,   //区域id
+        &quot;area&quot;:INT,   //区域名称
+        &quot;name&quot;:STRING,   //楼盘名称
+        &quot;recommend&quot;:INT,   //是否在首页推荐，0为否，1为是
+        &quot;designNum&quot;:INT,   //该楼盘设计方案总数
+        &quot;companyId&quot;:INT,   //开发商id
+        &quot;company&quot;:STRING,   //开发商公司名称
+    }
+
+}
+</code></pre><h3 id="1-3-">1.3 首页主推楼盘 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/recommend">http://121.40.212.161:8000/data/building/recommend</a></p>
+<pre><code>&gt;传入参数
+
+    {   无
+    }
+
+&gt;返回参数
+
+    {   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+            &quot;data&quot;: {
+                &quot;buildingList&quot;:[{
+                    &quot;id&quot;:INT,   //楼盘id
+                    &quot;cityId&quot;:INT,   //城市id
+                    &quot;prov&quot;:STRING,   //省份名称
+                    &quot;city&quot;:STRING,   //城市名称
+                    &quot;areaId&quot;:INT,   //区域id
+                    &quot;area&quot;:INT,   //区域名称
+                    &quot;name&quot;:STRING,   //楼盘名称
+                    &quot;recommend&quot;:INT,   //是否在首页推荐，0为否，1为是
+                    &quot;designNum&quot;:INT,   //该楼盘设计方案总数
+                    &quot;companyId&quot;:INT,   //开发商id
+                    &quot;company&quot;:STRING,   //开发商公司名称
+                }
+                ……
+                ]
+            }
+    }
+</code></pre><h3 id="1-4-">1.4 查询户型列表</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/house/list">http://121.40.212.161:8000/data/house/list</a></p>
+<pre><code>&gt;传入参数
+
+    {   &quot;cityId&quot;:INT,//城市id
+        &quot;areaId&quot;:INT,//区域id
+        &quot;buildingId&quot;:INT,//楼盘id
+        &quot;states&quot;:ARRAY,//0代表正常，1代表删除，2代表前台不显示
+        &quot;num&quot;:INT,//每页显示个数
+        &quot;page&quot;:INT,//所在页数，第一页为1
+    }
+
+&gt;返回参数
+
+    {   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+            &quot;data&quot;: {
+                &quot;houseList&quot;:[{
+                    &quot;id&quot;:INT,   //户型id
+                    &quot;name&quot;:STRING,   //户型，如“两室一厅一厨一卫”
+                    &quot;grossArea&quot;:STRING,   //建筑面积
+                    &quot;usableArea&quot;:STRING,   //可使用面积
+                    &quot;pic&quot;:STRING,   //户型图
+                    &quot;designNum&quot;:INT,   //该户型设计方案数
+                    &quot;state&quot;:INT,   //状态，0代表正常，1代表删除，2代表前台不显示
+                    &quot;areaId&quot;:INT,   //区域id
+                    &quot;area&quot;:INT,   //区域名称
+                    &quot;cityId&quot;:INT,   //城市id
+                    &quot;prov&quot;:STRING,   //省份名称
+                    &quot;city&quot;:STRING,   //城市名称
+                    &quot;buildingId&quot;:INT,   //楼盘id
+                    &quot;buildingName&quot;:STRING,   //楼盘名称
+                    &quot;companyId&quot;:INT,   //开发商id
+                    &quot;company&quot;:STRING,   //开发商公司名称
+                }
+                ……
+                ],
+                &quot;pagination&quot;:{
+                    &quot;count&quot;:INT,  //总个数
+                    &quot;page&quot;:INT    //页数
+                }
+            }
+    }
+</code></pre><h3 id="1-5-">1.5 单个户型信息</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/house/info">http://121.40.212.161:8000/data/house/info</a></p>
+<pre><code>&gt;传入参数
+
+    {   &quot;id&quot;:INT,//户型id
+    }
+
+&gt;返回参数
+
+    {   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+        &quot;data&quot;: {
+            &quot;id&quot;:INT,   //户型id
+            &quot;name&quot;:STRING,   //户型，如“两室一厅一厨一卫”
+            &quot;grossArea&quot;:STRING,   //建筑面积
+            &quot;usableArea&quot;:STRING,   //可使用面积
+            &quot;pic&quot;:STRING,   //户型图
+            &quot;designNum&quot;:INT,   //该户型设计方案数
+            &quot;state&quot;:INT,   //状态，0代表正常，1代表删除，2代表前台不显示
+            &quot;areaId&quot;:INT,   //区域id
+            &quot;area&quot;:INT,   //区域名称
+            &quot;cityId&quot;:INT,   //城市id
+            &quot;prov&quot;:STRING,   //省份名称
+            &quot;city&quot;:STRING,   //城市名称
+            &quot;buildingId&quot;:INT,   //楼盘id
+            &quot;buildingName&quot;:STRING,   //楼盘名称
+            &quot;companyId&quot;:INT,   //开发商id
+            &quot;company&quot;:STRING   //开发商公司名称
+        }
+    }
+</code></pre><h2 id="2-">2 编辑</h2>
+<h3 id="2-1-">2.1 新增楼盘 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/edit?act=add">http://121.40.212.161:8000/data/building/edit?act=add</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;cityId&quot;:INT, //城市id
+    &quot;areaId&quot;:INT, //区域id
+    &quot;name&quot;:STRING, //楼盘名称
+    &quot;company&quot;:STRING, //房产公司名称
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;:INT   //成功返回新增的楼盘id，失败返回0
+}
+</code></pre><h3 id="2-2-">2.2 更新楼盘 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/edit?act=update">http://121.40.212.161:8000/data/building/edit?act=update</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,//楼盘id
+    &quot;cityId&quot;:INT, //城市id
+    &quot;areaId&quot;:INT, //区域id
+    &quot;name&quot;:STRING, //楼盘名称
+    &quot;companyId&quot;:INT, //房产公司id
+    &quot;company&quot;:STRING, //房产公司名称
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN //成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="2-3-">2.3 推荐楼盘 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/edit?act=recommend">http://121.40.212.161:8000/data/building/edit?act=recommend</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT,//楼盘id
+    &quot;recommend&quot;:INT,//是否推荐，0为否，1为是
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN //成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="2-4-">2.4 新增户型</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/house/edit?act=add">http://121.40.212.161:8000/data/house/edit?act=add</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;cityId&quot;:INT, //城市id
+    &quot;areaId&quot;:INT, //区域id
+    &quot;buildingId&quot;:INT, //楼盘id
+    &quot;name&quot;:STRING, //户型名称
+    &quot;grossArea&quot;:STRING, //建筑面积，0.00
+    &quot;usableArea&quot;:STRING, //可使用面积，0.00
+    &quot;pic&quot;:STRING, //户型图地址
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;:INT   //成功返回新增的户型id，失败返回0
+}
+</code></pre><h3 id="2-5-">2.5 更新户型</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/house/edit?act=update">http://121.40.212.161:8000/data/house/edit?act=update</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT, //户型id
+    &quot;cityId&quot;:INT, //城市id
+    &quot;areaId&quot;:INT, //区域id
+    &quot;buildingId&quot;:INT, //楼盘id
+    &quot;name&quot;:STRING, //户型名称
+    &quot;grossArea&quot;:STRING, //建筑面积，0.00
+    &quot;usableArea&quot;:STRING, //可使用面积，0.00
+    &quot;pic&quot;:STRING, //户型图地址
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN //成功为TRUE，失败为FALSE
+}
+</code></pre><h2 id="3-">3 删除</h2>
+<h3 id="3-1-">3.1 删除楼盘 <code>√</code></h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/building/edit?act=del">http://121.40.212.161:8000/data/building/edit?act=del</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT //楼盘id
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN //成功为TRUE，失败为FALSE
+}
+</code></pre><h3 id="3-2-">3.2 更新户型状态</h3>
+<p>[GET] <a href="http://121.40.212.161:8000/data/house/edit?act=del">http://121.40.212.161:8000/data/house/edit?act=del</a></p>
+<blockquote>
+<p>传入参数</p>
+</blockquote>
+<pre><code>{   &quot;id&quot;:INT, //户型id
+    &quot;state&quot;:INT //状态，0代表正常，1代表删除，2代表前台不显示
+}
+</code></pre><blockquote>
+<p>返回参数</p>
+</blockquote>
+<pre><code>{   &quot;errCode&quot;:INT,  //成功返回22000，失败返回22001
+    &quot;data&quot;: BOOLEAN //成功为TRUE，失败为FALSE
+}
+</code></pre></div>
+</body>
+</html>

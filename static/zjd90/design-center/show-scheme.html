@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>展示中的设计方案</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/designer.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="ShowSchemeController">
+    <div class="body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--breadcrumb start-->
+        <div class="breadcrumb-title breadcrumb-wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="../index.html">首页</a></li>
+                    <!--<li><a href="javascript:;">个人中心</a></li>-->
+                    <li><a href="../design-center/designer.html">设计师中心</a></li>
+                    <li><a href="javascript:;">{{curTabName}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--breadcrumb end-->
+
+        <!--main start-->
+        <div class="main" id="show-scheme" style="margin-bottom: 35px;">
+            <div class="container clearfix">
+                <div ms-include-src="'../design-center/views/nav-left.html'"></div>
+                <div class="show-content pull-right list-content">
+                    <div class="search clearfix">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-bottom: 0">
+                                <div class="dropdown pull-left col-sm-2" style="padding: 0;margin-left: 14px;">
+                                    <a class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1">
+                                        按更新时间排序
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li role="presentation">按更新时间排序</li>
+                                        <li role="presentation">按其他排序</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                          <input type="text" class="form-control" id="inputEmail5"
+                                                 ms-duplex="key"
+                                                    placeholder="输入设计方案名称关键字">
+                                          <span class="input-group-btn">
+                                                <a class="btn btn-default"
+                                                   ms-click="searchHandler"
+                                                   type="button">搜索</a>
+                                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--<input type="text" class="pull-left" placeholder="输入设计方案名称关键字   ">-->
+                        <!--<button class="btn btn-default pull-left">搜索</button>-->
+                    </div>
+
+                    <table class="title">
+                        <colgroup>
+                            <col width="466px" class="name">
+                            <col class="price">
+                            <col class="state">
+                            <col class="operate">
+                        </colgroup>
+                        <thead>
+                            <tr class="col-name">
+                                <th class="name">设计方案名称</th>
+                                <th class="price">价格（元）</th>
+                                <th class="state">当前状态</th>
+                                <th class="operate">操作</th>
+                            </tr>
+                            <tr class="sep_row"></tr>
+                            <tr>
+                                <th colspan="2">
+                                    <!--<input style="margin-left:20px" type="checkbox">-->
+                                    <!--<span style="padding-left:20px">全选</span>-->
+                                    <!--<span style="padding-left:20px">重新发布所选项</span>-->
+                                </th>
+                                <th colspan="2">
+                                    <div class="pull-right" ms-widget="pager, HouseListPager"></div>
+                                </th>
+                            </tr>
+                            <tr class="sep_row"></tr>
+                        </thead>
+                        <tbody class="items" ms-repeat="items">
+                            <tr class="sep_row"></tr>
+                            <tr class="info">
+                                <td colspan="4">
+                                    <span style="padding-left:20px">更新时间: {{new Date(Number(el.modifyTime)*1000)|date("yyyy MM dd")}}</span>
+                                    <span style="padding-left:20px">编号: {{el.designSn}}</span>
+                                    <span style="padding-left:50px">浏览 {{el.viewNum}} 次</span>
+                                </td>
+                            </tr>
+                            <tr class="item">
+                                <td class="name">
+                                    <div class="pull-left">
+                                        <!--<input style="margin-left:20px;margin-top: 60px;" type="checkbox">         -->
+                                    </div>
+                                    <div style="padding-left:10px" class="img pull-left">
+                                        <a target="_blank"
+                                           ms-href="'../schema/detail.html?schema_id='+el.id+'&house_id=' + el.houseId">
+                                            <img ms-src="el.thumbUrl" alt="">
+                                        </a>
+                                    </div>
+                                    <div style="padding-left:24px" class="description pull-left">
+                                        <h2 style="text-align: left; font-size: 18px;">{{el.name}}</h2>
+                                        <span>{{el.houseInfo}}</span>
+                                    </div>                                   
+                                </td>
+                                <td class="price tlc">
+                                    <span>{{el.price}}</span>
+                                </td>
+                                <td class="state">
+                                    <span>{{el.stateText}}</span>
+                                </td>
+                                <td class="operate">
+                                    <span><a ms-href="'../schema/publish-effect.html?design_id='+el.id+ '&house_id=' + el.houseId">修改</a></span>
+                                    <span style="padding-left:25px"
+                                          ms-visible="el.state == 3">
+                                        <a href="javascript:;"
+                                           ms-click="actionHandler(el, 'up')">上架</a>
+                                    </span>
+                                    <span style="padding-left:25px"
+                                          ms-visible="el.state == 0">
+                                        <a href="javascript:;"
+                                           ms-click="actionHandler(el, 'down')">下架</a>
+                                    </span>
+                                    <span style="padding-left:25px">
+                                        <a href="javascript:;"
+                                           ms-click="actionHandler(el, 'del')">删除</a>
+                                    </span>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                      <thead class="footer">
+                            <tr>
+                                <th colspan="2">
+                                </th>
+                                <th colspan="2">
+                                    <div class="pull-right" ms-widget="pager, SchemaListPager"></div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+
+    <script type="text/javascript" src="../design-center/controllers/ShowSchemeController.js"></script>
+
+
+</body>
+</html>
+
+

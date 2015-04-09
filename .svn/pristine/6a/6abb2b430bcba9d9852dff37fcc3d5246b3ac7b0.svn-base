@@ -1,0 +1,74 @@
+<div class="head clear">
+    <span>建材</span> <b>￥{{unitPrice}}/m²</b> <i>建材总价￥{{totalPrice}} (可使用面积：{{usable_area}}m²)</i><em>(产品为每m²造价) </em>
+</div>
+<table>
+    <tbody ms-repeat="list">
+        <tr>
+            <td style="width: 175px" class="tlc">
+                <a>
+                    <!--<i class="fa fa-square-o fa-1_3x"></i>-->
+                    <span style="margin-left: 5px;">{{el.period}}</span>
+                </a>
+            </td>
+            <td style="width: 971px">
+                <table style="width: 100%"
+                       class="product-table">
+                    <tbody ms-repeat-good="el.goods">
+                        <tr>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr class="hover">
+                            <td width="175px" style="width: 175px;" class="">
+                                <!--<span>{{good.materialName}}</span>-->
+                            </td>
+                            <td width="244px" style="width: 244px;" class="">
+                                <a class="p_Jc" target="_blank">{{good.goodsName}}</a>
+                            </td>
+                            <td width="20px" style="width: 20px;"></td>
+
+                            <td width="150px" style="width: 150px;">单价: ￥{{good.sellPrice}}</td>
+                            <td width="150px" style="width: 150px;">数量: {{good.num}}{{good.unit}}</td>
+
+                            <td width="140px" style="width: 140px;">总价: ￥{{good.totalPrice}}</td>
+                            <td width="89px" style="width: 89px;" class="td7">
+                                <!--<a href="javascript:;"-->
+                                   <!--ms-click="toggleHandler(product, false)"-->
+                                   <!--ms-visible="product.toggle">收起</a>-->
+                            <!--<a href="javascript:;"-->
+                               <!--ms-click="toggleHandler(product, true)"-->
+                               <!--ms-visible="!product.toggle">查看备选产品</a>-->
+                            </td>
+                        </tr>
+                        <!--<tr class="change" ms-visible="product.toggle">-->
+                            <!--<td></td>-->
+                            <!--<td colspan="6" class="">-->
+                                <!--<div class="cont clear">-->
+                                    <!--<div class="top"><span class="total">为您的方案匹配到6个相似的建材,以下是1~3</span></div>-->
+                                    <!--<div class="main clear">-->
+                                        <!--<ul class="clear">-->
+                                            <!--<li class="clear" ms-repeat-option="product.options">-->
+                                                <!--<img ms-src="option.thumbUrl" class="bigPic">-->
+                                                <!--<a target="_blank" title="查看详情">-->
+                                                    <!--<img ms-src="option.thumbUrl">-->
+                                                <!--</a>-->
+                                                <!--<div>-->
+                                                    <!--<p ms-attr-title="option.name">{{option.name}}</p>-->
+                                                    <!--<p>单价：￥29.20</p>-->
+                                                    <!--<span>选中替换</span>-->
+                                                <!--</div>-->
+                                            <!--</li>-->
+                                        <!--</ul>-->
+                                        <!--<a href="javascript:;">换一批 &gt;&gt;</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <tr>
+                            <td colspan="7"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

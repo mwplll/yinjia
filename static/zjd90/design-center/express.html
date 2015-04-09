@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="zyc-2014-11-17">
+    <meta name="author" content="zyc">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!-- font-awesome styles -->
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap/font-awesome/font-awesome.min.css">
+
+    <!-- main styles -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/designer.css">
+
+    <!--[if lt IE 8]>
+    <link href="../js/bootstrap/Bootstrap-IE7Fix-master/css/bootstrap-ie7fix.css" rel="stylesheet">
+    <link href="../css/hack-ie7.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv/3.7.0/html5.js"></script>
+    <script src="../js/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ms-controller="ExpressSearchController">
+    <div class="body">
+        <!--header start-->
+        <div ms-include-src="'../share/views/header.html'" ms-controller="HeaderController"></div>
+        <!--header end-->
+
+        <!--breadcrumb start-->
+        <div class="breadcrumb-title breadcrumb-wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../design-center/designer.html">设计师中心</a></li>
+                    <li><a href="javascript:;">订单管理</a></li>
+                    <li><a href="javascript:;">查看物流</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--breadcrumb end-->
+
+        <!--main start-->
+        <div class="main" id="express" style="margin-bottom: 35px;">
+            <div class="container clearfix">
+                <div ms-include-src="'../design-center/views/thumbnail-left.html'"></div>
+                
+                <div class="express-content pull-right">
+                    <div class="express-info clearfix">
+                        <span>物流公司:中通快递</span>
+                        <span style="padding-left:40px">运单号码:2123131312313131313</span>
+                        <span style="padding-right:20px" class="pull-right">物流编号:123123123131323</span>
+                    </div>
+
+                    <div class="express-condition">
+                        <div class="title">
+                            <span>物流状态</span>
+                        </div>
+                        <div class="info">
+                            <p><span>2014-11-18 09:40:18</span><span style="padding-left:50px">您的订单等待处理</span></p>
+                            <p><span>2014-11-18 09:40:18</span><span style="padding-left:50px">您的订单等待处理</span></p>
+                            <p><span>2014-11-18 09:40:18</span><span style="padding-left:50px">您的订单等待处理</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--main end-->
+
+        <!--footer start-->
+        <div ms-include-src="'../share/views/footer.html'"></div>
+        <!--footer end-->
+    </div>
+
+    <!--script-->
+    <script type="text/javascript" src="../js/plugins/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../js/ngprogress/nprogress.js"></script>
+    <script type="text/javascript" src="../js/avalon/avalon.1.3.5-min.js"></script>
+    <script type="text/javascript" src="../config/config.js"></script>
+    <script type="text/javascript" src="../share/controllers/HeaderController.js"></script>
+    <script type="text/javascript" src="../design-center/controllers/ExpressSearchController.js"></script>
+
+
+</body>
+</html>
+
+

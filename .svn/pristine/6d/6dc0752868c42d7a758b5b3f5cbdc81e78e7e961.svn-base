@@ -1,0 +1,168 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * 设计方案价格相关计算
+ * User: mwp
+ * Date: 15-2-10
+ * Time: 上午1:35
+ */
+class LibDesignSchemaPrice{
+    public function isId($id)
+    {
+        if(!is_numeric($id) || $id<=0)
+            return false;
+        return true;
+    }
+
+    /**
+     * 设计费
+     * @param $designSchemaId
+     * @return bool|int
+     */
+    public function getDesignPrice($designSchemaId){
+        if(!$this->isId($designSchemaId)){
+            return FALSE;
+        }
+
+        $dal = new DBDesignSchema();
+        $designSchemaInfo = $dal->getDesignBaseInfoById($designSchemaId);
+        if($designSchemaInfo){
+            $designPrice = $designSchemaInfo['design_price'];
+            return $designPrice;
+        }
+        else{
+            return 0.00;
+        }
+    }
+
+    /**
+     * 设计费定金
+     * @param $designSchemaId
+     * @return bool|int
+     */
+    public function getDesignDeposit($designSchemaId){
+        if(!$this->isId($designSchemaId)){
+            return FALSE;
+        }
+
+        $dal = new DBDesignSchema();
+        $designSchemaInfo = $dal->getDesignBaseInfoById($designSchemaId);
+        if($designSchemaInfo){
+            $designDeposit = $designSchemaInfo['design_price'];
+            return $designDeposit;
+        }
+        else{
+            return 0.00;
+        }
+    }
+
+    /**
+     * 建材总价
+     * @param $designSchemaId
+     * @return bool|float
+     */
+    public function getMaterialPrice($designSchemaId){
+        if(!$this->isId($designSchemaId)){
+            return FALSE;
+        }
+
+        $materialPrice = 0.00;
+        $dal = new DBDesignMaterial();
+        $materialList = $dal->getMaterialListBydesignId($designSchemaId);
+
+        if(!$materialList){
+            return 0.00;
+        }
+
+        foreach($materialList as $material){
+            $productsNum = intval($material['products_num']);
+            $productsId = intval($material['products_id']);
+            $productsDB = new DBProducts();
+            $productsInfo = $productsDB->getProductsById($productsId);
+            $productsPrice = $productsInfo['sell_price'];
+            $materialPrice = $materialPrice + $productsPrice * $productsNum;
+        }
+
+        return $materialPrice*1.05;
+
+    }
+
+    /**
+     * 人工加辅料总价
+     * @param $designSchemaId
+     * @return bool|float
+     */
+    public function getManualPrice($designSchemaId){
+        if((!$this->isId($designSchemaId))){
+            return FALSE;
+        }
+
+        $manualPrice = 0.00;
+        /**
+         * 获得户型建筑面积
+         */
+        $designSchemaDB = new DBDesignSchema();
+        $designSchemaInfo = $designSchemaDB->getDesignBaseInfoById($designSchemaId);
+        if(!$designSchemaInfo){
+            return 0.00;
+        }
+
+        $designStypeId = $designSchemaInfo['design_style_id'];//装修风格
+        $houseTypeId = $designSchemaInfo['house_type_id'];  //户型id
+        $houseDB = new DBHouse();
+        $houseInfo = $houseDB->getHouseById($houseTypeId);
+        if(!$houseInfo){
+            return 0.00;
+        }
+        $grossArea = $houseInfo['gross_area'];
+        $cityId = $houseInfo['city_id'];
+
+        //获得城市系数
+        $cityDB = new DBCity();
+        $cityInfo = $cityDB->getCityById($cityId);
+        if(!$cityInfo){
+            return 0.00;
+        }
+        $manualCoe = $cityInfo['manual_coe'];
+
+        /**
+         * 获得人工+辅料表
+         */
+        $wh = array();
+        $wh['design_style_id'] = $designStypeId;
+        $manualDB = new DBManual();
+        $manualList = $manualDB->getManualList($wh);
+        if(!$manualList){
+            return 0.00;
+        }
+        foreach($manualList as $manual){
+            $manualPrice = $manual['manual_price'] * $manualCoe * $grossArea + $manualPrice;
+        }
+
+        return $manualPrice*1.05;
+    }
+
+    /**
+     * 设计方案总价
+     * @param $designSchemaId
+     * @return bool|float|int
+     */
+    public function getDesignSchemaTotalPrice($designSchemaId){
+        if((!$this->isId($designSchemaId))){
+            return FALSE;
+        }
+
+        $designSchemaTotalPrice = 0.00;
+
+        $designPrice = $this->getDesignPrice($designSchemaId);
+        //$depositPrice = $this->getDesignDeposit($designSchemaId);
+        $materialPrice = $this->getMaterialPrice($designSchemaId);
+        $manualPrice = $this->getManualPrice($designSchemaId);
+
+        $designSchemaTotalPrice = $designPrice + $materialPrice + $manualPrice;
+        return $designSchemaTotalPrice;
+
+    }
+
+
+}
