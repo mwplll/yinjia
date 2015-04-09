@@ -1,0 +1,7 @@
+rd/src/log
+rd/node_modules
+rd/.m3dsync_config
+
+*.log
+rd/.idea
+rd/.DS_Store
