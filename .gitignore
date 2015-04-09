@@ -5,3 +5,8 @@ rd/.m3dsync_config
 *.log
 rd/.idea
 rd/.DS_Store
+
+*.svn
+*tpl_c*
+
+
